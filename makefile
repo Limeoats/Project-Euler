@@ -1,24 +1,16 @@
-TARGET = prog
-LIBS = -lm
-CC = g++
-CFLAGS = -g -Wall
+CXX=clang++
+CXXFLAGS=-g -std=c++11 -Wall -pedantic
+BIN=prog
 
-.PHONY: default all clean
+SRC=$(wildcard *.cc)
+OBJ=$(SRC:%.cpp=%.o)
 
-default: $(TARGET)
-all: default
+all: $(OBJ)
+	$(CXX) -o $(BIN) $^
 
-OBJECTS = $(patsubst %.cc, %.o, $(wildcard *.cc))
-HEADERS = $(wildcard *.h)
-
-%.o: %.c $(HEADERS)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-.PRECIOUS: $(TARGET) $(OBJECTS)
-
-$(TARGET): $(OBJECTS)
-	$(CC) $(OBJECTS) -Wall $(LIBS) -o $@
+%.o: %.c
+	$(CXX) $@ -c $<
 
 clean:
-	-rm -f *.o
-	-rm -f $(TARGET)
+	rm -f *.o
+	rm $(BIN)
