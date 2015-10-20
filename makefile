@@ -1,12 +1,12 @@
 CXX=clang++
-CXXFLAGS=-g -std=c++11 -Wall -pedantic
-BIN=prog
+CXXFLAGS=-g -std=c++11 -Wall -pedantic -lstdc++ -fno-exceptions
+BIN=projecteuler
 
 SRC=$(wildcard *.cc)
 OBJ=$(SRC:%.cpp=%.o)
 
 all: $(OBJ)
-	$(CXX) -o $(BIN) $^
+	$(CXX) $(CXXFLAGS) -o $(BIN) $^
 
 %.o: %.c
 	$(CXX) $@ -c $<

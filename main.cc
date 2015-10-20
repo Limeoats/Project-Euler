@@ -1,9 +1,8 @@
 #include <iostream>
 #include <vector>
 
-#include "problem1.h"
+#include "problem11.h"
 
 int main(int argc, const char* argv[]) {
-    std::vector<int> x = {3, 5};
-    std::cout << "Answer: " << getMultiplesUnder(1000, x) << std::endl;
+    std::cout << "Answer: " << problem11::getAnswer() << std::endl;
 }
