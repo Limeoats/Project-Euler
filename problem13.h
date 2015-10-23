@@ -149,30 +149,36 @@ namespace problem13 {
         int carry = 0;
 
 
+        //std::cout << num1[49] - '0' << std::endl;
+        std::string n1 = num1;
+        std::string n2 = num2;
 
         for (int i = highest; i > 0; i--) {
             int x;
-            if (higherNumber == num1) {
-                x = (num1[i] - '0') + (num2[lowerCounter <= 0 ? 0 : lowerCounter] - '0') + carry;
+            if (higherNumber == n1) {
+                x = (n1[i-1] - '0') + (n2[lowerCounter-1 <= 0 ? 0 : lowerCounter-1] - '0') + carry;
             }
             else {
-                x = (num2[i] - '0') + (num1[lowerCounter] - '0') + carry;
+                x = (n2[i-1] - '0') + (n1[lowerCounter-1 <= 0 ? 0 : lowerCounter-1] - '0') + carry;
             }
-            if (x < 10)
-                totalReversed.push_back(static_cast<char>(x));
+            if (x < 10) {
+                totalReversed.push_back(x);
+            }
             else {
-                totalReversed.push_back(static_cast<char>(x - (x - 9)));
+                totalReversed.push_back(x - (x - 9));
                 carry = x - 9;
+
             }
             lowerCounter--;
         }
-
 
         //Build a new string from the vector
         std::string addedNumbers = "";
         for (int i = totalReversed.size(); i >= 0; i--) {
             addedNumbers += totalReversed[i];
         }
+
+
 
         return addedNumbers;
     }
