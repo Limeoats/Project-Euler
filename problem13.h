@@ -145,40 +145,46 @@ namespace problem13 {
         int lowerCounter = l1 < l2 ? l1 : l2;
         std::string higherNumber = l1 > l2 ? num1 : num2;
 
-        std::vector<char> totalReversed;
+        std::stringstream totalReversed;
         int carry = 0;
 
 
-        //std::cout << num1[49] - '0' << std::endl;
         std::string n1 = num1;
         std::string n2 = num2;
 
         for (int i = highest; i > 0; i--) {
             int x;
             if (higherNumber == n1) {
-                x = (n1[i-1] - '0') + (n2[lowerCounter-1 <= 0 ? 0 : lowerCounter-1] - '0') + carry;
+                //THE PROBLEM IS THE FIRST PART (n1[i-1])!!! RUN THIS CODE WITH THE PRINT STATEMENT
+                x = (n1[i-1] - '0') + (lowerCounter - 1 >= 0 ? (n2[lowerCounter - 1] - '0') : 0) + carry;
+                if (x < 0) {
+                    if (highest < 70) {
+                        std::cout << "First half: " << n1[i-1] - '0' << std::endl << "Second half: " << (lowerCounter - 1 >= 0 ? (n2[lowerCounter - 1] - '0') : 0) << std::endl << "Carry: " << carry << std::endl;
+                    }
+                }
             }
             else {
-                x = (n2[i-1] - '0') + (n1[lowerCounter-1 <= 0 ? 0 : lowerCounter-1] - '0') + carry;
+                x = (n2[i-1] - '0') + (lowerCounter - 1 >= 0 ? (n1[lowerCounter - 1] - '0') : 0) + carry;
             }
             if (x < 10) {
-                totalReversed.push_back(x);
+                totalReversed << x;
             }
             else {
-                totalReversed.push_back(x - (x - 9));
-                carry = x - 9;
+                totalReversed << (x % 10);
+                carry = x / 10;
 
             }
             lowerCounter--;
         }
+        if (carry > 0)
+            totalReversed << carry;
 
         //Build a new string from the vector
         std::string addedNumbers = "";
-        for (int i = totalReversed.size(); i >= 0; i--) {
-            addedNumbers += totalReversed[i];
+        std::string totalReversedString = totalReversed.str();
+        for (int i = totalReversedString.size(); i >= 0; i--) {
+            addedNumbers += totalReversedString[i];
         }
-
-
 
         return addedNumbers;
     }
