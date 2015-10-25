@@ -112,81 +112,29 @@
 
 namespace problem13 {
 
-    std::string add(std::string num1, std::string num2);
-
-    std::string getFirstNDigitsFromSumOfNumbers(int n, std::string numbers) {
-        std::vector<std::string> numArray = utils::split(numbers, ' ');
-        std::string total;
-        if (numArray.size() > 0) {
-            total = numArray[0];
-        }
-        //Loop through each of the numbers and add to the previous one
-        for (int i = 1; i < numArray.size(); i++) {
-            total = add(total, numArray[i]);
-        }
-
-
-        return total;
-
+    std::string numberToString(int number) {
+        std::stringstream ss;
+        ss << number;
+        return ss.str();
     }
 
-    std::vector<int> getLargeNumberAsIntArray(std::string number, int numberLength) {
-        std::vector<int> numbers(numberLength);
-        for (char c : number) {
-            numbers.push_back(c);
-        }
-        return numbers;
-    }
-
-    std::string add(std::string num1, std::string num2) {
-        int l1 = num1.size();
-        int l2 = num2.size();
-        int highest = l1 > l2 ? l1 : l2;
-        int lowerCounter = l1 < l2 ? l1 : l2;
-        std::string higherNumber = l1 > l2 ? num1 : num2;
-
-        std::stringstream totalReversed;
+    std::string getFirstNDigitsFromSumOfNumbers(int n, std::string nums) {
+        std::vector<std::string> numbers = utils::split(nums, ' ');
         int carry = 0;
-
-
-        std::string n1 = num1;
-        std::string n2 = num2;
-
-        for (int i = highest; i > 0; i--) {
-            int x;
-            if (higherNumber == n1) {
-                //THE PROBLEM IS THE FIRST PART (n1[i-1])!!! RUN THIS CODE WITH THE PRINT STATEMENT
-                x = (n1[i-1] - '0') + (lowerCounter - 1 >= 0 ? (n2[lowerCounter - 1] - '0') : 0) + carry;
-                if (x < 0) {
-                    if (highest < 70) {
-                        std::cout << "First half: " << n1[i-1] - '0' << std::endl << "Second half: " << (lowerCounter - 1 >= 0 ? (n2[lowerCounter - 1] - '0') : 0) << std::endl << "Carry: " << carry << std::endl;
-                    }
-                }
+        std::string result = "";
+        for (int i = 49; i >= 0; i--) {
+            int count = 0;
+            for (int j = 0; j < 100; j++) {
+                count = count + (numbers[j][i] - '0');
             }
-            else {
-                x = (n2[i-1] - '0') + (lowerCounter - 1 >= 0 ? (n1[lowerCounter - 1] - '0') : 0) + carry;
-            }
-            if (x < 10) {
-                totalReversed << x;
-            }
-            else {
-                totalReversed << (x % 10);
-                carry = x / 10;
-
-            }
-            lowerCounter--;
+            result += (numberToString((carry + count) % 10));
+            carry = (carry + count) / 10;
         }
-        if (carry > 0)
-            totalReversed << carry;
-
-        //Build a new string from the vector
-        std::string addedNumbers = "";
-        std::string totalReversedString = totalReversed.str();
-        for (int i = totalReversedString.size(); i >= 0; i--) {
-            addedNumbers += totalReversedString[i];
-        }
-
-        return addedNumbers;
+        //Reverse the string
+        result = std::string(result.rbegin(), result.rend());
+        std::string answer = numberToString(carry);
+        answer += (result);
+        return answer;
     }
 
 
