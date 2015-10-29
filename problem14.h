@@ -1,8 +1,6 @@
 #ifndef PROBLEM_14_H
 #define PROBLEM_14_H
 
-#include <stdio.h>
-
 //The following iterative sequence is defined for the set of positive integers:
 
 //n → n/2 (n is even)
@@ -31,7 +29,7 @@ namespace problem14 {
     int getStartingNumberUnder(int max) {
         int longestChain = 1;
         int longestChainStartingNumber = 2;
-        int currentChain = 1;
+        int currentChain;
         for (int i = 2; i < max; i++) {
             currentChain = 1;
             int curNum = i;
