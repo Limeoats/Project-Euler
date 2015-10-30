@@ -19,6 +19,6 @@ set(SOURCE_FILES
     problem7.h
     problem8.h
     problem9.h
-    utils.h)
+    utils.h problem15.h)
 
 add_executable(Project_Euler ${SOURCE_FILES})
