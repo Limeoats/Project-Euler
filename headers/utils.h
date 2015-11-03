@@ -13,7 +13,6 @@
 
 namespace utils {
 
-
     //bool contains(const C &v, const T &x)
     //Parameters:
     //  v: a container of some sort
@@ -22,7 +21,7 @@ namespace utils {
     //  true if the container v contains x, otherwise false
     template <class C, class T>
     bool contains(const C &v, const T &x) {
-        return end(v) != std::find(begin(v), end(v), x);
+        return std::end(v) != std::find(std::begin(v), std::end(v), x);
     }
 
 
