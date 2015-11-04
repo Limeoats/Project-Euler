@@ -23,6 +23,6 @@ set(SOURCE_FILES
         headers/problem8.h
         headers/problem9.h
         headers/problem16.h
-        headers/utils.h headers/problem15.h headers/bignumber.h)
+        headers/utils.h headers/problem15.h headers/bignumber.h source/bignumber.cpp)
 
 add_executable(Project_Euler ${SOURCE_FILES})
