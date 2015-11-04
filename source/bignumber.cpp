@@ -5,8 +5,10 @@
 #include <sstream>
 #include <stack>
 #include <iostream>
+#include <cstdlib>
 
 #include "bignumber.h"
+#include "utils.h"
 
 
 //Initializes member variables to default values
@@ -19,13 +21,16 @@ BigNumber::BigNumber() :
 BigNumber::BigNumber(std::string number) :
     _numberString(number)
 {
-    bool nextNegative = false;
     for (char c : number) {
-        if (c == '-')
-            nextNegative = true;
+        if (c == '-') {
+            std::cerr << "You cannot create a negative big number like this." <<
+            std::endl << "Please use the big number negate function." << std::endl <<
+            std::endl << "The negative is being removed and the number is being added as a positive big number." <<
+            std::endl;
+            continue;
+        }
         else {
-            this->_digits.push_back(nextNegative == true ? (c - '0') * -1 : (c - '0'));
-            nextNegative = false;
+            this->_digits.push_back(c - '0');
         }
     }
 }
@@ -159,6 +164,7 @@ BigNumber BigNumber::subtract(BigNumber other) {
 
 BigNumber BigNumber::multiply(BigNumber other) {
     int carry = 0;
+    int zeroCounter = 0;
     std::vector<std::vector<int>> results;
     BigNumber num1 = other._digits.size() > this->_digits.size() ? other : *this;
     BigNumber num2 = other._digits.size() > this->_digits.size() ? *this : other;
@@ -168,22 +174,23 @@ BigNumber BigNumber::multiply(BigNumber other) {
     for (int i = num2._digits.size() - 1; i >= 0; i--) {
         std::vector<int> rr;
         for (int j = num1._digits.size() - 1; j >= 0; j--) {
-            int val = num2._digits[i] * (num1._digits[j] + carry);
+            int val = (num2._digits[i] * num1._digits[j]) + carry;
             carry = 0;
-            if (val > 9) {
+            if (val > 9 && j != 0) {
                 int dig = val % 10;
                 carry = val / 10;
-                rr.push_back(dig);
+                rr.insert(rr.begin(), dig);
             }
             else {
-                rr.push_back(val);
+                rr.insert(rr.begin(), val);
             }
         }
-        if (i < num2._digits.size()) {
-            for (int x = 0; x < num2._digits.size() - i; i++) {
+        if (zeroCounter > 0) {
+            for (int x = 0; x < zeroCounter; x++) {
                 rr.push_back(0);
             }
         }
+        zeroCounter++;
         results.push_back(rr);
     }
     std::vector<BigNumber> bigNumbers;
@@ -198,15 +205,21 @@ BigNumber BigNumber::multiply(BigNumber other) {
     for (int i = 0; i < bigNumbers.size(); i++) {
         b = b + bigNumbers[i];
     }
+    b = BigNumber(utils::ltrim(b._numberString, '0'));
     return b;
 
 }
 
 //Raises the big number to the power of the exponent
-BigNumber BigNumber::pow(long exponent) {
-
+BigNumber BigNumber::pow(int exponent) {
+    BigNumber temp = *this;
+    for (int i = 0; i < exponent-1; i++) {
+        *this = temp * *this;
+    }
+    return *this;
 }
 
+//Turns the big number into an std::string and returns it
 std::string BigNumber::getString() {
     std::stringstream ss;
     for (int x : this->_digits) {
@@ -236,6 +249,16 @@ BigNumber operator+(BigNumber b1, const BigNumber &b2) {
 //Overload the minus operator to subtract two big numbers
 BigNumber operator-(BigNumber b1, const BigNumber &b2) {
     return b1.subtract(b2);
+}
+
+//Overload the multiplication operator to multiply two big numbers
+BigNumber operator*(BigNumber b1, const BigNumber &b2) {
+    return b1.multiply(b2);
+}
+
+//Overload the exponent operator to raise a big number to an exponent
+BigNumber operator^(BigNumber b1, const int &b2) {
+    return b1.pow(b2);
 }
 
 

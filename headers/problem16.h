@@ -6,19 +6,25 @@
 
 #include <cmath>
 #include <string>
+#include <cstdlib>
 
 #include "bignumber.h"
 
 
 namespace problem16 {
 
-    BigNumber sumOfDigits(BigNumber number) {
-        return BigNumber("5");
+    std::string sumOfDigits(BigNumber number, int power) {
+        BigNumber value = number.pow(power);
+        long total = 0;
+        for (char c : value.getString()) {
+            total += (c - '0');
+        }
+        return value.getString();
     }
 
     std::string getAnswer() {
-
-        return "";
+        BigNumber b("2");
+        return sumOfDigits(b, 100);
     }
 }
 

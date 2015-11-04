@@ -67,12 +67,18 @@ public:
     /* pow function
      * Raises the big number to the power of the exponent
      *  Params:
-     *    long exponent - the exponent to raise the big number to
+     *    BigNumber exponent - the exponent to raise the big number to
      *  Returns:
      *    The new big number after being raised to the provided exponent
      */
-    BigNumber pow(long exponent);
+    BigNumber pow(int exponent);
 
+    /* getString function
+     * Turns the big number into an std::string and returns it
+     *  Params: None
+     *  Returns:
+     *    The big number represented as an std::string
+     */
     std::string getString();
 
     /* negate function
@@ -92,6 +98,11 @@ public:
     friend BigNumber operator+(BigNumber b1, const BigNumber &b2);
     //Minus operator
     friend BigNumber operator-(BigNumber b1, const BigNumber &b2);
+    //Multiplication operator
+    friend BigNumber operator*(BigNumber b1, const BigNumber &b2);
+
+    //Exponent operator
+    friend BigNumber operator^(BigNumber b1, const int &b2);
 private:
     std::string _numberString;      //The big number represented as a string
     std::vector<int> _digits;       //A list of each digit in the big number

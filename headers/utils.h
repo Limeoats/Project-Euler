@@ -58,6 +58,19 @@ namespace utils {
         return list;
     }
 
+    //std::string ltrim(std::string str, char c)
+    //  Params:
+    //    str: the string being trimmed
+    //    c: the character being trimmed
+    //  Returns:
+    //    The trimmed string
+    std::string ltrim(std::string str, char c) {
+        while (str[0] == c) {
+            str.erase(std::remove(str.begin(), str.begin(), c));
+        }
+        return str;
+    }
+
 }
 
 #endif
