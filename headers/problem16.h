@@ -13,18 +13,18 @@
 
 namespace problem16 {
 
-    std::string sumOfDigits(BigNumber number, int power) {
-        BigNumber value = number.pow(power);
+    long sumOfDigits(BigNumber number, int power) {
+        BigNumber value = number^power;
         long total = 0;
         for (char c : value.getString()) {
             total += (c - '0');
         }
-        return value.getString();
+        return total;
     }
 
-    std::string getAnswer() {
+    long getAnswer() {
         BigNumber b("2");
-        return sumOfDigits(b, 100);
+        return sumOfDigits(b, 1000);
     }
 }
 
