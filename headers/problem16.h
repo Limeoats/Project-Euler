@@ -14,7 +14,7 @@
 namespace problem16 {
 
     long sumOfDigits(BigNumber number, int power) {
-        BigNumber value = number^power;
+        BigNumber value = number.pow(power);
         long total = 0;
         for (char c : value.getString()) {
             total += (c - '0');

@@ -203,7 +203,7 @@ BigNumber BigNumber::multiply(BigNumber other) {
     }
     BigNumber b("0");
     for (int i = 0; i < bigNumbers.size(); i++) {
-        b = b + bigNumbers[i];
+        b = b.add(bigNumbers[i]);
     }
     b = BigNumber(utils::ltrim(b._numberString, '0'));
     return b;
@@ -214,7 +214,7 @@ BigNumber BigNumber::multiply(BigNumber other) {
 BigNumber BigNumber::pow(int exponent) {
     BigNumber temp = *this;
     for (int i = 0; i < exponent-1; i++) {
-        *this = temp * *this;
+        *this = temp.multiply(*this);
     }
     return *this;
 }

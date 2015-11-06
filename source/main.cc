@@ -1,8 +1,8 @@
 #include <iostream>
 
-#include "problem17.h"
+#include "problem16.h"
 
 int main(int argc, const char* argv[]) {
-    std::cout << "Answer: " << problem17::getAnswer() << std::endl;
+    std::cout << "Answer: " << problem16::getAnswer() << std::endl;
 
 }
