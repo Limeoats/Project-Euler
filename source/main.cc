@@ -1,10 +1,8 @@
 #include <iostream>
 
-#include "problem16.h"
-#include "bignumber.h"
+#include "problem17.h"
 
 int main(int argc, const char* argv[]) {
-    std::cout << "Answer: " << problem16::getAnswer() << std::endl;
-    //std::cout << BigNumber("4829385") * BigNumber("28734") << std::endl;
+    std::cout << "Answer: " << problem17::getAnswer() << std::endl;
 
 }
