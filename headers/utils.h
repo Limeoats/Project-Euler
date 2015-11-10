@@ -5,10 +5,8 @@
 #ifndef UTILS_H
 #define UTILS_H
 
-#include <algorithm>
 #include <sstream>
 #include <vector>
-#include <cmath>
 
 
 namespace utils {

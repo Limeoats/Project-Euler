@@ -7,9 +7,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 include_directories(${Project_Euler_SOURCE_DIR}/headers)
 
 set(SOURCE_FILES
-        source/main.cc
-        source/utils.cpp
-        headers/problem1.h
+        source/main.cpp
+        headers/utils.h source/utils.cpp
+        headers/problem1.h source/problem1.cpp
+        headers/bignumber.h source/bignumber.cpp
         headers/problem10.h
         headers/problem11.h
         headers/problem12.h
@@ -24,6 +25,6 @@ set(SOURCE_FILES
         headers/problem8.h
         headers/problem9.h
         headers/problem16.h
-        headers/utils.h headers/problem15.h headers/bignumber.h source/bignumber.cpp headers/problem17.h)
+        headers/problem15.h headers/problem17.h)
 
 add_executable(Project_Euler ${SOURCE_FILES})
