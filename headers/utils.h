@@ -7,6 +7,7 @@
 
 #include <sstream>
 #include <vector>
+#include <algorithm>
 
 
 namespace utils {
@@ -18,7 +19,9 @@ namespace utils {
     //Returns:
     //  true if the container v contains x, otherwise false
     template <class C, class T>
-    bool contains(const C &v, const T &x);
+    bool contains(const C &v, const T &x) {
+        return std::end(v) != std::find(std::begin(v), std::end(v), x);
+    }
 
 
     //bool isPrime(int num)

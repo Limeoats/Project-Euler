@@ -1,13 +1,7 @@
 #include <algorithm>
-#include <cmath>
 
 #include "utils.h"
 
-
-template <class C, class T>
-bool utils::contains(const C &v, const T &x) {
-    return std::end(v) != std::find(std::begin(v), std::end(v), x);
-}
 
 bool utils::isPrime(int num) {
     if ((num & 1) == 0)

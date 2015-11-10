@@ -1,7 +1,6 @@
 #include "problem1.h"
 #include "utils.h"
 
-
 #include <numeric>
 
 std::vector<int> problem1::getMultiplesUnder(int numberUnder, std::vector<int> multiplesOf) {

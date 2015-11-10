@@ -1,8 +1,6 @@
 #ifndef PROBLEM_14_H
 #define PROBLEM_14_H
 
-#include <iostream>
-
 //The following iterative sequence is defined for the set of positive integers:
 
 //n → n/2 (n is even)
@@ -20,40 +18,9 @@
 
 
 namespace problem14 {
-
-    long getNextNumInSequence(long curNum) {
-        if ((curNum & 1) == 1)
-            return (3*curNum) + 1;  //odd
-        else
-            return curNum / 2;      //even
-    }
-
-    int getStartingNumberUnder(int max) {
-        long longestChain = 1;
-        long longestChainStartingNumber = 2;
-        long currentChain;
-        for (int i = 2; i < max; i++) {
-            currentChain = 1;
-            long curNum = i;
-            while (curNum > 1) {
-                curNum = getNextNumInSequence(curNum);
-                currentChain++;
-            }
-            if (curNum == 1) {
-                if (currentChain >= longestChain) {
-                    longestChain = currentChain;
-                    longestChainStartingNumber = i;
-                }
-
-            }
-        }
-        return longestChainStartingNumber;
-    }
-
-    long getAnswer() {
-        return getStartingNumberUnder(1000000);
-    }
-
+    long getNextNumInSequence(long curNum);
+    int getStartingNumberUnder(int max);
+    long getAnswer();
 }
 
 #endif
