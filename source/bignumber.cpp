@@ -261,4 +261,9 @@ BigNumber operator^(BigNumber b1, const int &b2) {
     return b1.pow(b2);
 }
 
+//Overload the bracket operator for indexing
+int BigNumber::operator[](int index) {
+    return this->_numberString[index] - '0';
+}
+
 

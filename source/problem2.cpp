@@ -1,6 +1,7 @@
 #include "problem2.h"
 
 #include <algorithm>
+#include <numeric>
 
 bool problem2::isOdd(int i) {
     return (i & 1) == 1;

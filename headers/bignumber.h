@@ -103,6 +103,9 @@ public:
 
     //Exponent operator
     friend BigNumber operator^(BigNumber b1, const int &b2);
+
+    //Index operator
+    int operator[](int index);
 private:
     std::string _numberString;      //The big number represented as a string
     std::vector<int> _digits;       //A list of each digit in the big number
