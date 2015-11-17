@@ -72,66 +72,26 @@ BigNumber BigNumber::add(BigNumber other) {
 
 //Subracts another big number from the current instance
 BigNumber BigNumber::subtract(BigNumber other) {
-    int result = 0;
-    char chars[1], val;
-    std::stack<char> s1, s2, sr;
-    int amountToTake = 0;
-
-    for (char c : this->getString()) {
-        s1.push(c);
+    std::vector<int> results;
+    BigNumber num1 = other._digits.size() > this->_digits.size() ? other : *this;
+    BigNumber num2 = other._digits.size() > this->_digits.size() ? *this : other;
+    int diff = num1._digits.size() - num2._digits.size();
+    for (int i = 0; i < diff; i++) {
+        num2._digits.insert(num2._digits.begin(), 0);
     }
-    for (char c : other.getString()) {
-        s2.push(c);
-    }
-    if (this->getString().size() < other.getString().size()) {
-        std::cerr << "Negative big numbers are not currently supported." << std::endl;
-    }
-    else {
-        while (!s1.empty() || !s2.empty()) {
-            if (!s1.empty()) {
-                chars[0] = s1.top();
-                s1.pop();
-                result = atoi(chars);
-                if (amountToTake > 0) {
-                    if (result == 0) {
-                        result = 9;
-                    }
-                    else {
-                        result -= 1;
-                        amountToTake--;
-                    }
-                }
-            }
-            if (!s2.empty()) {
-                chars[0] = s2.top();
-                s2.pop();
-                if (result - atoi(chars) < 0 && s1.size() > 0) {
-                    result += 10;
-                    result -= atoi(chars);
-                    amountToTake++;
-                }
-                else {
-                    result -= atoi(chars);
-                }
-
-            }
-            std::stringstream ss;
-            ss << result;
-            if (ss.str()[0] == '-') {
-                sr.push(ss.str()[1]);
-            }
-            val = ss.str()[0];
-            sr.push(val);
-            result = 0;
+    int i = num1._digits.size() - 1;
+    for (int j = num2._digits.size() - 1; j >= 0; j--) {
+        if (num1._digits[i] < num2._digits[j]) {
+            num1._digits[i] += 10;
+            num1._digits[i - 1] -= 1;
         }
-        std::stringstream ss;
-        while (!sr.empty()) {
-            ss << sr.top();
-            sr.pop();
-        }
-        BigNumber b(ss.str());
-        return b;
+        results.insert(results.begin(), num1._digits[i] - num2._digits[j]);
+        i--;
     }
+    while (i >= 0 && num1._digits[i] != 0) {
+        results.insert(results.begin(), num1._digits[i]);
+    }
+    return BigNumber(results);
 }
 
 BigNumber BigNumber::multiply(BigNumber other) {
@@ -184,11 +144,6 @@ BigNumber BigNumber::multiply(BigNumber other) {
 
 //Raises the big number to the power of the exponent
 BigNumber BigNumber::pow(int exponent) {
-//    BigNumber temp = *this;
-//    for (int i = 0; i < exponent-1; i++) {
-//        *this = temp.multiply(*this);
-//    }
-//    return *this;
     BigNumber result("1");
     while (exponent > 0) {
         if (exponent & 1) {
@@ -198,7 +153,6 @@ BigNumber BigNumber::pow(int exponent) {
         exponent /= 2;
     }
     return result;
-
 }
 
 //Turns the big number into an std::string and returns it

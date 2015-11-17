@@ -3,6 +3,8 @@
 
 #include "problem16.h"
 
+#include "bignumber.h"
+
 
 
 int main(int argc, const char* argv[]) {
