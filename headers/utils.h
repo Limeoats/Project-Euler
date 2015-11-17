@@ -8,6 +8,7 @@
 #include <sstream>
 #include <vector>
 #include <algorithm>
+#include <chrono>
 
 
 namespace utils {
@@ -54,6 +55,14 @@ namespace utils {
     //    The number of digits
     int numDigits(int num);
 
+//    struct Timer {
+//    public:
+//        void startTimer();
+//        void endTimer();
+//        std::chrono::duration<double> getElapsedTime();
+//    private:
+//        std::chrono::time_point<std::chrono::system_clock> start, end;
+//    };
 }
 
 #endif

@@ -36,3 +36,17 @@ std::string utils::ltrim(std::string str, char c) {
 int utils::numDigits(int num) {
     return num > 0 ? (int)log10 ((double)num) + 1 : 1;
 }
+
+//Timer struct
+//void utils::Timer::startTimer() {
+//    this->start = std::chrono::system_clock::now();
+//}
+//
+//void utils::Timer::endTimer() {
+//    this->end = std::chrono::system_clock::now();
+//}
+//
+//std::chrono::duration<double> utils::Timer::getElapsedTime() {
+//    auto duration = end - start;
+//    return std::chrono::duration_cast<double>(duration);
+//}

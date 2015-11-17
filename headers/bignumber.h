@@ -30,6 +30,14 @@ public:
      */
     BigNumber(std::string number);
 
+    /* Constructor
+     * Initializes member variables using a vector of ints
+     *  Params:
+     *    std::vector numbers - the vector containing the big number's numbers
+     *  Returns: None
+     */
+    BigNumber(std::vector<int> &numbers);
+
     /* Add function
      * Adds another big number to the current instance
      *  Params:

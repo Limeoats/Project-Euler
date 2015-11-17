@@ -35,67 +35,39 @@ BigNumber::BigNumber(std::string number) :
     }
 }
 
+BigNumber::BigNumber(std::vector<int> &numbers) {
+    std::stringstream ss;
+    this->_numberString = "";
+    for (int n : numbers) {
+        ss << n;
+        this->_digits.push_back(n);
+    }
+    this->_numberString = ss.str();
+}
+
 //Adds another big number to the current instance
 BigNumber BigNumber::add(BigNumber other) {
-    int result = 0;
-    char chars[1], val;
-    std::stack<char> s1, s2, sr;
-
-    for (char c : this->getString()) {
-        s1.push(c);
+    std::vector<int> results;
+    int carry = 0;
+    BigNumber num1 = other._digits.size() > this->_digits.size() ? other : *this;
+    BigNumber num2 = other._digits.size() > this->_digits.size() ? *this : other;
+    int diff = num1._digits.size() - num2._digits.size();
+    for (int i = 0; i < diff; i++) {
+        num2._digits.insert(num2._digits.begin(), 0);
     }
-    for (char c : other.getString()) {
-        s2.push(c);
-    }
-    int unitNum, carry = 0;
-
-    while (!s1.empty() || !s2.empty()) {
-        if (!s1.empty()) {
-            chars[0] = s1.top();
-            s1.pop();
-            result += atoi(chars);
-        }
-        if (!s2.empty()) {
-            chars[0] = s2.top();
-            s2.pop();
-            result += atoi(chars);
-        }
-        if (result > 9) {
-            //There is a carry
-            unitNum = result - 10;
-            std::stringstream ss;
-            ss << unitNum;
-            val = ss.str()[0];
-            sr.push(val);
-            carry = int(result * .1); //Change unitNum to a decimal, and cast it to an int to get the carry
-            result = carry;
-            if (!s1.empty() || !s2.empty()) {
-                carry = 0;
-            }
+    for (int i = num1._digits.size() - 1; i >= 0; i--) {
+        int sum = num1._digits[i] + num2._digits[i] + carry;
+        carry = 0;
+        if (sum <= 9 || i == 0) {
+            results.insert(results.begin(), sum);
         }
         else {
-            //There is no carry in this pass
-            std::stringstream ss;
-            ss << result;
-            val = ss.str()[0];
-            sr.push(val);
-            result = 0;
+            results.insert(results.begin(), sum % 10);
+            carry = 1;
         }
     }
-    if (carry != 0) {
-        //After the while loop ended, the carry variable has a number
-        std::stringstream ss;
-        ss << carry;
-        val = ss.str()[0];
-        sr.push(val);
-    }
-    std::stringstream ss;
-    while (!sr.empty()) {
-        ss << sr.top();
-        sr.pop();
-    }
-    BigNumber b(ss.str());
-    return b;
+
+    return BigNumber(results);
 }
 
 //Subracts another big number from the current instance
@@ -168,7 +140,7 @@ BigNumber BigNumber::multiply(BigNumber other) {
     std::vector<std::vector<int>> results;
     BigNumber num1 = other._digits.size() > this->_digits.size() ? other : *this;
     BigNumber num2 = other._digits.size() > this->_digits.size() ? *this : other;
-    for (int i = 0; i < num1._digits.size() - other._digits.size(); i++) {
+    for (int i = 0; i < num1._digits.size() - num2._digits.size(); i++) {
         num2._digits.insert(num2._digits.begin(), 0);
     }
     for (int i = num2._digits.size() - 1; i >= 0; i--) {
