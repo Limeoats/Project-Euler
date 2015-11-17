@@ -1,3 +1,9 @@
+/* Maximum path sum 1
+ * Problem 18
+ * By: Mark Guerra
+ * 11/10/2015
+ */
+
 #include "problem18.h"
 #include "utils.h"
 

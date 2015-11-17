@@ -1,3 +1,9 @@
+/* Maximum path sum 1
+ * Problem 18
+ * By: Mark Guerra
+ * 11/10/2015
+ */
+
 #ifndef PROBLEM_18_H
 #define PROBLEM_18_H
 
