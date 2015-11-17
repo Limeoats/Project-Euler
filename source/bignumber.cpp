@@ -184,11 +184,21 @@ BigNumber BigNumber::multiply(BigNumber other) {
 
 //Raises the big number to the power of the exponent
 BigNumber BigNumber::pow(int exponent) {
-    BigNumber temp = *this;
-    for (int i = 0; i < exponent-1; i++) {
-        *this = temp.multiply(*this);
+//    BigNumber temp = *this;
+//    for (int i = 0; i < exponent-1; i++) {
+//        *this = temp.multiply(*this);
+//    }
+//    return *this;
+    BigNumber result("1");
+    while (exponent > 0) {
+        if (exponent & 1) {
+            result = result.multiply(*this);
+        }
+        *this = this->multiply(*this);
+        exponent /= 2;
     }
-    return *this;
+    return result;
+
 }
 
 //Turns the big number into an std::string and returns it

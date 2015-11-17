@@ -4,6 +4,7 @@
 #include "problem16.h"
 
 
+
 int main(int argc, const char* argv[]) {
     auto t0 = std::chrono::high_resolution_clock::now();
     std::cout << "Answer: " << problem16::getAnswer() << std::endl;
