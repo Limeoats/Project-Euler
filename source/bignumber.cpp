@@ -21,18 +21,6 @@ BigNumber::BigNumber() :
 BigNumber::BigNumber(std::string number) :
     _numberString(number)
 {
-    for (char c : number) {
-        if (c == '-') {
-            std::cerr << "You cannot create a negative big number like this." <<
-            std::endl << "Please use the big number negate function." << std::endl <<
-            std::endl << "The negative is being removed and the number is being added as a positive big number." <<
-            std::endl;
-            continue;
-        }
-        else {
-            this->_digits.push_back(c - '0');
-        }
-    }
 }
 
 BigNumber::BigNumber(std::vector<int> &numbers) {
@@ -40,7 +28,6 @@ BigNumber::BigNumber(std::vector<int> &numbers) {
     this->_numberString = "";
     for (int n : numbers) {
         ss << n;
-        this->_digits.push_back(n);
     }
     this->_numberString = ss.str();
 }
@@ -49,14 +36,14 @@ BigNumber::BigNumber(std::vector<int> &numbers) {
 BigNumber BigNumber::add(BigNumber other) {
     std::vector<int> results;
     int carry = 0;
-    BigNumber num1 = other._digits.size() > this->_digits.size() ? other : *this;
-    BigNumber num2 = other._digits.size() > this->_digits.size() ? *this : other;
-    int diff = num1._digits.size() - num2._digits.size();
+    BigNumber num1 = other._numberString.size() > this->_numberString.size() ? other : *this;
+    BigNumber num2 = other._numberString.size() > this->_numberString.size() ? *this : other;
+    int diff = num1._numberString.size() - num2._numberString.size();
     for (int i = 0; i < diff; i++) {
-        num2._digits.insert(num2._digits.begin(), 0);
+        num2._numberString.insert(num2._numberString.begin(), '0');
     }
-    for (int i = num1._digits.size() - 1; i >= 0; i--) {
-        int sum = num1._digits[i] + num2._digits[i] + carry;
+    for (int i = num1._numberString.size() - 1; i >= 0; i--) {
+        int sum = (num1._numberString[i] - '0') + (num2._numberString[i] - '0') + carry;
         carry = 0;
         if (sum <= 9 || i == 0) {
             results.insert(results.begin(), sum);
@@ -73,23 +60,23 @@ BigNumber BigNumber::add(BigNumber other) {
 //Subracts another big number from the current instance
 BigNumber BigNumber::subtract(BigNumber other) {
     std::vector<int> results;
-    BigNumber num1 = other._digits.size() > this->_digits.size() ? other : *this;
-    BigNumber num2 = other._digits.size() > this->_digits.size() ? *this : other;
-    int diff = num1._digits.size() - num2._digits.size();
+    BigNumber num1 = other._numberString.size() > this->_numberString.size() ? other : *this;
+    BigNumber num2 = other._numberString.size() > this->_numberString.size() ? *this : other;
+    int diff = num1._numberString.size() - num2._numberString.size();
     for (int i = 0; i < diff; i++) {
-        num2._digits.insert(num2._digits.begin(), 0);
+        num2._numberString.insert(num2._numberString.begin(), '0');
     }
-    int i = num1._digits.size() - 1;
-    for (int j = num2._digits.size() - 1; j >= 0; j--) {
-        if (num1._digits[i] < num2._digits[j]) {
-            num1._digits[i] += 10;
-            num1._digits[i - 1] -= 1;
+    int i = num1._numberString.size() - 1;
+    for (int j = num2._numberString.size() - 1; j >= 0; j--) {
+        if ((num1._numberString[i] - '0') < (num2._numberString[j] - '0')) {
+            num1._numberString[i] = ((num1._numberString[i] - '0') + 10);
+            num1._numberString[i - 1] = ((num1._numberString[i - 1] - '0') - 1);
         }
-        results.insert(results.begin(), num1._digits[i] - num2._digits[j]);
+        results.insert(results.begin(), (num1._numberString[i] - '0') - (num2._numberString[j] - '0'));
         i--;
     }
-    while (i >= 0 && num1._digits[i] != 0) {
-        results.insert(results.begin(), num1._digits[i]);
+    while (i >= 0 && (num1._numberString[i] - '0') != 0) {
+        results.insert(results.begin(), (num1._numberString[i] - '0'));
     }
     return BigNumber(results);
 }
@@ -98,15 +85,15 @@ BigNumber BigNumber::multiply(BigNumber other) {
     int carry = 0;
     int zeroCounter = 0;
     std::vector<std::vector<int>> results;
-    BigNumber num1 = other._digits.size() > this->_digits.size() ? other : *this;
-    BigNumber num2 = other._digits.size() > this->_digits.size() ? *this : other;
-    for (int i = 0; i < num1._digits.size() - num2._digits.size(); i++) {
-        num2._digits.insert(num2._digits.begin(), 0);
+    BigNumber num1 = other._numberString.size() > this->_numberString.size() ? other : *this;
+    BigNumber num2 = other._numberString.size() > this->_numberString.size() ? *this : other;
+    for (int i = 0; i < num1._numberString.size() - num2._numberString.size(); i++) {
+        num2._numberString.insert(num2._numberString.begin(), '0');
     }
-    for (int i = num2._digits.size() - 1; i >= 0; i--) {
+    for (int i = num2._numberString.size() - 1; i >= 0; i--) {
         std::vector<int> rr;
-        for (int j = num1._digits.size() - 1; j >= 0; j--) {
-            int val = (num2._digits[i] * num1._digits[j]) + carry;
+        for (int j = num1._numberString.size() - 1; j >= 0; j--) {
+            int val = ((num2._numberString[i] - '0') * (num1._numberString[j] - '0')) + carry;
             carry = 0;
             if (val > 9 && j != 0) {
                 int dig = val % 10;
@@ -157,23 +144,25 @@ BigNumber BigNumber::pow(int exponent) {
 
 //Turns the big number into an std::string and returns it
 std::string BigNumber::getString() {
-    std::stringstream ss;
-    for (int x : this->_digits) {
-        ss << x;
-    }
-    return ss.str();
+    return this->_numberString;
 }
 
 //Makes the big number negative
 void BigNumber::negate() {
-    this->_digits[0] *= -1;
+    //TODO: Implement
+}
+
+//Checks if the other big number is equal to this one
+bool BigNumber::equals(BigNumber other) {
+    if (this->_numberString == other._numberString) {
+        return true;
+    }
+    return false;
 }
 
 //Overload the output stream operator to print the number
 std::ostream &operator<<(std::ostream &os, const BigNumber &num) {
-    for (int x : num._digits) {
-        os << x;
-    }
+    os << num._numberString;
     return os;
 }
 
@@ -195,6 +184,25 @@ BigNumber operator*(BigNumber b1, const BigNumber &b2) {
 //Overload the exponent operator to raise a big number to an exponent
 BigNumber operator^(BigNumber b1, const int &b2) {
     return b1.pow(b2);
+}
+
+//Overload the equals operator to compare two big numbers
+bool operator==(BigNumber b1, const BigNumber &b2) {
+    return b1.equals(b2);
+}
+
+//Overload the greater than operator to compare two big numbers
+bool operator>(BigNumber b1, const BigNumber &b2) {
+    if (b1._numberString.size() > b2._numberString.size()) {
+        return true;
+    }
+    else if (b2._numberString.size() > b1._numberString.size()) {
+        return false;
+    }
+    else {
+        //TODO: finish this after implementing negative big numbers
+    }
+    return false;
 }
 
 //Overload the bracket operator for indexing

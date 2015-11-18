@@ -91,10 +91,19 @@ public:
 
     /* negate function
      * Makes the big number negative
-     * Params: None
-     * Returns: None
+     *  Params: None
+     *  Returns: None
      */
     void negate();
+
+    /* equals function
+     * Checks if the other big number is equal to this one
+     *  Params:
+     *    BigNumber other - the other big number being compared
+     *  Returns:
+     *    True if equal, otherwise false
+     */
+    bool equals(BigNumber other);
 
 
 
@@ -112,11 +121,16 @@ public:
     //Exponent operator
     friend BigNumber operator^(BigNumber b1, const int &b2);
 
+    //Equals operator
+    friend bool operator==(BigNumber b1, const BigNumber &b2);
+
+    //Greater than operator
+    friend bool operator>(BigNumber b1, const BigNumber &b2);
+
     //Index operator
     int operator[](int index);
 private:
     std::string _numberString;      //The big number represented as a string
-    std::vector<int> _digits;       //A list of each digit in the big number
 };
 
 
