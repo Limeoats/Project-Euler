@@ -1,3 +1,8 @@
+/* Problem 2: Even Fibonacci numbers
+ * By: Mark Guerra
+ * 10/19/2015
+ */
+
 #include "problem2.h"
 
 #include <algorithm>

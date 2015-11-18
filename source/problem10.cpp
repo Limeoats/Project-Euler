@@ -1,3 +1,8 @@
+/* Problem 10: Summation of primes
+ * By: Mark Guerra
+ * 10/19/2015
+ */
+
 #include "problem10.h"
 #include "utils.h"
 

@@ -1,3 +1,8 @@
+/* Problem 6: Sum square difference
+ * By: Mark Guerra
+ * 10/19/2015
+ */
+
 #include "problem6.h"
 
 #include <cmath>

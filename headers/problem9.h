@@ -1,3 +1,8 @@
+/* Problem 9: Special Pythagorean triplet
+ * By: Mark Guerra
+ * 10/19/2015
+ */
+
 #ifndef PROBLEM_9_H
 #define PROBLEM_9_H
 

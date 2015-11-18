@@ -1,3 +1,8 @@
+/* Problem 14: Longest Collatz sequence
+ * By: Mark Guerra
+ * 10/28/2015
+ */
+
 #include "problem14.h"
 
 long problem14::getNextNumInSequence(long curNum) {

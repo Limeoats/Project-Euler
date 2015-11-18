@@ -1,6 +1,6 @@
-/* Mark Guerra
- * Project Euler, Problem 1
- * 11/3/2015
+/* Problem 1: Multiples of 3 and 5
+ * By: Mark Guerra
+ * 10/19/2015
  */
 
 #ifndef PROBLEM_1_H

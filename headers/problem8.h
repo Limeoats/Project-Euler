@@ -1,3 +1,8 @@
+/* Problem 8: Largest product in a series
+ * By: Mark Guerra
+ * 10/19/2015
+ */
+
 #ifndef PROBLEM_8_H
 #define PROBLEM_8_H
 

@@ -1,3 +1,10 @@
+/* Power digit sum
+ * Problem 16
+ * By: Mark Guerra
+ * 11/5/2015
+ */
+
+
 #include "problem16.h"
 
 #include <iostream>

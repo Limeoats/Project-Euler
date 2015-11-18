@@ -1,3 +1,8 @@
+/* Problem 3: Largest prime factor
+ * By: Mark Guerra
+ * 10/19/2015
+ */
+
 #ifndef PROBLEM_3_H
 #define PROBLEM_3_H
 

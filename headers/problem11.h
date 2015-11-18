@@ -1,3 +1,9 @@
+/* Problem 11: Largest product in a grid
+ * By: Mark Guerra
+ * 10/19/2015
+ */
+
+
 #ifndef PROBLEM_11_H
 #define PROBLEM_11_H
 

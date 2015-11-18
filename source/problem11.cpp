@@ -1,3 +1,8 @@
+/* Problem 11: Largest product in a grid
+ * By: Mark Guerra
+ * 10/19/2015
+ */
+
 #include "problem11.h"
 
 long problem11::getGreatestProductOfXAdjacentNumbers(int x) {

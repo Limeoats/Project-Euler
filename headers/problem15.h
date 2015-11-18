@@ -1,3 +1,9 @@
+/* Problem 15: Lattice paths
+ * By: Mark Guerra
+ * 10/29/2015
+ */
+
+
 #ifndef PROBLEM_15_H
 #define PROBLEM_15_H
 

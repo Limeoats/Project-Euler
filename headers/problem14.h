@@ -1,3 +1,9 @@
+/* Problem 14: Longest Collatz sequence
+ * By: Mark Guerra
+ * 10/28/2015
+ */
+
+
 #ifndef PROBLEM_14_H
 #define PROBLEM_14_H
 

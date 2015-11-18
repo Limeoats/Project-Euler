@@ -1,3 +1,9 @@
+/* Problem 12: Highly divisible triangular number
+ * By: Mark Guerra
+ * 10/20/2015
+ */
+
+
 #ifndef PROBLEM_12_H
 #define PROBLEM_12_H
 

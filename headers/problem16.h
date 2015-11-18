@@ -1,3 +1,10 @@
+/* Power digit sum
+ * Problem 16
+ * By: Mark Guerra
+ * 11/5/2015
+ */
+
+
 #ifndef PROBLEM_16_H
 #define PROBLEM_16_H
 

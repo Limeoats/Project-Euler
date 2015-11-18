@@ -1,3 +1,8 @@
+/* Problem 5: Smallest multiple
+ * By: Mark Guerra
+ * 10/19/2015
+ */
+
 #include "problem5.h"
 
 int problem5::getSmallestNumberDividedByRange(int begin, int end) {

@@ -1,3 +1,8 @@
+/* Problem 8: Largest product in a series
+ * By: Mark Guerra
+ * 10/19/2015
+ */
+
 #include "problem8.h"
 
 #include <string>

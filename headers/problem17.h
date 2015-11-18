@@ -1,6 +1,9 @@
-//
-// Created by Mark Guerra on 11/5/15.
-//
+/* Number letter counts
+ * Problem 17
+ * By: Mark Guerra
+ * 11/5/2015
+ */
+
 
 #ifndef PROBLEM_17_H
 #define PROBLEM_17_H

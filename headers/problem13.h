@@ -1,3 +1,8 @@
+/* Problem 13: Large sum
+ * By: Mark Guerra
+ * 10/22/2015
+ */
+
 #ifndef PROBLEM_13_H
 #define PROBLEM_13_H
 

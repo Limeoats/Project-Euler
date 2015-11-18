@@ -1,3 +1,8 @@
+/* Problem 7: 10001st prime
+ * By: Mark Guerra
+ * 10/19/2015
+ */
+
 #include "problem7.h"
 #include "utils.h"
 

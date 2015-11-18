@@ -1,3 +1,8 @@
+/* Problem 4: Largest palindrome product
+ * By: Mark Guerra
+ * 10/19/2015
+ */
+
 #ifndef PROBLEM_4_H
 #define PROBLEM_4_H
 

@@ -1,3 +1,8 @@
+/* Problem 6: Sum square difference
+ * By: Mark Guerra
+ * 10/19/2015
+ */
+
 #ifndef PROBLEM_6_H
 #define PROBLEM_6_H
 

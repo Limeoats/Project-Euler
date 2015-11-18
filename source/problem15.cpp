@@ -1,3 +1,9 @@
+/* Problem 15: Lattice paths
+ * By: Mark Guerra
+ * 10/29/2015
+ */
+
+
 #include "problem15.h"
 
 long problem15::choose(long n, long k) {

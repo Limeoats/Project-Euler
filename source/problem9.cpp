@@ -1,3 +1,8 @@
+/* Problem 9: Special Pythagorean triplet
+ * By: Mark Guerra
+ * 10/19/2015
+ */
+
 #include "problem9.h"
 
 #include <cmath>

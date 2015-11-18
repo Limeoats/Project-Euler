@@ -1,3 +1,8 @@
+/* Problem 4: Largest palindrome product
+ * By: Mark Guerra
+ * 10/19/2015
+ */
+
 #include "problem4.h"
 
 #include <sstream>

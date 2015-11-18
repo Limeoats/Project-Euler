@@ -1,3 +1,9 @@
+/* Number letter counts
+ * Problem 17
+ * By: Mark Guerra
+ * 11/5/2015
+ */
+
 #include "problem17.h"
 #include "utils.h"
 

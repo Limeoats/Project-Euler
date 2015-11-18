@@ -1,3 +1,8 @@
+/* Problem 1: Multiples of 3 and 5
+ * By: Mark Guerra
+ * 10/19/2015
+ */
+
 #include "problem1.h"
 #include "utils.h"
 

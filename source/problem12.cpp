@@ -1,3 +1,8 @@
+/* Problem 12: Highly divisible triangular number
+ * By: Mark Guerra
+ * 10/20/2015
+ */
+
 #include "problem12.h"
 
 #include <cmath>

@@ -1,3 +1,8 @@
+/* Problem 13: Large sum
+ * By: Mark Guerra
+ * 10/22/2015
+ */
+
 #include "problem13.h"
 
 #include <vector>

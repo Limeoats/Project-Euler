@@ -1,3 +1,8 @@
+/* Problem 10: Summation of primes
+ * By: Mark Guerra
+ * 10/19/2015
+ */
+
 #ifndef PROBLEM_10_H
 #define PROBLEM_10_H
 
