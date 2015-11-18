@@ -1,6 +1,6 @@
 /* Problem 1: Multiples of 3 and 5
  * By: Mark Guerra
- * 10/19/2015
+ * 10/14/2015
  */
 
 #ifndef PROBLEM_1_H
