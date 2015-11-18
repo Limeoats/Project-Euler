@@ -65,13 +65,6 @@ public:
      */
     BigNumber multiply(BigNumber other);
 
-    /* getString function
-     * Gets the big number as a string
-     *  Params: None
-     *  Returns:
-     *    The big number as a string
-     */
-
     /* pow function
      * Raises the big number to the power of the exponent
      *  Params:
@@ -120,15 +113,19 @@ public:
 
     //Exponent operator
     friend BigNumber operator^(BigNumber b1, const int &b2);
-
     //Equals operator
     friend bool operator==(BigNumber b1, const BigNumber &b2);
-
     //Greater than operator
     friend bool operator>(BigNumber b1, const BigNumber &b2);
 
+    //Assignment operator
+    BigNumber& operator=(const BigNumber &other);
+
+
     //Index operator
     int operator[](int index);
+
+
 private:
     std::string _numberString;      //The big number represented as a string
 };

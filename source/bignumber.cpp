@@ -149,7 +149,12 @@ std::string BigNumber::getString() {
 
 //Makes the big number negative
 void BigNumber::negate() {
-    //TODO: Implement
+    if (this->_numberString[0] == '-') {
+        this->_numberString.erase(0, 1);
+    }
+    else {
+        this->_numberString.insert(this->_numberString.begin(), '-');
+    }
 }
 
 //Checks if the other big number is equal to this one
@@ -210,4 +215,9 @@ int BigNumber::operator[](int index) {
     return this->_numberString[index] - '0';
 }
 
+//Assignment operator
+BigNumber& BigNumber::operator=(const BigNumber &other) {
+    this->_numberString = other._numberString;
+    return *this;
+}
 
