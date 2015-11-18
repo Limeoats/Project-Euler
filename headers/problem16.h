@@ -1,5 +1,4 @@
-/* Power digit sum
- * Problem 16
+/* Problem 16: Power digit sum
  * By: Mark Guerra
  * 11/5/2015
  */
