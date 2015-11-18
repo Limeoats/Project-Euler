@@ -117,6 +117,12 @@ public:
     friend bool operator==(BigNumber b1, const BigNumber &b2);
     //Greater than operator
     friend bool operator>(BigNumber b1, const BigNumber &b2);
+    //Less than operator
+    friend bool operator<(BigNumber b1, const BigNumber &b2);
+    //Greater than or equal to operator
+    friend bool operator>=(BigNumber b1, const BigNumber &b2);
+    //Less than or equal to operator
+    friend bool operator<=(BigNumber b1, const BigNumber &b2);
 
     //Assignment operator
     BigNumber& operator=(const BigNumber &other);

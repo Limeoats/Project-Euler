@@ -36,13 +36,13 @@ BigNumber::BigNumber(std::vector<int> &numbers) {
 BigNumber BigNumber::add(BigNumber other) {
     std::vector<int> results;
     int carry = 0;
-    BigNumber num1 = other._numberString.size() > this->_numberString.size() ? other : *this;
-    BigNumber num2 = other._numberString.size() > this->_numberString.size() ? *this : other;
-    int diff = num1._numberString.size() - num2._numberString.size();
+    BigNumber num1 = other > *this ? other : *this;
+    BigNumber num2 = other > *this ? *this : other;
+    int diff = int(num1._numberString.size() - num2._numberString.size());
     for (int i = 0; i < diff; i++) {
         num2._numberString.insert(num2._numberString.begin(), '0');
     }
-    for (int i = num1._numberString.size() - 1; i >= 0; i--) {
+    for (int i = int(num1._numberString.size() - 1); i >= 0; i--) {
         int sum = (num1._numberString[i] - '0') + (num2._numberString[i] - '0') + carry;
         carry = 0;
         if (sum <= 9 || i == 0) {
@@ -60,17 +60,18 @@ BigNumber BigNumber::add(BigNumber other) {
 //Subracts another big number from the current instance
 BigNumber BigNumber::subtract(BigNumber other) {
     std::vector<int> results;
-    BigNumber num1 = other._numberString.size() > this->_numberString.size() ? other : *this;
-    BigNumber num2 = other._numberString.size() > this->_numberString.size() ? *this : other;
-    int diff = num1._numberString.size() - num2._numberString.size();
+    BigNumber num1 = other > *this ? other : *this;
+    BigNumber num2 = other > *this ? *this : other;
+
+    int diff = int(num1._numberString.size() - num2._numberString.size());
     for (int i = 0; i < diff; i++) {
         num2._numberString.insert(num2._numberString.begin(), '0');
     }
-    int i = num1._numberString.size() - 1;
-    for (int j = num2._numberString.size() - 1; j >= 0; j--) {
+    int i = int(num1._numberString.size() - 1);
+    for (int j = int(num2._numberString.size() - 1); j >= 0; j--) {
         if ((num1._numberString[i] - '0') < (num2._numberString[j] - '0')) {
-            num1._numberString[i] = ((num1._numberString[i] - '0') + 10);
-            num1._numberString[i - 1] = ((num1._numberString[i - 1] - '0') - 1);
+            num1._numberString[i] = char((num1._numberString[i] - '0') + 10);
+            num1._numberString[i - 1] = char((num1._numberString[i - 1] - '0') - 1);
         }
         results.insert(results.begin(), (num1._numberString[i] - '0') - (num2._numberString[j] - '0'));
         i--;
@@ -85,14 +86,14 @@ BigNumber BigNumber::multiply(BigNumber other) {
     int carry = 0;
     int zeroCounter = 0;
     std::vector<std::vector<int>> results;
-    BigNumber num1 = other._numberString.size() > this->_numberString.size() ? other : *this;
-    BigNumber num2 = other._numberString.size() > this->_numberString.size() ? *this : other;
+    BigNumber num1 = other > *this ? other : *this;
+    BigNumber num2 = other > *this ? *this : other;
     for (int i = 0; i < num1._numberString.size() - num2._numberString.size(); i++) {
         num2._numberString.insert(num2._numberString.begin(), '0');
     }
-    for (int i = num2._numberString.size() - 1; i >= 0; i--) {
+    for (int i = (num2._numberString.size() - 1); i >= 0; i--) {
         std::vector<int> rr;
-        for (int j = num1._numberString.size() - 1; j >= 0; j--) {
+        for (int j = int(num1._numberString.size() - 1); j >= 0; j--) {
             int val = ((num2._numberString[i] - '0') * (num1._numberString[j] - '0')) + carry;
             carry = 0;
             if (val > 9 && j != 0) {
@@ -159,10 +160,7 @@ void BigNumber::negate() {
 
 //Checks if the other big number is equal to this one
 bool BigNumber::equals(BigNumber other) {
-    if (this->_numberString == other._numberString) {
-        return true;
-    }
-    return false;
+    return this->_numberString == other._numberString;
 }
 
 //Overload the output stream operator to print the number
@@ -198,6 +196,9 @@ bool operator==(BigNumber b1, const BigNumber &b2) {
 
 //Overload the greater than operator to compare two big numbers
 bool operator>(BigNumber b1, const BigNumber &b2) {
+    if (b1 == b2) {
+        return false;
+    }
     if (b1._numberString.size() > b2._numberString.size()) {
         return true;
     }
@@ -205,9 +206,29 @@ bool operator>(BigNumber b1, const BigNumber &b2) {
         return false;
     }
     else {
-        //TODO: finish this after implementing negative big numbers
+        for (int i = 0; i < b1._numberString.size(); i++) {
+            if (b1[i] == (b2._numberString[i] - '0')) {
+                continue;
+            }
+            return b1[i] > (b2._numberString[i] - '0');
+        }
     }
     return false;
+}
+
+//Overload the less than operator to compare two big numbers
+bool operator<(BigNumber b1, const BigNumber &b2) {
+    return !(b1 == b2) && !(b1 > b2);
+}
+
+//Overload the greater than or equal to operator to compare two big numbers
+bool operator>=(BigNumber b1, const BigNumber &b2) {
+    return b1 > b2 || b1 == b2;
+}
+
+//Overload the less than or equal to operator to compare two big numbers
+bool operator<=(BigNumber b1, const BigNumber &b2) {
+    return b1 < b2 || b1 == b2;
 }
 
 //Overload the bracket operator for indexing
