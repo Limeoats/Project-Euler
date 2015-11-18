@@ -1,5 +1,4 @@
-/* Number letter counts
- * Problem 17
+/* Problem 17: Number letter counts
  * By: Mark Guerra
  * 11/5/2015
  */
