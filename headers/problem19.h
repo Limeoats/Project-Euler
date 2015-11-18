@@ -1,5 +1,4 @@
-/* Counting Sundays
- * Problem 19
+/* Problem 19: Counting Sundays
  * By: Mark Guerra
  * 11/17/2015
  */
