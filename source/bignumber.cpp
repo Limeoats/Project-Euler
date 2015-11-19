@@ -23,18 +23,37 @@ BigNumber::BigNumber(std::string number) :
 {
 }
 
-BigNumber::BigNumber(std::vector<int> &numbers) {
-    std::stringstream ss;
-    this->_numberString = "";
-    for (int n : numbers) {
-        ss << n;
-    }
-    this->_numberString = ss.str();
-}
-
 //Adds another big number to the current instance
 BigNumber BigNumber::add(BigNumber other) {
-    std::vector<int> results;
+    if (this->_numberString[0] == '-' || other._numberString[0] == '-') {
+        if (this->_numberString[0] == '-' && other._numberString[0] == '-') {
+            BigNumber x1, x2;
+            x1 = *this;
+            x2 = other;
+            x1.negate();
+            x2.negate();
+            BigNumber res = x1.add(x2);
+            res.negate();
+            return res;
+        }
+        else if (this->_numberString[0] == '-' && other._numberString[0] != '-') {
+            BigNumber x1;
+            x1 = *this;
+            x1.negate();
+            BigNumber res = x1.subtract(other);
+            res.negate();
+            return res;
+        }
+        else {
+            BigNumber x2;
+            x2 = other;
+            x2.negate();
+            BigNumber res = x2.subtract(*this);
+            res.negate();
+            return res;
+        }
+    }
+    std::string results;
     int carry = 0;
     BigNumber num1 = other > *this ? other : *this;
     BigNumber num2 = other > *this ? *this : other;
@@ -46,68 +65,202 @@ BigNumber BigNumber::add(BigNumber other) {
         int sum = (num1._numberString[i] - '0') + (num2._numberString[i] - '0') + carry;
         carry = 0;
         if (sum <= 9 || i == 0) {
-            results.insert(results.begin(), sum);
+            std::stringstream ss;
+            ss << sum;
+            results.insert(0, ss.str());
         }
         else {
-            results.insert(results.begin(), sum % 10);
+            std::stringstream ss;
+            ss << (sum % 10);
+            results.insert(0, ss.str());
             carry = 1;
         }
     }
-
     return BigNumber(results);
 }
 
 //Subracts another big number from the current instance
 BigNumber BigNumber::subtract(BigNumber other) {
-    std::vector<int> results;
-    BigNumber num1 = other > *this ? other : *this;
-    BigNumber num2 = other > *this ? *this : other;
-
-    int diff = int(num1._numberString.size() - num2._numberString.size());
-    for (int i = 0; i < diff; i++) {
-        num2._numberString.insert(num2._numberString.begin(), '0');
+    if (this->_numberString[0] == '-' || other._numberString[0] == '-') {
+        if (this->_numberString[0] == '-' && other._numberString[0] == '-') {
+            BigNumber x1, x2;
+            x1 = *this;
+            x2 = other;
+            x1._numberString.erase(0, 1);
+            x2._numberString.erase(0, 1);
+            BigNumber res = x1.add(x2);
+            res.negate();
+            return res;
+        }
+        else if (this->_numberString[0] == '-' && other._numberString[0] != '-') {
+            BigNumber x1;
+            x1 = *this;
+            x1.negate();
+            BigNumber res = x1.add(other);
+            res.negate();
+            return res;
+        }
+        else {
+            BigNumber x2;
+            x2 = other;
+            x2.negate();
+            BigNumber res = x2.add(*this);
+            return res;
+        }
     }
+    std::string results;
+    BigNumber num1 = *this;
+    BigNumber num2 = other;
+    int n = 0;
+    int p = 0;
+    bool takeOffOne = false;
+    bool shouldBeTen = false;
+
+    if (num1 < num2) {
+        //Negative answer
+        BigNumber xx = num2.subtract(num1);
+        xx.negate();
+        return xx;
+    }
+
     int i = int(num1._numberString.size() - 1);
     for (int j = int(num2._numberString.size() - 1); j >= 0; j--) {
-        if ((num1._numberString[i] - '0') < (num2._numberString[j] - '0')) {
-            num1._numberString[i] = char((num1._numberString[i] - '0') + 10);
-            num1._numberString[i - 1] = char((num1._numberString[i - 1] - '0') - 1);
+        if (((num1._numberString[i] - '0') < (num2._numberString[j] - '0')) && i > 0) {
+            n = char((num1._numberString[i] - '0') + 10);
+            takeOffOne = true;
+            if (j > 0 || num1._numberString[i - 1] != '0') {
+                p = char((num1._numberString[i - 1] - '0') - 1);
+                if (p == -1) {
+                    p = 9;
+                    shouldBeTen = true;
+                }
+                takeOffOne = false;
+            }
+            if (shouldBeTen) {
+                int index = i - 1;
+                for (int a = i - 1; (num1._numberString[a] - '0') == 0; a--) {
+                    num1._numberString[a] = (p + '0');
+                    index--;
+                }
+                int t = (num1._numberString[index] - '0');
+                t--;
+                num1._numberString[index] = (t + '0');
+            }
+            num1._numberString[i - 1] = (p + '0');
+            shouldBeTen = false;
         }
-        results.insert(results.begin(), (num1._numberString[i] - '0') - (num2._numberString[j] - '0'));
+        std::stringstream ss;
+        if (((num1._numberString[i] - '0') == (num2._numberString[j] - '0'))) {
+            ss << "0";
+        }
+        else {
+            if (n <= 0) {
+                ss << ((num1._numberString[i] - '0') - (num2._numberString[j] - '0'));
+            }
+            else {
+                ss << (n - (num2._numberString[j] - '0'));
+            }
+        }
+
+        results.insert(0, ss.str());
+        i--;
+        n = 0;
+    }
+    if (takeOffOne) {
+        std::string number = "";
+        for (int i = num1._numberString.length() - num2._numberString.length() - 1; i >= 0; i--) {
+            if (num1._numberString[i] == '0') {
+                number += "0";
+                continue;
+            }
+            else {
+                number.insert(number.begin(), num1._numberString[i]);
+                int n = atoi(number.c_str());
+                n--;
+                std::stringstream ss;
+                ss << n;
+                num1._numberString.replace(0, number.size(), ss.str());
+                takeOffOne = false;
+                break;
+            }
+        }
+    }
+    while (i >= 0) {
+        std::stringstream ss;
+        if (i == 0) {
+            if (num1._numberString[i] - '0' != 0) {
+                ss << (num1._numberString[i] - '0');
+                results.insert(0, ss.str());
+            }
+        }
+        else {
+            ss << (num1._numberString[i] - '0');
+            results.insert(0, ss.str());
+        }
+
         i--;
     }
-    while (i >= 0 && (num1._numberString[i] - '0') != 0) {
-        results.insert(results.begin(), (num1._numberString[i] - '0'));
-    }
+
     return BigNumber(results);
 }
 
 BigNumber BigNumber::multiply(BigNumber other) {
+    if (this->_numberString[0] == '-' || other._numberString[0] == '-') {
+        if (this->_numberString[0] == '-' && other._numberString[0] == '-') {
+            BigNumber x1, x2;
+            x1 = *this;
+            x2 = other;
+            x1.negate();
+            x2.negate();
+            BigNumber res = x1.multiply(x2);
+            return res;
+        }
+        else if (this->_numberString[0] == '-' && other._numberString[0] != '-') {
+            BigNumber x1;
+            x1 = *this;
+            x1.negate();
+            BigNumber res = x1.multiply(other);
+            res.negate();
+            return res;
+        }
+        else {
+            BigNumber x2;
+            x2 = other;
+            x2.negate();
+            BigNumber res = x2.multiply(*this);
+            res.negate();
+            return res;
+        }
+    }
     int carry = 0;
     int zeroCounter = 0;
-    std::vector<std::vector<int>> results;
+    std::vector<std::string> results;
     BigNumber num1 = other > *this ? other : *this;
     BigNumber num2 = other > *this ? *this : other;
     for (int i = 0; i < num1._numberString.size() - num2._numberString.size(); i++) {
         num2._numberString.insert(num2._numberString.begin(), '0');
     }
     for (int i = (num2._numberString.size() - 1); i >= 0; i--) {
-        std::vector<int> rr;
+        std::string rr;
         for (int j = int(num1._numberString.size() - 1); j >= 0; j--) {
             int val = ((num2._numberString[i] - '0') * (num1._numberString[j] - '0')) + carry;
             carry = 0;
             if (val > 9 && j != 0) {
                 int dig = val % 10;
                 carry = val / 10;
-                rr.insert(rr.begin(), dig);
+                std::stringstream ss;
+                ss << dig;
+                rr.insert(0, ss.str());
             }
             else {
-                rr.insert(rr.begin(), val);
+                std::stringstream ss;
+                ss << val;
+                rr.insert(0, ss.str());
             }
         }
         if (zeroCounter > 0) {
             for (int x = 0; x < zeroCounter; x++) {
-                rr.push_back(0);
+                rr.append("0");
             }
         }
         zeroCounter++;
@@ -115,11 +268,7 @@ BigNumber BigNumber::multiply(BigNumber other) {
     }
     std::vector<BigNumber> bigNumbers;
     for (int i = 0; i < results.size(); i++) {
-        std::stringstream ss;
-        for (int j = 0; j < results[i].size(); j++) {
-            ss << results[i][j];
-        }
-        bigNumbers.push_back(BigNumber(ss.str()));
+        bigNumbers.push_back(BigNumber(results[i]));
     }
     BigNumber b("0");
     for (int i = 0; i < bigNumbers.size(); i++) {
@@ -196,6 +345,19 @@ bool operator==(BigNumber b1, const BigNumber &b2) {
 
 //Overload the greater than operator to compare two big numbers
 bool operator>(BigNumber b1, const BigNumber &b2) {
+    if (b1._numberString[0] == '-' || b2._numberString[0] == '-') {
+        if (b1._numberString[0] == '-' && b2._numberString[0] == '-') {
+            BigNumber x1, x2;
+            x1 = b1;
+            x2 = b2;
+            x1._numberString.erase(0, 1);
+            x2._numberString.erase(0, 1);
+            return x1 < x2;
+        }
+        else {
+            return !(b1._numberString[0] == '-' && b2._numberString[0] != '-');
+        }
+    }
     if (b1 == b2) {
         return false;
     }
