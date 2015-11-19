@@ -118,6 +118,9 @@ public:
 
     //Assignment operator
     BigNumber& operator=(const BigNumber &other);
+    BigNumber& operator+=(const BigNumber &other);
+    BigNumber& operator-=(const BigNumber &other);
+    BigNumber& operator*=(const BigNumber &other);
 
 
     //Index operator

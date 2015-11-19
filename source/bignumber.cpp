@@ -65,14 +65,10 @@ BigNumber BigNumber::add(BigNumber other) {
         int sum = (num1._numberString[i] - '0') + (num2._numberString[i] - '0') + carry;
         carry = 0;
         if (sum <= 9 || i == 0) {
-            std::stringstream ss;
-            ss << sum;
-            results.insert(0, ss.str());
+            results.insert(0, std::to_string(sum));
         }
         else {
-            std::stringstream ss;
-            ss << (sum % 10);
-            results.insert(0, ss.str());
+            results.insert(0, std::to_string(sum % 10));
             carry = 1;
         }
     }
@@ -177,9 +173,7 @@ BigNumber BigNumber::subtract(BigNumber other) {
                 number.insert(number.begin(), num1._numberString[i]);
                 int n = atoi(number.c_str());
                 n--;
-                std::stringstream ss;
-                ss << n;
-                num1._numberString.replace(0, number.size(), ss.str());
+                num1._numberString.replace(0, number.size(), std::to_string(n));
                 takeOffOne = false;
                 break;
             }
@@ -248,14 +242,10 @@ BigNumber BigNumber::multiply(BigNumber other) {
             if (val > 9 && j != 0) {
                 int dig = val % 10;
                 carry = val / 10;
-                std::stringstream ss;
-                ss << dig;
-                rr.insert(0, ss.str());
+                rr.insert(0, std::to_string(dig));
             }
             else {
-                std::stringstream ss;
-                ss << val;
-                rr.insert(0, ss.str());
+                rr.insert(0, std::to_string(val));
             }
         }
         if (zeroCounter > 0) {
@@ -401,6 +391,21 @@ int BigNumber::operator[](int index) {
 //Assignment operator
 BigNumber& BigNumber::operator=(const BigNumber &other) {
     this->_numberString = other._numberString;
+    return *this;
+}
+
+BigNumber& BigNumber::operator+=(const BigNumber &other) {
+    *this = *this + other;
+    return *this;
+}
+
+BigNumber& BigNumber::operator-=(const BigNumber &other) {
+    *this = *this - other;
+    return *this;
+}
+
+BigNumber& BigNumber::operator*=(const BigNumber &other) {
+    *this = *this * other;
     return *this;
 }
 
