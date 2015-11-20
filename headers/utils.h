@@ -20,7 +20,7 @@ namespace utils {
     //Returns:
     //  true if the container v contains x, otherwise false
     template <class C, class T>
-    bool contains(const C &v, const T &x) {
+    inline bool contains(const C &v, const T &x) {
         return std::end(v) != std::find(std::begin(v), std::end(v), x);
     }
 
