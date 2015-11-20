@@ -20,7 +20,7 @@ namespace utils {
     //Returns:
     //  true if the container v contains x, otherwise false
     template <class C, class T>
-    bool contains(const C &v, const T &x) {
+    inline bool contains(const C &v, const T &x) {
         return std::end(v) != std::find(std::begin(v), std::end(v), x);
     }
 
@@ -63,6 +63,13 @@ namespace utils {
     //  Returns:
     //    None
     void replace(std::string &str, std::string seq, std::string newstr);
+
+    //std::string toString(long long num)
+    //  Params:
+    //    num: the number being converted into a string
+    //  Returns:
+    //    The number as a string
+    std::string toString(long long num);
 }
 
 #endif

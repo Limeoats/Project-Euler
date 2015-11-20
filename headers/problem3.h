@@ -10,7 +10,7 @@
 //What is the largest prime factor of the number 600851475143 ?
 
 namespace problem3 {
-    long getGreatestPrimeFactor(long num);
+    long getGreatestPrimeFactor(long long num);
     long getAnswer();
 }
 

@@ -7,7 +7,7 @@
 
 #include <cmath>
 
-long problem3::getGreatestPrimeFactor(long num) {
+long problem3::getGreatestPrimeFactor(long long num) {
     long i = 2;
     while (pow(i, 2) < num) {
         while (num % i == 0) {
@@ -19,5 +19,5 @@ long problem3::getGreatestPrimeFactor(long num) {
 }
 
 long problem3::getAnswer() {
-    return getGreatestPrimeFactor(600851475143L);
+    return getGreatestPrimeFactor(600851475143);
 }

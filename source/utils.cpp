@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <iostream>
 #include <cmath>
 
 #include "utils.h"
@@ -47,4 +48,12 @@ void utils::replace(std::string &str, std::string seq, std::string newstr) {
         str.replace(index, seq.length(), newstr);
         index += newstr.length();
     }
+}
+
+std::string utils::toString(long long num) {
+    int count = 0;
+    for (int t = num; t != 0; count++) { t /= 10;}
+    char x[count];
+    sprintf(x, "%d", num);
+    return std::string(x);
 }

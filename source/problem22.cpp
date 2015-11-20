@@ -38,7 +38,7 @@ BigNumber problem22::getAnswer() {
         for (char c : names[i]) {
             lTotal += getAlphabetPos(char(tolower(c)));
         }
-        total += BigNumber(std::to_string(lTotal * (i+1)));
+        total += BigNumber(utils::toString(lTotal * (i+1)));
     }
     return total;
 }
