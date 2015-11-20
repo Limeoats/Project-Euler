@@ -5,12 +5,12 @@
 
 #include "problem20.h"
 
-#include <sstream>
+#include "utils.h"
 
 BigNumber problem20::factorial(int n) {
     BigNumber b("1");
     for (int i = 1; i <= n; i++) {
-        b  *= BigNumber(std::to_string(i));
+        b  *= BigNumber(utils::toString(i));
     }
     return b;
 }

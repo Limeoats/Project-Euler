@@ -63,6 +63,13 @@ namespace utils {
     //  Returns:
     //    None
     void replace(std::string &str, std::string seq, std::string newstr);
+
+    //std::string toString(long long num)
+    //  Params:
+    //    num: the number being converted into a string
+    //  Returns:
+    //    The number as a string
+    std::string toString(long long num);
 }
 
 #endif

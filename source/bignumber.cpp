@@ -65,10 +65,10 @@ BigNumber BigNumber::add(BigNumber other) {
         int sum = (num1._numberString[i] - '0') + (num2._numberString[i] - '0') + carry;
         carry = 0;
         if (sum <= 9 || i == 0) {
-            results.insert(0, std::to_string(sum));
+            results.insert(0, utils::toString(sum));
         }
         else {
-            results.insert(0, std::to_string(sum % 10));
+            results.insert(0, utils::toString(sum % 10));
             carry = 1;
         }
     }
@@ -173,7 +173,7 @@ BigNumber BigNumber::subtract(BigNumber other) {
                 number.insert(number.begin(), num1._numberString[i]);
                 int n = atoi(number.c_str());
                 n--;
-                num1._numberString.replace(0, number.size(), std::to_string(n));
+                num1._numberString.replace(0, number.size(), utils::toString(n));
                 takeOffOne = false;
                 break;
             }
@@ -242,10 +242,10 @@ BigNumber BigNumber::multiply(BigNumber other) {
             if (val > 9 && j != 0) {
                 int dig = val % 10;
                 carry = val / 10;
-                rr.insert(0, std::to_string(dig));
+                rr.insert(0, utils::toString(dig));
             }
             else {
-                rr.insert(0, std::to_string(val));
+                rr.insert(0, utils::toString(val));
             }
         }
         if (zeroCounter > 0) {
