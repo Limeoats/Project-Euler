@@ -37,16 +37,14 @@ int utils::numDigits(int num) {
     return num > 0 ? (int)log10 ((double)num) + 1 : 1;
 }
 
-//Timer struct
-//void utils::Timer::startTimer() {
-//    this->start = std::chrono::system_clock::now();
-//}
-//
-//void utils::Timer::endTimer() {
-//    this->end = std::chrono::system_clock::now();
-//}
-//
-//std::chrono::duration<double> utils::Timer::getElapsedTime() {
-//    auto duration = end - start;
-//    return std::chrono::duration_cast<double>(duration);
-//}
+void utils::replace(std::string &str, std::string seq, std::string newstr) {
+    size_t index = 0;
+    while (true) {
+        index = str.find(seq);
+        if (index == std::string::npos) {
+            break;
+        }
+        str.replace(index, seq.length(), newstr);
+        index += newstr.length();
+    }
+}

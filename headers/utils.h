@@ -55,14 +55,14 @@ namespace utils {
     //    The number of digits
     int numDigits(int num);
 
-//    struct Timer {
-//    public:
-//        void startTimer();
-//        void endTimer();
-//        std::chrono::duration<double> getElapsedTime();
-//    private:
-//        std::chrono::time_point<std::chrono::system_clock> start, end;
-//    };
+    //void replace(std::string &str, std::string seq, std::string newstr)
+    //  Params:
+    //    str: a reference to the string being changed
+    //    seq: the sequence being replaced
+    //    newstr: the string to replace seq with
+    //  Returns:
+    //    None
+    void replace(std::string &str, std::string seq, std::string newstr);
 }
 
 #endif
