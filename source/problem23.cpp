@@ -21,14 +21,6 @@ long problem23::sumOfProperDivisors(int n) {
     return std::accumulate(pd.begin(), pd.end(), 0);
 }
 
-bool problem23::isPerfectNumber(long n) {
-    return sumOfProperDivisors(n) == n;
-}
-
-bool problem23::isDeficient(long n) {
-    return sumOfProperDivisors(n) < n;
-}
-
 bool problem23::isAbundant(long n) {
     return sumOfProperDivisors(n) > n;
 }
@@ -36,28 +28,24 @@ bool problem23::isAbundant(long n) {
 long long problem23::getAnswer() {
     std::vector<int> abundantNumbers;
     for (int i = 1; i < 28123; i++) {
-        if ((i & 1) == 1) continue;
         if (isAbundant(i)) {
             abundantNumbers.push_back(i);
         }
     }
-    //std::sort(abundantNumbers.begin(), abundantNumbers.end(), [](int a, int b) {return a < b;});
-    std::vector<int> sums;
-    for (int c : abundantNumbers) {
-        for (int d : abundantNumbers) {
-            sums.push_back(c + d);
+    bool cb[28124];
+    std::fill_n(cb, 28124, false);
+    for (int i = 0; i < abundantNumbers.size(); i++) {
+        for (int j = i; j < abundantNumbers.size(); j++) {
+            int t = abundantNumbers[i] + abundantNumbers[j];
+            if (t > 28123) break;
+            cb[t] = true;
         }
     }
-    long long total = 0;
-    for (int i = 1; i < 28123; i++) {
-        if ((i & 1) == 1) {
-            total += i;
-            continue;
-        }
-        if (!utils::contains(sums, i)) {
+    long total = 0;
+    for (int i = 1; i <= 28123; i++) {
+        if (!cb[i]) {
             total += i;
         }
     }
     return total;
-
 }

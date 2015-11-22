@@ -25,8 +25,6 @@
 
 namespace problem23 {
     long sumOfProperDivisors(int n);
-    bool isPerfectNumber(long n);
-    bool isDeficient(long n);
     bool isAbundant(long n);
     long long getAnswer();
 }
