@@ -1,3 +1,8 @@
+/* Problem 27: Quadratic primes
+ * By: Mark Guerra
+ * 11/23/2015
+ */
+
 #include "problem27.h"
 #include "utils.h"
 
