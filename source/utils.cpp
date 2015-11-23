@@ -6,6 +6,8 @@
 
 
 bool utils::isPrime(int num) {
+    if (num < 0)
+        return false;
     if ((num & 1) == 0)
         return num == 2;
     int root = sqrt(num);
