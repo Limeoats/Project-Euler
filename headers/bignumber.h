@@ -90,6 +90,14 @@ public:
      */
     bool equals(BigNumber other);
 
+    /* digits function
+     * Returns the number of digits in the big number
+     * Params: None
+     * Returns:
+     *    The number of digits in the big number
+     */
+    int digits();
+
 
 
     //Operator overloads

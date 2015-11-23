@@ -302,6 +302,11 @@ bool BigNumber::equals(BigNumber other) {
     return this->_numberString == other._numberString;
 }
 
+//Returns the number of digits in the big number
+int BigNumber::digits() {
+    return this->_numberString.size();
+}
+
 //Overload the output stream operator to print the number
 std::ostream &operator<<(std::ostream &os, const BigNumber &num) {
     os << num._numberString;
