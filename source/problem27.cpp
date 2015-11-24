@@ -3,6 +3,7 @@
  * 11/23/2015
  */
 
+#include <math.h>
 #include "problem27.h"
 #include "utils.h"
 
