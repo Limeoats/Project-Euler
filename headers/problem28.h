@@ -7,7 +7,8 @@
 #define PROBLEM_28_H
 
 namespace problem28 {
-
+    enum class Direction {UP, DOWN, LEFT, RIGHT};
+    long getAnswer();
 }
 
 
