@@ -23,7 +23,7 @@
 
 unsigned int problem28::getAnswer() {
     return ([](unsigned int total)->unsigned int {
-        for (int i = 2; i < 1002; i++)
+        for (int i = 2; i < 1002; ++i)
             total += (i & 1 == 1) ? pow(i, 2) : 3 * (pow(i, 2) + 1);
         return total;
     }(1));
