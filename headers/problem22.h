@@ -24,7 +24,7 @@
 
 namespace problem22 {
     inline int getAlphabetPos(char c) { return (c - 'a' + 1);}
-    BigNumber getAnswer();
+    int getAnswer();
 }
 
 
