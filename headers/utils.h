@@ -24,6 +24,15 @@ namespace utils {
         return std::end(v) != std::find(std::begin(v), std::end(v), x);
     }
 
+    //void removeDuplicates(const C &v)
+    //Parameters:
+    //  v: a container of some sort
+    //Returns: None
+    template<class C>
+    inline void removeDuplicates(const C &v) {
+        std::sort(v.begin(), v.end());
+        v.erase(std::unique(v.begin(), v.end()), v.end());
+    };
 
     //bool isPrime(int num)
     //Parameters:
