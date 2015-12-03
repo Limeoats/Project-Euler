@@ -12,13 +12,13 @@
 #include "problem23.h"
 
 long problem23::sumOfProperDivisors(int n) {
-    std::vector<int> pd;
+    int sum = 0;
     for (int i = 1; i <= (n / 2); i++) {
         if (n % i == 0) {
-            pd.push_back(i);
+            sum += i;
         }
     }
-    return std::accumulate(pd.begin(), pd.end(), 0);
+    return sum;
 }
 
 bool problem23::isAbundant(long n) {
@@ -27,22 +27,22 @@ bool problem23::isAbundant(long n) {
 
 long long problem23::getAnswer() {
     std::vector<int> abundantNumbers;
-    for (int i = 1; i < 28123; i++) {
+    for (int i = 1; i < 20161; i++) {
         if (isAbundant(i)) {
             abundantNumbers.push_back(i);
         }
     }
-    bool cb[28124];
-    std::fill_n(cb, 28124, false);
+    bool cb[20162];
+    std::fill_n(cb, 20162, false);
     for (int i = 0; i < abundantNumbers.size(); i++) {
         for (int j = i; j < abundantNumbers.size(); j++) {
             int t = abundantNumbers[i] + abundantNumbers[j];
-            if (t > 28123) break;
+            if (t > 20161) break;
             cb[t] = true;
         }
     }
     long total = 0;
-    for (int i = 1; i <= 28123; i++) {
+    for (int i = 1; i <= 20161; i++) {
         if (!cb[i]) {
             total += i;
         }
