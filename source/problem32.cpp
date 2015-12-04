@@ -7,6 +7,7 @@
 #include "utils.h"
 
 #include <unordered_set>
+#include <numeric>
 
 /*
  * The program loops through numbers up to 9876 to find

@@ -7,6 +7,7 @@
 #include <vector>
 #include <algorithm>
 #include <cmath>
+#include <numeric>
 
 /*
  * Create a list to hold the numbers that satisfy the requirement, [nums].
