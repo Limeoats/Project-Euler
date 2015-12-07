@@ -38,9 +38,7 @@ std::vector<std::string> utils::split(std::string str, char c) {
 }
 
 std::string utils::ltrim(std::string str, char c) {
-    while (str[0] == c) {
-        str.erase(std::remove(str.begin(), str.begin(), c));
-    }
+    str.erase(0, str.find_first_not_of(c));
     return str;
 }
 

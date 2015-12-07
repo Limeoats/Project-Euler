@@ -34,6 +34,14 @@ namespace utils {
         v.erase(std::unique(v.begin(), v.end()), v.end());
     };
 
+    template <class T>
+    inline T convertBinary(T n) {
+        if (n / 2 != 0) {
+            convertBinary(n/2);
+        }
+        return n;
+    }
+
     //bool isPrime(int num)
     //Parameters:
     //  num: the number being checked
