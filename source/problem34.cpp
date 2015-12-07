@@ -4,6 +4,7 @@
  */
 
 #include "problem34.h"
+#include "utils.h"
 
 #include <vector>
 #include <algorithm>
@@ -16,14 +17,6 @@
  * the sum of each item in the list.
  */
 
-int problem34::factorial(int n) {
-    int x = 1;
-    for (int i = 1; i <= n; ++i) {
-        x *= i;
-    }
-    return x;
-}
-
 int problem34::getAnswer() {
     std::vector<int> nums;
     int sum = 0;
@@ -31,7 +24,7 @@ int problem34::getAnswer() {
         sum = 0;
         int a = i;
         while (true) {
-            sum += factorial(a % 10);
+            sum += utils::factorial(a % 10);
             a /= 10;
             if (a == 0) {
                 break;

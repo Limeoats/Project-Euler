@@ -19,6 +19,14 @@ bool utils::isPrime(int num) {
     return true;
 }
 
+int utils::factorial(int n) {
+    int x = 1;
+    for (int i = 1; i <= n; ++i) {
+        x *= i;
+    }
+    return x;
+}
+
 std::vector<std::string> utils::split(std::string str, char c) {
     std::vector<std::string> list;
     std::stringstream ss(str);

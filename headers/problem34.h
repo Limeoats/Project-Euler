@@ -13,7 +13,6 @@
  */
 
 namespace problem34 {
-    int factorial(int n);
     int getAnswer();
 }
 

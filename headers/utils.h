@@ -41,6 +41,13 @@ namespace utils {
     //  true if num is prime, otherwise false
     bool isPrime(int num);
 
+    //int factorial(int n)
+    //Parameters:
+    //  n: the number the factorial is being applied to
+    //Returns:
+    //  The result of the factorial
+    int factorial(int n);
+
     //vector<string> split(string str, char c)
     //Parameters:
     //  str: the string being split
