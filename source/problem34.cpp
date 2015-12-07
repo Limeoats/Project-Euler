@@ -9,7 +9,8 @@
 #include <algorithm>
 
 /*
- * Loop through every number from 3 to (9! * 4).
+ * Loop through every number from 3 to 41000 (upper bound
+ * found through guess and check after solving the problem).
  * Add up the sums of the factorials each digit. If that sum
  * equals the original number, add it to a list. Return
  * the sum of each item in the list.
@@ -26,7 +27,7 @@ int problem34::factorial(int n) {
 int problem34::getAnswer() {
     std::vector<int> nums;
     int sum = 0;
-    for (int i = 3; i < 1451520; i++) {
+    for (int i = 3; i < 41000; i++) {
         sum = 0;
         int a = i;
         while (true) {
