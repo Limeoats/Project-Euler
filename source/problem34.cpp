@@ -8,6 +8,7 @@
 
 #include <vector>
 #include <algorithm>
+#include <numeric>
 
 /*
  * Loop through every number from 3 to 41000 (upper bound
