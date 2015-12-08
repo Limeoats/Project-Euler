@@ -43,7 +43,7 @@ std::string utils::ltrim(std::string str, char c) {
 }
 
 int utils::numDigits(int num) {
-    return num > 0 ? (int)log10 ((double)num) + 1 : 1;
+    return num > 0 ? (int)log10((double)num) + 1 : 1;
 }
 
 void utils::replace(std::string &str, std::string seq, std::string newstr) {
