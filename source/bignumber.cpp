@@ -287,6 +287,11 @@ std::string BigNumber::getString() {
     return this->_numberString;
 }
 
+//Sets the actual number string equal to a new string
+void BigNumber::setString(std::string newStr) {
+    this->_numberString = newStr;
+}
+
 //Makes the big number negative
 void BigNumber::negate() {
     if (this->_numberString[0] == '-') {

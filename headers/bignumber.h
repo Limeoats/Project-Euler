@@ -74,6 +74,14 @@ public:
      */
     std::string getString();
 
+    /* setString function
+     * Sets the actual number string to a new string
+     *  Params:
+     *    std::string newStr - the new string
+     *  Returns: None
+     */
+    void setString(std::string newStr);
+
     /* negate function
      * Makes the big number negative
      *  Params: None
