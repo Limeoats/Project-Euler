@@ -5,6 +5,10 @@
 
 #include "problem40.h"
 
+int problem40::getDigitInChampernowneConstant(int n) {
+
+}
+
 int problem40::getAnswer() {
 
 }

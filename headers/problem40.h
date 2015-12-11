@@ -17,6 +17,7 @@
  */
 
 namespace problem40 {
+    int getDigitInChampernowneConstant(int n);
     int getAnswer();
 }
 
