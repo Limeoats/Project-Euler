@@ -65,3 +65,28 @@ std::string utils::toString(long long num) {
     sprintf(x, "%d", num);
     return std::string(x);
 }
+
+std::vector<long> utils::generatePrimes(long limit) {
+    long bound = (long)floor(sqrt(limit));
+    std::vector<bool> primes(limit, true);
+    std::vector<long> result;
+    for (long i = 4; i < limit; i += 2) {
+        primes[i] = false;
+    }
+    result.push_back(2);
+    for (long i = 3; i <= bound; i += 2) {
+        if (primes[i] == true) {
+            result.push_back(i);
+            for (long j = (long)pow(i, 2); j < limit; j += i*2) {
+                primes[j] = false;
+            }
+        }
+    }
+    for (long i = bound + 1; i < limit; ++i) {
+        if (primes[i] == true) {
+            result.push_back(i);
+        }
+    }
+    return result;
+
+}

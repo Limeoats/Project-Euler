@@ -7,7 +7,6 @@
 #include "utils.h"
 
 #include <sstream>
-#include <iostream>
 
 /*
  * The indices of the digits we want from Champernowne's constant

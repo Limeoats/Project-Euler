@@ -94,6 +94,14 @@ namespace utils {
     //  Returns:
     //    The number as a string
     std::string toString(long long num);
+
+    //std::vector generatePrimes(int limit)
+    //  Uses the Sieve of Eratosthenes
+    //  Params:
+    //    limit: the number to go up to
+    //  Returns:
+    //    A list of all primes up to the limit
+    std::vector<long> generatePrimes(long limit);
 }
 
 #endif
