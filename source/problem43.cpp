@@ -7,38 +7,40 @@
 #include "utils.h"
 
 #include <sstream>
-#include <vector>
+
+/*
+ * The very first permutation is 0123456789.
+ * Then, for each permutation of that number [str],
+ * start by checking if the last 3 digits are not divisible by 17.
+ * If they are not, skip that permutation and move on to the next one.
+ * If they are, check all of the digits to see if they are divisible
+ * by their respective numbers. If they are not, move on to the next one.
+ * If all of the sets of digits are divisible by their numbers in [divs],
+ * add the entire permutation to the sum.
+ * Finally, return the sum and print it.
+ */
 
 
-long problem43::getAnswer() {
-    std::vector<std::string> pandigitalNumbers;
+BigNumber problem43::getAnswer() {
+    BigNumber sum = BigNumber("0");
+    int divs[7] = {2, 3, 5, 7, 11, 13};
     std::string str = "0123456789";
     do {
-        pandigitalNumbers.push_back(str);
+        if (atoi(str.substr(str.size() - 3, str.size() - 1).c_str()) % 17 != 0) continue;
+        bool divisible = true;
+        for (int j = 0; j < 6; ++j) {
+            std::stringstream ss;
+            ss << str[j + 1] << str[j + 2] << str[j + 3];
+            std::string s = ss.str();
+            if (atoi(s.c_str()) % divs[j] != 0) {
+                divisible = false;
+                break;
+            }
+        }
+        if (divisible) {
+            sum += BigNumber(str);
+        }
     } while (std::next_permutation(str.begin(), str.end()));
 
-    long sum = 0;
-    int divs[7] = {2, 3, 5, 7, 11, 13, 17};
-    for (std::string s : pandigitalNumbers) {
-        int counter = 0;
-        int beg = 2, mid = 3, end = 4;
-        for (int j = 0; j < 7; j++) {
-            std::stringstream ss;
-            ss << s[beg-1] << s[mid-1] << s[end-1];
-            if (atol(ss.str().c_str()) % divs[j] != 0) {
-                if (counter >= 6) {
-                    sum += atol(s.c_str());
-                    break;
-                }
-                else {
-                    counter++;
-                    beg++;
-                    end++;
-                    mid++;
-                }
-            }
-
-        }
-    }
     return sum;
 }
