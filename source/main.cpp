@@ -1,12 +1,12 @@
 #include <iostream>
 #include "utils.h"
 
-#include "problem45.h"
+#include "problem46.h"
 
 
 int main(int argc, const char* argv[]) {
     auto t0 = std::chrono::high_resolution_clock::now();
-    std::cout << "Answer: " << problem45::getAnswer() << std::endl;
+    std::cout << "Answer: " << problem46::getAnswer() << std::endl;
     auto t1 = std::chrono::high_resolution_clock::now();
     std::cout << "Elapsed time: " << static_cast<std::chrono::duration<float>>(t1 - t0).count() << " seconds" << std::endl;
 }

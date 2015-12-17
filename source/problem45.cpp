@@ -1,6 +1,6 @@
-/* Problem 44: Pentagon numbers
+/* Problem 45: Triangular, pentagonal, and hexagonal
  * By: Mark Guerra
- * 12/16/2015
+ * 12/17/2015
  */
 
 #include "problem45.h"
