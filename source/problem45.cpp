@@ -12,22 +12,18 @@ bool problem45::isPentagonal(int x) {
     return  t == int(t);
 }
 
-bool problem45::isHexagonal(int x) {
-    double t = (sqrt(1.0 + 8.0 * x) + 1.0) / 4.0;
-    return t == int(t);
-}
-
 bool problem45::isTriangle(int x) {
     double t = (sqrt(1.0 + 8.0 * x) - 1.0) / 2.0;
     return t == int(t);
 }
 
 long problem45::getAnswer() {
-    int n = 40756;
+    int n = 286;
     while (true) {
-        if (isHexagonal(n) && isPentagonal(n) && isTriangle(n)) {
-            return n;
+        int hex = (2 * n - 1) * n;
+        if (isPentagonal(hex) && isTriangle(hex)) {
+            return hex;
         }
-        n++;
+        ++n;
     }
 }

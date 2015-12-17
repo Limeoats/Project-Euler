@@ -19,7 +19,6 @@
 
 namespace problem45 {
     bool isPentagonal(int x);
-    bool isHexagonal(int x);
     bool isTriangle(int x);
     long getAnswer();
 }
