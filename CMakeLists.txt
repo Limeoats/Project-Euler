@@ -57,6 +57,7 @@ set(SOURCE_FILES
         source/problem42.cpp
         source/problem43.cpp
         source/problem44.cpp
+        source/problem45.cpp
         )
 
 add_executable(Project_Euler ${SOURCE_FILES})

@@ -27,12 +27,12 @@
  *
  */
 
-bool isPentagonal(int x) {
+bool problem44::isPentagonal(int x) {
     double t = (sqrt(1.0 + 24.0 * x) + 1.0) / 6.0;
     return  t == int(t);
 }
 
-int pentagonalNumber(int n) {
+int problem44::pentagonalNumber(int n) {
     return n * (3 * n - 1) / 2;
 }
 

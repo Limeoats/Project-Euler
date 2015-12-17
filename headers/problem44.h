@@ -18,6 +18,8 @@
  */
 
 namespace problem44 {
+    bool isPentagonal(int x);
+    int pentagonalNumber(int n);
     int getAnswer();
 }
 
