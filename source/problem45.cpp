@@ -3,8 +3,9 @@
  * 12/16/2015
  */
 
-#include <math.h>
 #include "problem45.h"
+
+#include <cmath>
 
 bool problem45::isPentagonal(int x) {
     double t = (sqrt(1.0 + 24.0 * x) + 1.0) / 6.0;
@@ -22,10 +23,10 @@ bool problem45::isTriangle(int x) {
 }
 
 long problem45::getAnswer() {
-    int n = 40755;
+    int n = 40756;
     while (true) {
-        if (isTriangle(n) && isPentagonal(n) && isHexagonal(n)) {
-            return long((n / 2) * (n + 1));
+        if (isHexagonal(n) && isPentagonal(n) && isTriangle(n)) {
+            return n;
         }
         n++;
     }
