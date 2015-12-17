@@ -23,7 +23,7 @@
 
 BigNumber problem43::getAnswer() {
     BigNumber sum = BigNumber("0");
-    int divs[7] = {2, 3, 5, 7, 11, 13};
+    int divs[6] = {2, 3, 5, 7, 11, 13};
     std::string str = "0123456789";
     do {
         if (atoi(str.substr(str.size() - 3, str.size() - 1).c_str()) % 17 != 0) continue;
@@ -31,8 +31,7 @@ BigNumber problem43::getAnswer() {
         for (int j = 0; j < 6; ++j) {
             std::stringstream ss;
             ss << str[j + 1] << str[j + 2] << str[j + 3];
-            std::string s = ss.str();
-            if (atoi(s.c_str()) % divs[j] != 0) {
+            if (atoi(ss.str().c_str()) % divs[j] != 0) {
                 divisible = false;
                 break;
             }
