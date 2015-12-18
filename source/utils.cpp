@@ -88,5 +88,4 @@ std::vector<long> utils::generatePrimes(long limit) {
         }
     }
     return result;
-
 }
