@@ -4,7 +4,7 @@
  */
 
 #ifndef PROBLEM_48_H
-#define PROBLEM_48_h
+#define PROBLEM_48_H
 
 #include <string>
 
