@@ -13,11 +13,8 @@
 //Find the sum of all the multiples of 3 or 5 below 1000.
 
 namespace problem1 {
-
-    std::vector<int> getMultiplesUnder(int numberUnder, std::vector<int> multiplesOf);
-
+    std::vector<int> getMultiplesUnder(int numberUnder);
     int getAnswer();
-
 }
 
 #endif
