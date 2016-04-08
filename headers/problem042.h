@@ -3,8 +3,8 @@
  * 12/11/2015
  */
 
-#ifndef PROBLEM_42_H
-#define PROBLEM_42_H
+#ifndef PROBLEM_042_H
+#define PROBLEM_042_H
 
 /*
  * The nth term of the sequence of triangle numbers is given by, tn = ½n(n+1); so the first ten triangle numbers are:
@@ -18,7 +18,7 @@
  * Using words.txt (right click and 'Save Link/Target As...'), a 16K text file containing nearly two-thousand common English words, how many are triangle words?
  */
 
-namespace problem42 {
+namespace problem042 {
     inline int getAlphabetPos(char c) { return (c - 'a' + 1);}
     int getAnswer();
 }

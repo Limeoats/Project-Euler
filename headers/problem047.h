@@ -3,8 +3,8 @@
  * 12/17/2015
  */
 
-#ifndef PROBLEM_47_H
-#define PROBLEM_47_H
+#ifndef PROBLEM_047_H
+#define PROBLEM_047_H
 
 /*
  * The first two consecutive numbers to have two distinct prime factors are:
@@ -21,7 +21,7 @@
  * Find the first four consecutive integers to have four distinct prime factors. What is the first of these numbers?
  */
 
-namespace problem47 {
+namespace problem047 {
     int getDistinctPrimeFactors(int n);
     int getAnswer();
 }

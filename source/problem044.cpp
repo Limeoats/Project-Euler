@@ -3,12 +3,14 @@
  * 12/16/2015
  */
 
+#include "problem044.h"
+
 #include <algorithm>
 #include <array>
 #include <vector>
 #include <stdlib.h>
 #include <math.h>
-#include "problem44.h"
+
 
 /*
  * To solve this problem, there are two loops:
@@ -27,16 +29,16 @@
  *
  */
 
-bool problem44::isPentagonal(int x) {
+bool problem044::isPentagonal(int x) {
     double t = (sqrt(1.0 + 24.0 * x) + 1.0) / 6.0;
     return  t == int(t);
 }
 
-int problem44::pentagonalNumber(int n) {
+int problem044::pentagonalNumber(int n) {
     return n * (3 * n - 1) / 2;
 }
 
-int problem44::getAnswer() {
+int problem044::getAnswer() {
     int x = 1;
     while (true) {
         int pnx = pentagonalNumber(x);

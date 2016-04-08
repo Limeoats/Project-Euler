@@ -3,8 +3,8 @@
  * 12/3/2015
  */
 
-#ifndef PROBLEM_31_H
-#define PROBLEM_31_H
+#ifndef PROBLEM_031_H
+#define PROBLEM_031_H
 
 #include <vector>
 
@@ -18,7 +18,7 @@
  * How many different ways can £2 be made using any number of coins?
  */
 
-namespace problem31 {
+namespace problem031 {
     unsigned int denomFunc(int n, std::vector<int> &denoms);
     unsigned int getAnswer();
 }

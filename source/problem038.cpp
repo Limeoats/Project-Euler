@@ -3,7 +3,7 @@
  * 12/8/2015
  */
 
-#include "problem38.h"
+#include "problem038.h"
 #include "utils.h"
 
 /*
@@ -17,7 +17,7 @@
  * Finally, print [highest].
  */
 
-bool problem38::isPandigital(std::string n) {
+bool problem038::isPandigital(std::string n) {
     int len = n.size();
     for (int i = 1; i <= len; ++i) {
         if (n.find(i + '0') == std::string::npos)
@@ -26,7 +26,7 @@ bool problem38::isPandigital(std::string n) {
     return true;
 }
 
-int problem38::getAnswer() {
+int problem038::getAnswer() {
     int highest = 0;
     for (int i = 1; i < 10000; ++i) {
         std::string result = "";

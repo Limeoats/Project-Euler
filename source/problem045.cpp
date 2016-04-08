@@ -3,7 +3,7 @@
  * 12/17/2015
  */
 
-#include "problem45.h"
+#include "problem045.h"
 
 #include <cmath>
 
@@ -15,17 +15,17 @@
  * a triangle number. If both are true, return it and print it.
  */
 
-bool problem45::isPentagonal(int x) {
+bool problem045::isPentagonal(int x) {
     double t = (sqrt(1.0 + 24.0 * x) + 1.0) / 6.0;
     return  t == int(t);
 }
 
-bool problem45::isTriangle(int x) {
+bool problem045::isTriangle(int x) {
     double t = (sqrt(1.0 + 8.0 * x) - 1.0) / 2.0;
     return t == int(t);
 }
 
-long problem45::getAnswer() {
+long problem045::getAnswer() {
     int n = 286;
     while (true) {
         int hex = (2 * n - 1) * n;

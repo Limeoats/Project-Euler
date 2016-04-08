@@ -3,8 +3,8 @@
  * 12/8/2015
  */
 
-#ifndef PROBLEM_38_H
-#define PROBLEM_38_H
+#ifndef PROBLEM_038_H
+#define PROBLEM_038_H
 
 /*
  * Take the number 192 and multiply it by each of 1, 2, and 3:
@@ -25,7 +25,7 @@
 
 #include <string>
 
-namespace problem38 {
+namespace problem038 {
     bool isPandigital(std::string n);
     int getAnswer();
 }

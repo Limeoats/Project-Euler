@@ -3,8 +3,8 @@
  * 12/17/2015
  */
 
-#ifndef PROBLEM_46_H
-#define PROBLEM_46_H
+#ifndef PROBLEM_046_H
+#define PROBLEM_046_H
 
 /*
  * It was proposed by Christian Goldbach that every odd composite number can be written as the sum of a prime
@@ -22,7 +22,7 @@
  * What is the smallest odd composite that cannot be written as the sum of a prime and twice a square?
 */
 
-namespace problem46 {
+namespace problem046 {
     int getAnswer();
 }
 

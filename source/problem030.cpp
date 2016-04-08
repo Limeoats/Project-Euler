@@ -3,7 +3,7 @@
  * 12/3/2015
  */
 
-#include "problem30.h"
+#include "problem030.h"
 #include <vector>
 #include <algorithm>
 #include <cmath>
@@ -18,7 +18,7 @@
  * Finally, return the sum of everything in [nums] and print it to the screen.
  */
 
-long problem30::getAnswer() {
+long problem030::getAnswer() {
     std::vector<int> nums;
     for (int i = 2; i < (pow(9, 5) * 5); i++) {
         if ([](int x)->int {

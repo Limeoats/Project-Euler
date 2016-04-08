@@ -3,7 +3,7 @@
  * 12/21/2015
  */
 
-#include "problem50.h"
+#include "problem050.h"
 #include "utils.h"
 
 #include <vector>
@@ -22,7 +22,7 @@ namespace {
     const int LIMIT = 1000000;
 }
 
-int problem50::getAnswer() {
+int problem050::getAnswer() {
     std::vector<long> allPrimes = utils::generatePrimes(LIMIT);
     int sum = 0, i = 0;
     for (i; sum + allPrimes[i] < LIMIT; ++i) {

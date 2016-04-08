@@ -3,8 +3,8 @@
  * 12/3/2015
  */
 
-#ifndef PROBLEM_32_H
-#define PROBLEM_32_H
+#ifndef PROBLEM_032_H
+#define PROBLEM_032_H
 
 #include <string>
 
@@ -21,7 +21,7 @@
  * HINT: Some products can be obtained in more than one way so be sure to only include it once in your sum.
  */
 
-namespace problem32 {
+namespace problem032 {
     bool isPandigital(std::string n);
     long getAnswer();
 }
