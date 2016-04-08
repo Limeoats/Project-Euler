@@ -198,6 +198,7 @@ BigNumber BigNumber::subtract(BigNumber other) {
     return BigNumber(results);
 }
 
+//Multiplies the big number by another big number
 BigNumber BigNumber::multiply(BigNumber other) {
     if (this->_numberString[0] == '-' || other._numberString[0] == '-') {
         if (this->_numberString[0] == '-' && other._numberString[0] == '-') {
@@ -309,7 +310,12 @@ bool BigNumber::equals(BigNumber other) {
 
 //Returns the number of digits in the big number
 int BigNumber::digits() {
-    return this->_numberString.size();
+    return this->_numberString.size() - this->isNegative() ? 1 : 0;
+}
+
+//Determines whether a big number is negative
+bool BigNumber::isNegative() {
+    return this->_numberString[0] == '-';
 }
 
 //Overload the output stream operator to print the number

@@ -106,6 +106,15 @@ public:
      */
     int digits();
 
+    /*
+     * Method: isNegative
+     * Determines whether a big number is negative
+     * Parameters: None
+     * Returns:
+     *   True if negative, otherwise false
+     */
+    bool isNegative();
+
 
 
     //Operator overloads
