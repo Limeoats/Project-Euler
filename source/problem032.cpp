@@ -3,7 +3,7 @@
  * 12/3/2015
  */
 
-#include "problem32.h"
+#include "problem032.h"
 #include "utils.h"
 
 #include <unordered_set>
@@ -17,7 +17,7 @@
  * of all numbers in [products] and print it.
  */
 
-bool problem32::isPandigital(std::string n) {
+bool problem032::isPandigital(std::string n) {
     int len = n.size();
     for (int i = 1; i <= len; ++i) {
         if (n.find(i + '0') == std::string::npos)
@@ -26,7 +26,7 @@ bool problem32::isPandigital(std::string n) {
     return true;
 }
 
-long problem32::getAnswer() {
+long problem032::getAnswer() {
     std::unordered_set<long> products;
     for (int i = 2; i < 9876; i++) {
         for (int j = 123; j < 9876 / i; j++) {

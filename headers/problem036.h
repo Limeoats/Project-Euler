@@ -3,8 +3,8 @@
  * 12/7/2015
  */
 
-#ifndef PROBLEM_36_H
-#define PROBLEM_36_H
+#ifndef PROBLEM_036_H
+#define PROBLEM_036_H
 
 #include <string>
 
@@ -14,7 +14,7 @@
  * (Please note that the palindromic number, in either base, may not include leading zeros.)
  */
 
-namespace problem36 {
+namespace problem036 {
     bool isPalindrome(std::string n);
     int getAnswer();
 }

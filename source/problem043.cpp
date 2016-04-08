@@ -3,7 +3,7 @@
  * 12/16/2015
  */
 
-#include "problem43.h"
+#include "problem043.h"
 #include "utils.h"
 
 #include <sstream>
@@ -21,7 +21,7 @@
  */
 
 
-BigNumber problem43::getAnswer() {
+BigNumber problem043::getAnswer() {
     BigNumber sum = BigNumber("0");
     int divs[6] = {2, 3, 5, 7, 11, 13};
     std::string str = "0123456789";

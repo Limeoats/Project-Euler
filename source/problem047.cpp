@@ -3,7 +3,7 @@
  * 12/17/2015
  */
 
-#include "problem47.h"
+#include "problem047.h"
 #include "utils.h"
 
 #include <unordered_set>
@@ -22,7 +22,7 @@ namespace {
     std::vector<long> primes = utils::generatePrimes(1000);
 }
 
-int problem47::getDistinctPrimeFactors(int n) {
+int problem047::getDistinctPrimeFactors(int n) {
     int results = 0;
     for (int i = 0; i < primes.size(); ++i) {
         if (primes[i] > n) break;
@@ -33,7 +33,7 @@ int problem47::getDistinctPrimeFactors(int n) {
     return results;
 }
 
-int problem47::getAnswer() {
+int problem047::getAnswer() {
     int counter = 0;
     int result = 0;
     int x = 643;

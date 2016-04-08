@@ -3,8 +3,8 @@
  * 12/7/2015
  */
 
-#ifndef PROBLEM_37_H
-#define PROBLEM_37_H
+#ifndef PROBLEM_037_H
+#define PROBLEM_037_H
 
 /*
  * The number 3797 has an interesting property. Being prime itself, it is possible to continuously remove digits from
@@ -17,7 +17,7 @@
 
  */
 
-namespace problem37 {
+namespace problem037 {
     bool isTruncatable(int n);
     int getAnswer();
 }

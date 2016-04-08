@@ -3,8 +3,8 @@
  * 12/21/2015
  */
 
-#ifndef PROBLEM_50_H
-#define PROBLEM_50_H
+#ifndef PROBLEM_050_H
+#define PROBLEM_050_H
 
 /*
  * The prime 41, can be written as the sum of six consecutive primes:
@@ -17,7 +17,7 @@
  * Which prime, below one-million, can be written as the sum of the most consecutive primes?
  */
 
-namespace problem50 {
+namespace problem050 {
     int getAnswer();
 }
 

@@ -3,8 +3,8 @@
  * 12/7/2015
  */
 
-#ifndef PROBLEM_35_H
-#define PROBLEM_35_H
+#ifndef PROBLEM_035_H
+#define PROBLEM_035_H
 
 #include <string>
 
@@ -14,7 +14,7 @@
  * How many circular primes are there below one million?
  */
 
-namespace problem35 {
+namespace problem035 {
     bool isCircularPrime(int n);
     int getAnswer();
 }

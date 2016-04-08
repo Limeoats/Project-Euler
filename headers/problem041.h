@@ -3,8 +3,8 @@
  * 12/11/2015
  */
 
-#ifndef PROBLEM_41_H
-#define PROBLEM_41_H
+#ifndef PROBLEM_041_H
+#define PROBLEM_041_H
 
 /*
  * We shall say that an n-digit number is pandigital if it makes use of all the digits 1 to n exactly once.
@@ -13,7 +13,7 @@
  * What is the largest n-digit pandigital prime that exists?
  */
 
-namespace problem41 {
+namespace problem041 {
     bool isPandigital(long n);
     long getAnswer();
 }

@@ -3,8 +3,8 @@
  * 12/16/2015
  */
 
-#ifndef PROBLEM_43_H
-#define PROBLEM_43_H
+#ifndef PROBLEM_043_H
+#define PROBLEM_043_H
 
 #include "bignumber.h"
 
@@ -25,7 +25,7 @@
  * Find the sum of all 0 to 9 pandigital numbers with this property.
  */
 
-namespace problem43 {
+namespace problem043 {
     BigNumber getAnswer();
 }
 

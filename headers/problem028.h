@@ -3,8 +3,8 @@
  * 11/23/2015
  */
 
-#ifndef PROBLEM_28_H
-#define PROBLEM_28_H
+#ifndef PROBLEM_028_H
+#define PROBLEM_028_H
 
 /*
  * Starting with the number 1 and moving to the right in a clockwise direction a 5 by 5 spiral is formed as follows:
@@ -19,7 +19,7 @@
  * What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed in the same way?
  */
 
-namespace problem28 {
+namespace problem028 {
     unsigned int getAnswer();
 }
 

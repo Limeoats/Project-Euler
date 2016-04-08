@@ -3,8 +3,8 @@
  * 12/9/2015
  */
 
-#ifndef PROBLEM_40_H
-#define PROBLEM_40_H
+#ifndef PROBLEM_040_H
+#define PROBLEM_040_H
 
 /*
  * An irrational decimal fraction is created by concatenating the positive integers:
@@ -16,7 +16,7 @@
  *       d1 × d10 × d100 × d1000 × d10000 × d100000 × d1000000
  */
 
-namespace problem40 {
+namespace problem040 {
     int getDigitInChampernowneConstant(int n);
     int getAnswer();
 }

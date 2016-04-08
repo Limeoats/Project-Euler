@@ -3,8 +3,8 @@
  * 11/23/2015
  */
 
-#ifndef PROBLEM_26_H
-#define PROBLEM_26_H
+#ifndef PROBLEM_026_H
+#define PROBLEM_026_H
 
 /*
  * A unit fraction contains 1 in the numerator. The decimal representation of
@@ -25,7 +25,7 @@
  */
 
 
-namespace problem26 {
+namespace problem026 {
     int getAnswer();
 }
 

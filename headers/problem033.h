@@ -3,8 +3,8 @@
  * 12/4/2015
  */
 
-#ifndef PROBLEM_33_H
-#define PROBLEM_33_H
+#ifndef PROBLEM_033_H
+#define PROBLEM_033_H
 
 /*
  * The fraction 49/98 is a curious fraction, as an inexperienced mathematician in attempting to simplify it
@@ -18,7 +18,7 @@
  */
 
 
-namespace problem33 {
+namespace problem033 {
     int getAnswer();
 }
 

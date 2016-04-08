@@ -3,7 +3,7 @@
  * 12/11/2015
  */
 
-#include "problem42.h"
+#include "problem042.h"
 #include "utils.h"
 
 #include <fstream>
@@ -21,7 +21,7 @@
  * Finally, return count and print it to the screen.
  */
 
-int problem42::getAnswer() {
+int problem042::getAnswer() {
     std::ifstream in("data/problem42_data.txt");
     std::stringstream ss;
     ss << in.rdbuf();

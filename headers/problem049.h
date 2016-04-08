@@ -3,8 +3,8 @@
  * 12/21/2015
  */
 
-#ifndef PROBLEM_49_H
-#define PROBLEM_49_H
+#ifndef PROBLEM_049_H
+#define PROBLEM_049_H
 
 #include <sstream>
 
@@ -19,7 +19,7 @@
  * What 12-digit number do you form by concatenating the three terms in this sequence?
  */
 
-namespace problem49 {
+namespace problem049 {
     std::string getAnswer();
 }
 

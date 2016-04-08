@@ -3,8 +3,8 @@
  * 11/23/2015
  */
 
-#ifndef PROBLEM_27_H
-#define PROBLEM_27_H
+#ifndef PROBLEM_027_H
+#define PROBLEM_027_H
 
 /*
  * Euler discovered the remarkable quadratic formula:
@@ -25,7 +25,7 @@
  * produces the maximum number of primes for consecutive values of n, starting with n = 0.
  */
 
-namespace problem27 {
+namespace problem027 {
     long getAnswer();
 }
 

@@ -3,7 +3,7 @@
  * 12/11/2015
  */
 
-#include "problem41.h"
+#include "problem041.h"
 #include "utils.h"
 
 //There are two keys to making this program run fast:
@@ -18,7 +18,7 @@
 //We also know that the number must be either 4 digits or 7 digits.
 //Once we get the highest number, we return it and print it out.
 
-bool problem41::isPandigital(long n) {
+bool problem041::isPandigital(long n) {
     std::string str = utils::toString(n);
     int len = str.size();
     for (int i = 1; i <= len; ++i) {
@@ -28,7 +28,7 @@ bool problem41::isPandigital(long n) {
     return true;
 }
 
-long problem41::getAnswer() {
+long problem041::getAnswer() {
     long highest = 0;
     auto primes = utils::generatePrimes(7654321);
     for (long t : primes) {

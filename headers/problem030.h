@@ -3,8 +3,8 @@
  * 12/3/2015
  */
 
-#ifndef PROBLEM_30_H
-#define PROBLEM_30_H
+#ifndef PROBLEM_030_H
+#define PROBLEM_030_H
 
 /*
  * Surprisingly there are only three numbers that can be written as the sum of fourth powers of their digits:
@@ -19,7 +19,7 @@
  * Find the sum of all the numbers that can be written as the sum of fifth powers of their digits.
  */
 
-namespace problem30 {
+namespace problem030 {
     long getAnswer();
 }
 

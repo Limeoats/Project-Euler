@@ -3,8 +3,8 @@
  * 12/8/2015
  */
 
-#ifndef PROBLEM_39_H
-#define PROBLEM_39_H
+#ifndef PROBLEM_039_H
+#define PROBLEM_039_H
 
 /*
  * If p is the perimeter of a right angle triangle with integral length sides, {a,b,c}, there
@@ -15,7 +15,7 @@
  * For which value of p ≤ 1000, is the number of solutions maximised?
  */
 
-namespace problem39 {
+namespace problem039 {
     int getAnswer();
 }
 
