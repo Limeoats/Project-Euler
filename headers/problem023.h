@@ -3,8 +3,8 @@
  * 11/20/2015
  */
 
-#ifndef PROBLEM_23_H
-#define PROBLEM_23_H
+#ifndef PROBLEM_023_H
+#define PROBLEM_023_H
 
 /*
  * A perfect number is a number for which the sum of its proper divisors is exactly
@@ -23,7 +23,7 @@
  * Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
  */
 
-namespace problem23 {
+namespace problem023 {
     long sumOfProperDivisors(int n);
     bool isAbundant(long n);
     long long getAnswer();

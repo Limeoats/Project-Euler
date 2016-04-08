@@ -3,8 +3,8 @@
  * 10/14/2015
  */
 
-#ifndef PROBLEM_1_H
-#define PROBLEM_1_H
+#ifndef PROBLEM_001_H
+#define PROBLEM_001_H
 
 #include <vector>
 
@@ -12,7 +12,7 @@
 //The sum of these multiples is 23.
 //Find the sum of all the multiples of 3 or 5 below 1000.
 
-namespace problem1 {
+namespace problem001 {
     std::vector<int> getMultiplesUnder(int numberUnder);
     int getAnswer();
 }

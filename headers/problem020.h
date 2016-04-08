@@ -3,8 +3,8 @@
  * 11/19/2015
  */
 
-#ifndef PROBLEM_20_H
-#define PROBLEM_20_H
+#ifndef PROBLEM_020_H
+#define PROBLEM_020_H
 
 #include "bignumber.h"
 
@@ -15,7 +15,7 @@
  * Find the sum of the digits in the number 100!
  */
 
-namespace problem20 {
+namespace problem020 {
     BigNumber factorial(int n);
     long getAnswer();
 }

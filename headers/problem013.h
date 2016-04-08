@@ -3,8 +3,8 @@
  * 10/22/2015
  */
 
-#ifndef PROBLEM_13_H
-#define PROBLEM_13_H
+#ifndef PROBLEM_013_H
+#define PROBLEM_013_H
 
 #include <sstream>
 
@@ -111,7 +111,7 @@
     53503534226472524250874054075591789781264330331690
 */
 
-namespace problem13 {
+namespace problem013 {
     std::string numberToString(int number);
     std::string getFirstNDigitsFromSumOfNumbers(int n, std::string nums);
     std::string getAnswer();

@@ -3,9 +3,9 @@
  * 11/23/2015
  */
 
-#include "problem25.h"
+#include "problem025.h"
 
-int problem25::getAnswer() {
+int problem025::getAnswer() {
     int index = 2;
     BigNumber b("1"), c("1"), tmp("1");
     while (c.digits() < 1000) {

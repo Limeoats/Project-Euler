@@ -4,8 +4,8 @@
  */
 
 
-#ifndef PROBLEM_11_H
-#define PROBLEM_11_H
+#ifndef PROBLEM_011_H
+#define PROBLEM_011_H
 
 #include <sstream>
 #include <vector>
@@ -40,7 +40,7 @@
 */
 
 
-namespace problem11 {
+namespace problem011 {
     long getGreatestProductOfXAdjacentNumbers(int x);
     long getAnswer();
 }

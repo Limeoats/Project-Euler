@@ -3,16 +3,16 @@
  * 11/17/2015
  */
 
-#include "problem19.h"
+#include "problem019.h"
 
 
-int problem19::getDayOfWeek(int year, int month, int day) {
+int problem019::getDayOfWeek(int year, int month, int day) {
     int t[] = {0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4};
     year -= month < 3;
     return (year + year / 4 - year / 100 + year / 400 + t[month-1] + day) % 7;
 }
 
-int problem19::getDaysInMonth(int month, int year) {
+int problem019::getDaysInMonth(int month, int year) {
     if (month == 4 || month == 6 || month == 9 || month == 11) {
         return 30;
     }
@@ -27,7 +27,7 @@ int problem19::getDaysInMonth(int month, int year) {
     }
 }
 
-int problem19::getNumSundaysBetweenDates() {
+int problem019::getNumSundaysBetweenDates() {
     int daysInMonth = 0;
     int numSundays = 0;
     for (int i = 1901; i < 2001; i++) {
@@ -43,6 +43,6 @@ int problem19::getNumSundaysBetweenDates() {
     return numSundays;
 }
 
-int problem19::getAnswer() {
+int problem019::getAnswer() {
     return getNumSundaysBetweenDates();
 }

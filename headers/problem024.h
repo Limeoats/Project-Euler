@@ -3,8 +3,8 @@
  * 11/23/2015
  */
 
-#ifndef PROBLEM_24_H
-#define PROBLEM_24_H
+#ifndef PROBLEM_024_H
+#define PROBLEM_024_H
 
 #include <vector>
 #include <sstream>
@@ -19,7 +19,7 @@
  */
 
 
-namespace problem24 {
+namespace problem024 {
     std::vector<std::string> getPermutations(std::vector<int> numbers, int limit = 0);
     std::string getAnswer();
 }

@@ -3,16 +3,16 @@
  * 10/19/2015
  */
 
-#include "problem2.h"
+#include "problem002.h"
 
 #include <algorithm>
 #include <numeric>
 
-bool problem2::isOdd(int i) {
+bool problem002::isOdd(int i) {
     return (i & 1) == 1;
 }
 
-std::vector<int> problem2::getFibNumbers(int max) {
+std::vector<int> problem002::getFibNumbers(int max) {
     std::vector<int> list = {1, 2};
     int i = 1;
 
@@ -26,7 +26,7 @@ std::vector<int> problem2::getFibNumbers(int max) {
     return list;
 }
 
-int problem2::getAnswer() {
+int problem002::getAnswer() {
     std::vector<int> list = getFibNumbers(4000000);
     //Remove the odds
     list.erase(std::remove_if(list.begin(), list.end(), [](int i) { return (i & 1) == 1; }), list.end());

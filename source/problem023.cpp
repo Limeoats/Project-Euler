@@ -9,9 +9,9 @@
 #include <iostream>
 #include <utils.h>
 
-#include "problem23.h"
+#include "problem023.h"
 
-long problem23::sumOfProperDivisors(int n) {
+long problem023::sumOfProperDivisors(int n) {
     int sum = 0;
     for (int i = 1; i <= (n / 2); i++) {
         if (n % i == 0) {
@@ -21,11 +21,11 @@ long problem23::sumOfProperDivisors(int n) {
     return sum;
 }
 
-bool problem23::isAbundant(long n) {
+bool problem023::isAbundant(long n) {
     return sumOfProperDivisors(n) > n;
 }
 
-long long problem23::getAnswer() {
+long long problem023::getAnswer() {
     std::vector<int> abundantNumbers;
     for (int i = 1; i < 20161; i++) {
         if (isAbundant(i)) {

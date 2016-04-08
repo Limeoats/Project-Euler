@@ -3,16 +3,16 @@
  * 10/28/2015
  */
 
-#include "problem14.h"
+#include "problem014.h"
 
-long problem14::getNextNumInSequence(long curNum) {
+long problem014::getNextNumInSequence(long curNum) {
     if ((curNum & 1) == 1)
         return (3*curNum) + 1;  //odd
     else
         return curNum / 2;      //even
 }
 
-int problem14::getStartingNumberUnder(int max) {
+int problem014::getStartingNumberUnder(int max) {
     long longestChain = 1;
     long longestChainStartingNumber = 2;
     long currentChain;
@@ -34,6 +34,6 @@ int problem14::getStartingNumberUnder(int max) {
     return longestChainStartingNumber;
 }
 
-long problem14::getAnswer() {
+long problem014::getAnswer() {
     return getStartingNumberUnder(1000000);
 }

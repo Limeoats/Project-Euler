@@ -3,8 +3,8 @@
  * 10/19/2015
  */
 
-#ifndef PROBLEM_8_H
-#define PROBLEM_8_H
+#ifndef PROBLEM_008_H
+#define PROBLEM_008_H
 
 /* The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.
 
@@ -31,7 +31,7 @@
     Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
 */
 
-namespace problem8 {
+namespace problem008 {
     long getGreatestProduct(int howMany);
     long getAnswer();
 }

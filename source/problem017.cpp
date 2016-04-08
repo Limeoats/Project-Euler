@@ -3,7 +3,7 @@
  * 11/5/2015
  */
 
-#include "problem17.h"
+#include "problem017.h"
 #include "utils.h"
 
 #include <sstream>
@@ -15,7 +15,7 @@ std::string tens[8] = {"twenty", "thirty", "forty", "fifty", "sixty", "seventy",
 std::string hundreds[9] = {"onehundred", "twohundred", "threehundred", "fourhundred", "fivehundred", "sixhundred", "sevenhundred", "eighthundred", "ninehundred"};
 std::string thousands[1] = {"onethousand"};
 
-long problem17::getNumLetters(int startNum, int endNum) {
+long problem017::getNumLetters(int startNum, int endNum) {
     if (endNum > 1000 || startNum < 1) {
         std::cerr << "The starting number must be greater than 0 and the ending number must be less than 1000" << std::endl;
         return -1;
@@ -79,6 +79,6 @@ long problem17::getNumLetters(int startNum, int endNum) {
     return letterTotal;
 }
 
-long problem17::getAnswer() {
+long problem017::getAnswer() {
     return getNumLetters(1, 1000);
 }

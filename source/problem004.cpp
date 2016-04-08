@@ -3,14 +3,14 @@
  * 10/19/2015
  */
 
-#include "problem4.h"
+#include "problem004.h"
 
 #include <sstream>
 #include <algorithm>
 #include <vector>
 #include <iostream>
 
-bool problem4::isPalindrome(int num) {
+bool problem004::isPalindrome(int num) {
     int tmp = num;
     int sum = 0;
     int r;
@@ -22,7 +22,7 @@ bool problem4::isPalindrome(int num) {
     return num == sum;
 }
 
-int problem4::getLargestPalindrome() {
+int problem004::getLargestPalindrome() {
 
     std::vector<int> list;
     const int x1 = 999;
@@ -38,6 +38,6 @@ int problem4::getLargestPalindrome() {
     return list[std::distance(list.begin(), max_element(std::begin(list), std::end(list)))];
 }
 
-int problem4::getAnswer() {
+int problem004::getAnswer() {
     return getLargestPalindrome();
 }

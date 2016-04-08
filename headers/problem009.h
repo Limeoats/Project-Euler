@@ -3,8 +3,8 @@
  * 10/19/2015
  */
 
-#ifndef PROBLEM_9_H
-#define PROBLEM_9_H
+#ifndef PROBLEM_009_H
+#define PROBLEM_009_H
 
 //A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
 //a2 + b2 = c2
@@ -13,7 +13,7 @@
 //		Find the product abc.
 
 
-namespace problem9 {
+namespace problem009 {
     double getProductOfPythagoreanTriplet(int sumOfABC);
     int getAnswer();
 }

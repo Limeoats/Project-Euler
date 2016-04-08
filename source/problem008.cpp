@@ -3,11 +3,11 @@
  * 10/19/2015
  */
 
-#include "problem8.h"
+#include "problem008.h"
 
 #include <string>
 
-long problem8::getGreatestProduct(int howMany) {
+long problem008::getGreatestProduct(int howMany) {
     const std::string num = "73167176531330624919225119674426574742355349194934"
             "96983520312774506326239578318016984801869478851843"
             "85861560789112949495459501737958331952853208805511"
@@ -45,6 +45,6 @@ long problem8::getGreatestProduct(int howMany) {
 }
 
 
-long problem8::getAnswer() {
+long problem008::getAnswer() {
     return getGreatestProduct(13);
 }

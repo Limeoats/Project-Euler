@@ -3,8 +3,8 @@
  * 11/17/2015
  */
 
-#ifndef PROBLEM_19_H
-#define PROBLEM_19_H
+#ifndef PROBLEM_019_H
+#define PROBLEM_019_H
 
 /*
  * You are given the following information, but you may prefer to do some research for yourself.
@@ -20,7 +20,7 @@
  */
 
 
-namespace problem19 {
+namespace problem019 {
     int getDayOfWeek(int year, int month, int day);
     int getDaysInMonth(int month, int year);
     int getNumSundaysBetweenDates();

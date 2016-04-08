@@ -3,8 +3,8 @@
  * 11/19/2015
  */
 
-#ifndef PROBLEM_21_H
-#define PROBLEM_21_H
+#ifndef PROBLEM_021_H
+#define PROBLEM_021_H
 
 
 /*
@@ -17,7 +17,7 @@
  * Evaluate the sum of all the amicable numbers under 10000.
  */
 
-namespace problem21 {
+namespace problem021 {
     long sumOfProperDivisors(int n);
     bool isAmicable(int a);
     long getAnswer();

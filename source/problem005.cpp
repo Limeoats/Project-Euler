@@ -3,9 +3,9 @@
  * 10/19/2015
  */
 
-#include "problem5.h"
+#include "problem005.h"
 
-int problem5::getSmallestNumberDividedByRange(int begin, int end) {
+int problem005::getSmallestNumberDividedByRange(int begin, int end) {
     long c = 1;
     int successes = 0;
     while (true) {
@@ -25,6 +25,6 @@ int problem5::getSmallestNumberDividedByRange(int begin, int end) {
     }
 }
 
-int problem5::getAnswer() {
+int problem005::getAnswer() {
     return getSmallestNumberDividedByRange(1, 20);
 }

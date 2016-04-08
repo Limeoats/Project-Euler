@@ -3,8 +3,8 @@
  * 10/19/2015
  */
 
-#ifndef PROBLEM_2_H
-#define PROBLEM_2_H
+#ifndef PROBLEM_002_H
+#define PROBLEM_002_H
 
 #include <vector>
 
@@ -14,7 +14,7 @@
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million,
 // find the sum of the even-valued terms.
 
-namespace problem2 {
+namespace problem002 {
     bool isOdd(int i);
     std::vector<int> getFibNumbers(int max);
     int getAnswer();

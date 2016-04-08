@@ -4,8 +4,8 @@
  */
 
 
-#ifndef PROBLEM_14_H
-#define PROBLEM_14_H
+#ifndef PROBLEM_014_H
+#define PROBLEM_014_H
 
 //The following iterative sequence is defined for the set of positive integers:
 
@@ -23,7 +23,7 @@
 //Note: Once the chain starts the terms are allowed to go above one million.
 
 
-namespace problem14 {
+namespace problem014 {
     long getNextNumInSequence(long curNum);
     int getStartingNumberUnder(int max);
     long getAnswer();

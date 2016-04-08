@@ -3,11 +3,11 @@
  * 10/20/2015
  */
 
-#include "problem12.h"
+#include "problem012.h"
 
 #include <cmath>
 
-int problem12::getNumberOfDivisors(int x) {
+int problem012::getNumberOfDivisors(int x) {
     int root = sqrt(x);
     int divisors = 0;
     for (int i = 1; i <= root; i++) {
@@ -23,7 +23,7 @@ int problem12::getNumberOfDivisors(int x) {
 }
 
 
-int problem12::getFirstTriangleNumberWithGreaterThanNDivisors(int n) {
+int problem012::getFirstTriangleNumberWithGreaterThanNDivisors(int n) {
     int triangleNumber = 0;
     int counter = 1;
     while (true) {
@@ -36,6 +36,6 @@ int problem12::getFirstTriangleNumberWithGreaterThanNDivisors(int n) {
     return -1;
 }
 
-int problem12::getAnswer() {
+int problem012::getAnswer() {
     return getFirstTriangleNumberWithGreaterThanNDivisors(500);
 }

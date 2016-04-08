@@ -3,8 +3,8 @@
  * 11/19/2015
  */
 
-#ifndef PROBLEM_22_H
-#define PROBLEM_22_H
+#ifndef PROBLEM_022_H
+#define PROBLEM_022_H
 
 #include <vector>
 #include <sstream>
@@ -22,7 +22,7 @@
  * What is the total of all the name scores in the file?
  */
 
-namespace problem22 {
+namespace problem022 {
     inline int getAlphabetPos(char c) { return (c - 'a' + 1);}
     int getAnswer();
 }

@@ -3,12 +3,12 @@
  * 11/23/2015
  */
 
-#include "problem24.h"
+#include "problem024.h"
 
 #include <iostream>
 #include <algorithm>
 
-std::vector<std::string> problem24::getPermutations(std::vector<int> numbers, int limit) {
+std::vector<std::string> problem024::getPermutations(std::vector<int> numbers, int limit) {
     int count = 0;
     std::vector<std::string> p;
     std::stringstream ss;
@@ -26,7 +26,7 @@ std::vector<std::string> problem24::getPermutations(std::vector<int> numbers, in
     return p;
 }
 
-std::string problem24::getAnswer() {
+std::string problem024::getAnswer() {
     std::vector<std::string> x = getPermutations({0,1,2,3,4,5,6,7,8,9}, 1000000);
     return x[999999];
 }

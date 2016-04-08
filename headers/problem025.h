@@ -3,8 +3,8 @@
  * 11/23/2015
  */
 
-#ifndef PROBLEM_25_H
-#define PROBLEM_25_H
+#ifndef PROBLEM_025_H
+#define PROBLEM_025_H
 
 #include "bignumber.h"
 
@@ -31,7 +31,7 @@
 
  */
 
-namespace problem25 {
+namespace problem025 {
     int getAnswer();
 }
 

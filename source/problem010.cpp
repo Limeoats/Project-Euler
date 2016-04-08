@@ -3,10 +3,10 @@
  * 10/19/2015
  */
 
-#include "problem10.h"
+#include "problem010.h"
 #include "utils.h"
 
-long problem10::getSumOfPrimesBelowNum(int num) {
+long problem010::getSumOfPrimesBelowNum(int num) {
     long total = 2;
     for (int i = 3; i < num; i += 2) {
         if (utils::isPrime(i)) {
@@ -16,6 +16,6 @@ long problem10::getSumOfPrimesBelowNum(int num) {
     return total;
 }
 
-long problem10::getAnswer() {
+long problem010::getAnswer() {
     return getSumOfPrimesBelowNum(2000000);
 }

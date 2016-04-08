@@ -3,12 +3,12 @@
  * 10/19/2015
  */
 
-#include "problem7.h"
+#include "problem007.h"
 #include "utils.h"
 
 #include <cmath>
 
-int problem7::getNthPrimeNumber(int n) {
+int problem007::getNthPrimeNumber(int n) {
     int numPrimes = 0;
     int i = 1;
     while (numPrimes < n) {
@@ -23,6 +23,6 @@ int problem7::getNthPrimeNumber(int n) {
     return i;
 }
 
-int problem7::getAnswer() {
+int problem007::getAnswer() {
     return getNthPrimeNumber(10001);
 }
