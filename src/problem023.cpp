@@ -7,8 +7,8 @@
 #include <numeric>
 #include <algorithm>
 #include <iostream>
-#include <utils.h>
 
+#include "utils.h"
 #include "problem023.h"
 
 long problem023::sumOfProperDivisors(int n) {
