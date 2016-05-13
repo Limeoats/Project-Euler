@@ -5,3 +5,7 @@ projecteuler.dSYM
 projecteuler.dsym/*
 build-dir
 build-dir/*
+
+#emacs stuff
+\#*\#
+*~
