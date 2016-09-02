@@ -36,11 +36,11 @@ namespace utils {
 
     template<class V, class T>
     inline T closest(const V &v, const T &t) {
-        auto const it = std::lower_bound(std::begin(v), std::end(v), t);
-        if (it == std::end(v)) {
-            return -1;
+        T closest = v[0];
+        for (const T &m : v) {
+            closest = abs(m - t) < abs(closest - t) ? m : closest;
         }
-        return *it;
+        return closest;
     };
 
     template <class T>
