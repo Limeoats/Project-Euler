@@ -34,6 +34,15 @@ namespace utils {
         v.erase(std::unique(v.begin(), v.end()), v.end());
     };
 
+    template<class V, class T>
+    inline T closest(const V &v, const T &t) {
+        auto const it = std::lower_bound(std::begin(v), std::end(v), t);
+        if (it == std::end(v)) {
+            return -1;
+        }
+        return *it;
+    };
+
     template <class T>
     inline T convertBinary(T n) {
         if (n / 2 != 0) {
@@ -98,6 +107,7 @@ namespace utils {
     //std::vector generatePrimes(int limit)
     //  Uses the Sieve of Eratosthenes
     //  Params:
+    //    start: the starting point (optional)
     //    limit: the number to go up to
     //  Returns:
     //    A list of all primes up to the limit

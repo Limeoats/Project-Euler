@@ -21,7 +21,7 @@
  */
 
 namespace problem051 {
-    int getAnswer();
+    long getAnswer();
 };
 
 

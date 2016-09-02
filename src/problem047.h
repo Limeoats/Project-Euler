@@ -21,8 +21,10 @@
  * Find the first four consecutive integers to have four distinct prime factors. What is the first of these numbers?
  */
 
+#include <vector>
+
 namespace problem047 {
-    int getDistinctPrimeFactors(int n);
+    int getDistinctPrimeFactors(int n, std::vector<long> primes);
     int getAnswer();
 }
 

@@ -18,11 +18,7 @@
  * return it and print it to the screen.
  */
 
-namespace {
-    std::vector<long> primes = utils::generatePrimes(1000);
-}
-
-int problem047::getDistinctPrimeFactors(int n) {
+int problem047::getDistinctPrimeFactors(int n, std::vector<long> primes) {
     int results = 0;
     for (int i = 0; i < primes.size(); ++i) {
         if (primes[i] > n) break;
@@ -34,12 +30,13 @@ int problem047::getDistinctPrimeFactors(int n) {
 }
 
 int problem047::getAnswer() {
+    std::vector<long> primes = utils::generatePrimes(1000);
     int counter = 0;
     int result = 0;
     int x = 643;
     while (true) {
         ++x;
-        if (getDistinctPrimeFactors(x) == 4) {
+        if (getDistinctPrimeFactors(x, primes) == 4) {
             if (counter == 0) {
                 result = x;
             }
