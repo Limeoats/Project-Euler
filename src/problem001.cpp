@@ -10,6 +10,7 @@
  * The remaining numbers are added together and printed to the screen.
  */
 
+#include <numeric>
 #include "problem001.h"
 #include "utils.h"
 
