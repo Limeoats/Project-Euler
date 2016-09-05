@@ -20,7 +20,20 @@
  * with the same digit, is part of an eight prime value family.
  */
 
+#include <vector>
+#include <map>
+
 namespace problem051 {
+    struct NumberInfo {
+    public:
+        unsigned long Number;
+        std::map<unsigned int, std::vector<unsigned int>> DigitPositions;
+        NumberInfo(unsigned long number, std::map<unsigned int, std::vector<unsigned int>> digitPositions) {
+            this->Number = number;
+            this->DigitPositions = digitPositions;
+        }
+    };
+    std::vector<long> calculate(std::vector<problem051::NumberInfo>& numbers, int familySize);
     long getAnswer();
 };
 
