@@ -22,48 +22,25 @@
 #include <sstream>
 #include <stack>
 #include <iostream>
-#include <cstdlib>
 
 #include "bignumber.h"
 
 
-BigNumber::BigNumber() :
-    _numberString("")
-{
-}
-
 BigNumber::BigNumber(std::string number) :
-    _numberString(number)
+        _numberString(number)
 {
 }
 
 BigNumber BigNumber::add(BigNumber other) {
-    if (this->_numberString[0] == '-' || other._numberString[0] == '-') {
-        if (this->_numberString[0] == '-' && other._numberString[0] == '-') {
-            BigNumber x1, x2;
-            x1 = *this;
-            x2 = other;
-            x1.negate();
-            x2.negate();
-            BigNumber res = x1.add(x2);
-            res.negate();
-            return res;
+    if (this->isNegative() || other.isNegative()) {
+        if (this->isNegative() && other.isNegative()) {
+            return this->negate().add(other.negate()).negate();
         }
-        else if (this->_numberString[0] == '-' && other._numberString[0] != '-') {
-            BigNumber x1;
-            x1 = *this;
-            x1.negate();
-            BigNumber res = x1.subtract(other);
-            res.negate();
-            return res;
+        else if (this->isNegative() && !other.isNegative()) {
+            return this->negate().subtract(other).negate();
         }
         else {
-            BigNumber x2;
-            x2 = other;
-            x2.negate();
-            BigNumber res = x2.subtract(*this);
-            res.negate();
-            return res;
+            return other.negate().subtract(*this).negate();
         }
     }
     std::string results;
@@ -90,55 +67,39 @@ BigNumber BigNumber::add(BigNumber other) {
 
 
 BigNumber BigNumber::subtract(BigNumber other) {
-    if (this->_numberString[0] == '-' || other._numberString[0] == '-') {
-        if (this->_numberString[0] == '-' && other._numberString[0] == '-') {
-            BigNumber x1, x2;
-            x1 = *this;
-            x2 = other;
-            x1._numberString.erase(0, 1);
-            x2._numberString.erase(0, 1);
-            BigNumber res = x1.add(x2);
-            res.negate();
-            return res;
+    if (this->isNegative() || other.isNegative()) {
+        if (this->isNegative() && other.isNegative()) {
+            return this->negate().add(other.negate()).negate();
         }
-        else if (this->_numberString[0] == '-' && other._numberString[0] != '-') {
-            BigNumber x1;
-            x1 = *this;
-            x1.negate();
-            BigNumber res = x1.add(other);
-            res.negate();
-            return res;
+        else if (this->isNegative() && !other.isNegative()) {
+            return this->negate().add(other).negate();
         }
         else {
-            BigNumber x2;
-            x2 = other;
-            x2.negate();
-            BigNumber res = x2.add(*this);
-            return res;
+            return other.negate().add(*this);
         }
     }
     std::string results;
-    BigNumber num1 = *this;
-    BigNumber num2 = other;
-    int n = 0;
-    int p = 0;
+    int n = 0, p = 0;
     bool takeOffOne = false;
     bool shouldBeTen = false;
 
-    if (num1 < num2) {
+    if (*this < other) {
         //Negative answer
-        BigNumber xx = num2.subtract(num1);
-        xx.negate();
-        return xx;
+        std::string t = other.subtract(*this).negate().getString();
+        for (unsigned int i = 1; i < t.length(); ++i) {
+            if (t[i] != '0') break;
+            t.erase(1, 1);
+        }
+        return BigNumber(t);
     }
 
-    int i = int(num1._numberString.size() - 1);
-    for (int j = int(num2._numberString.size() - 1); j >= 0; j--) {
-        if (((num1._numberString[i] - '0') < (num2._numberString[j] - '0')) && i > 0) {
-            n = char((num1._numberString[i] - '0') + 10);
+    int i = int(this->_numberString.size() - 1);
+    for (int j = int(other._numberString.size() - 1); j >= 0; j--) {
+        if (((this->_numberString[i] - '0') < (other._numberString[j] - '0')) && i > 0) {
+            n = char((this->_numberString[i] - '0') + 10);
             takeOffOne = true;
-            if (j > 0 || num1._numberString[i - 1] != '0') {
-                p = char((num1._numberString[i - 1] - '0') - 1);
+            if (j > 0 || this->_numberString[i - 1] != '0') {
+                p = char((this->_numberString[i - 1] - '0') - 1);
                 if (p == -1) {
                     p = 9;
                     shouldBeTen = true;
@@ -147,27 +108,26 @@ BigNumber BigNumber::subtract(BigNumber other) {
             }
             if (shouldBeTen) {
                 int index = i - 1;
-                for (int a = i - 1; (num1._numberString[a] - '0') == 0; a--) {
-                    num1._numberString[a] = (p + '0');
+                for (int a = i - 1; (this->_numberString[a] - '0') == 0; a--) {
+                    this->_numberString[a] = static_cast<char>(p + '0');
                     index--;
                 }
-                int t = (num1._numberString[index] - '0');
-                t--;
-                num1._numberString[index] = (t + '0');
+                int t = (this->_numberString[index] - '0') - 1;
+                this->_numberString[index] = static_cast<char>(t + '0');
             }
-            num1._numberString[i - 1] = (p + '0');
+            this->_numberString[i - 1] = static_cast<char>(p + '0');
             shouldBeTen = false;
         }
         std::stringstream ss;
-        if (((num1._numberString[i] - '0') == (num2._numberString[j] - '0'))) {
+        if (((this->_numberString[i] - '0') == (other._numberString[j] - '0'))) {
             ss << "0";
         }
         else {
             if (n <= 0) {
-                ss << ((num1._numberString[i] - '0') - (num2._numberString[j] - '0'));
+                ss << ((this->_numberString[i] - '0') - (other._numberString[j] - '0'));
             }
             else {
-                ss << (n - (num2._numberString[j] - '0'));
+                ss << (n - (other._numberString[j] - '0'));
             }
         }
 
@@ -177,17 +137,16 @@ BigNumber BigNumber::subtract(BigNumber other) {
     }
     if (takeOffOne) {
         std::string number = "";
-        for (int i = num1._numberString.length() - num2._numberString.length() - 1; i >= 0; i--) {
-            if (num1._numberString[i] == '0') {
+        for (int j = this->_numberString.length() - other._numberString.length() - 1; j >= 0; j--) {
+            if (this->_numberString[j] == '0') {
                 number += "0";
                 continue;
             }
             else {
-                number.insert(number.begin(), num1._numberString[i]);
-                int n = atoi(number.c_str());
-                n--;
-                num1._numberString.replace(0, number.size(), std::to_string(n));
-                takeOffOne = false;
+                number.insert(number.begin(), this->_numberString[j]);
+                int t = atoi(number.c_str());
+                t--;
+                this->_numberString.replace(0, number.size(), std::to_string(t));
                 break;
             }
         }
@@ -195,13 +154,13 @@ BigNumber BigNumber::subtract(BigNumber other) {
     while (i >= 0) {
         std::stringstream ss;
         if (i == 0) {
-            if (num1._numberString[i] - '0' != 0) {
-                ss << (num1._numberString[i] - '0');
+            if (this->_numberString[i] - '0' != 0) {
+                ss << (this->_numberString[i] - '0');
                 results.insert(0, ss.str());
             }
         }
         else {
-            ss << (num1._numberString[i] - '0');
+            ss << (this->_numberString[i] - '0');
             results.insert(0, ss.str());
         }
 
@@ -217,31 +176,15 @@ BigNumber BigNumber::subtract(BigNumber other) {
 
 
 BigNumber BigNumber::multiply(BigNumber other) {
-    if (this->_numberString[0] == '-' || other._numberString[0] == '-') {
-        if (this->_numberString[0] == '-' && other._numberString[0] == '-') {
-            BigNumber x1, x2;
-            x1 = *this;
-            x2 = other;
-            x1.negate();
-            x2.negate();
-            BigNumber res = x1.multiply(x2);
-            return res;
+    if (this->isNegative() || other.isNegative()) {
+        if (this->isNegative() && other.isNegative()) {
+            return this->negate().multiply(other.negate());
         }
-        else if (this->_numberString[0] == '-' && other._numberString[0] != '-') {
-            BigNumber x1;
-            x1 = *this;
-            x1.negate();
-            BigNumber res = x1.multiply(other);
-            res.negate();
-            return res;
+        else if (this->isNegative() && !other.isNegative()) {
+            return this->negate().multiply(other).negate();
         }
         else {
-            BigNumber x2;
-            x2 = other;
-            x2.negate();
-            BigNumber res = x2.multiply(*this);
-            res.negate();
-            return res;
+            return other.negate().multiply(*this).negate();
         }
     }
     int carry = 0;
@@ -249,7 +192,7 @@ BigNumber BigNumber::multiply(BigNumber other) {
     std::vector<std::string> results;
     BigNumber num1 = other > *this ? other : *this;
     BigNumber num2 = other > *this ? *this : other;
-    for (int i = 0; i < num1._numberString.size() - num2._numberString.size(); i++) {
+    for (unsigned int i = 0; i < num1._numberString.size() - num2._numberString.size(); i++) {
         num2._numberString.insert(num2._numberString.begin(), '0');
     }
     for (int i = (num2._numberString.size() - 1); i >= 0; i--) {
@@ -275,11 +218,11 @@ BigNumber BigNumber::multiply(BigNumber other) {
         results.push_back(rr);
     }
     std::vector<BigNumber> bigNumbers;
-    for (int i = 0; i < results.size(); i++) {
+    for (unsigned int i = 0; i < results.size(); i++) {
         bigNumbers.push_back(BigNumber(results[i]));
     }
     BigNumber b("0");
-    for (int i = 0; i < bigNumbers.size(); i++) {
+    for (unsigned int i = 0; i < bigNumbers.size(); i++) {
         b = b.add(bigNumbers[i]);
     }
     if (b._numberString.find_first_not_of('0') != std::string::npos) {
@@ -312,28 +255,30 @@ std::string BigNumber::getString() {
     return this->_numberString;
 }
 
-void BigNumber::setString(std::string newStr) {
+BigNumber BigNumber::setString(const std::string &newStr) {
     this->_numberString = newStr;
+    return *this;
 }
 
-void BigNumber::negate() {
+BigNumber BigNumber::negate() {
     if (this->_numberString[0] == '-') {
         this->_numberString.erase(0, 1);
     }
     else {
         this->_numberString.insert(this->_numberString.begin(), '-');
     }
+    return *this;
 }
 
-bool BigNumber::equals(BigNumber other) {
+bool BigNumber::equals(const BigNumber &other) {
     return this->_numberString == other._numberString;
 }
 
 int BigNumber::digits() {
-    return this->_numberString.size() - this->isNegative() ? 1 : 0;
+    return this->_numberString.length() - static_cast<int>(this->isNegative());
 }
 
-bool BigNumber::isNegative() {
+bool BigNumber::isNegative() const {
     return this->_numberString[0] == '-';
 }
 
@@ -347,6 +292,10 @@ bool BigNumber::isEven() {
 
 bool BigNumber::isOdd() {
     return !this->isEven();
+}
+
+BigNumber BigNumber::abs() const {
+    return BigNumber(this->_numberString.substr(static_cast<unsigned int>(this->isNegative())));
 }
 
 std::ostream &operator<<(std::ostream &os, const BigNumber &num) {
@@ -375,17 +324,15 @@ bool operator==(BigNumber b1, const BigNumber &b2) {
 }
 
 bool operator>(BigNumber b1, const BigNumber &b2) {
-    if (b1._numberString[0] == '-' || b2._numberString[0] == '-') {
-        if (b1._numberString[0] == '-' && b2._numberString[0] == '-') {
-            BigNumber x1, x2;
-            x1 = b1;
-            x2 = b2;
-            x1._numberString.erase(0, 1);
-            x2._numberString.erase(0, 1);
-            return x1 < x2;
+    if (b1.isNegative() || b2.isNegative()) {
+        if (b1.isNegative() && b2.isNegative()) {
+            BigNumber bt = b2;
+            b1._numberString.erase(0, 1);
+            bt._numberString.erase(0, 1);
+            return b1 < bt;
         }
         else {
-            return !(b1._numberString[0] == '-' && b2._numberString[0] != '-');
+            return !(b1.isNegative() && !b2.isNegative());
         }
     }
     if (b1 == b2) {
@@ -398,7 +345,7 @@ bool operator>(BigNumber b1, const BigNumber &b2) {
         return false;
     }
     else {
-        for (int i = 0; i < b1._numberString.size(); i++) {
+        for (unsigned int i = 0; i < b1._numberString.size(); i++) {
             if (b1[i] == (b2._numberString[i] - '0')) {
                 continue;
             }
@@ -447,3 +394,24 @@ BigNumber& BigNumber::operator*=(const BigNumber &other) {
     return *this;
 }
 
+BigNumber& BigNumber::operator++() {
+    *this += BigNumber("1");
+    return *this;
+}
+
+BigNumber& BigNumber::operator--() {
+    *this -= BigNumber("1");
+    return *this;
+}
+
+BigNumber BigNumber::operator++(int) {
+    BigNumber t(this->getString());
+    ++(*this);
+    return t;
+}
+
+BigNumber BigNumber::operator--(int) {
+    BigNumber t(this->getString());
+    --(*this);
+    return t;
+}
