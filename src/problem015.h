@@ -12,7 +12,6 @@
 //How many such routes are there through a 20×20 grid?
 
 namespace problem015 {
-    long choose(long n, long k);
     long calculateNumRoutes(int gridSize);
     long getAnswer();
 }

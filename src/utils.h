@@ -10,7 +10,6 @@
 #include <algorithm>
 #include <chrono>
 
-
 namespace utils {
 
     //bool contains(const C &v, const T &x)
@@ -63,7 +62,7 @@ namespace utils {
     //  n: the number the factorial is being applied to
     //Returns:
     //  The result of the factorial
-    int factorial(int n);
+    long long factorial(int n);
 
     //vector<string> split(string str, char c)
     //Parameters:
@@ -112,6 +111,15 @@ namespace utils {
     //  Returns:
     //    A list of all primes up to the limit
     std::vector<long> generatePrimes(long limit);
+
+    //unsigned long long choose(long n, long k)
+    //  Choose algorithm for combinations
+    //  Params:
+    //      n: The number of digits, starting at 1
+    //      k: The number of elements being chosen
+    //  Returns:
+    //      The number of results
+    unsigned long long choose(long n, long k);
 }
 
 #endif

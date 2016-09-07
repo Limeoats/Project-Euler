@@ -5,15 +5,10 @@
 
 
 #include "problem015.h"
-
-long problem015::choose(long n, long k) {
-    if (k == 0)
-        return 1;
-    return (n * choose(n - 1, k - 1)) / k;
-}
+#include "utils.h"
 
 long problem015::calculateNumRoutes(int gridSize) {
-    return choose(gridSize * 2, gridSize);
+    return utils::choose(gridSize * 2, gridSize);
 }
 
 long problem015::getAnswer() {

@@ -19,9 +19,9 @@ bool utils::isPrime(int num) {
     return true;
 }
 
-int utils::factorial(int n) {
-    int x = 1;
-    for (int i = 1; i <= n; ++i) {
+long long utils::factorial(int n) {
+    long long x = 1;
+    for (long long i = 1; i <= n; ++i) {
         x *= i;
     }
     return x;
@@ -85,4 +85,9 @@ std::vector<long> utils::generatePrimes(long limit) {
         }
     }
     return result;
+}
+
+unsigned long long utils::choose(long n, long k) {
+    if (k == 0) return 1;
+    return (n * choose(n - 1, k - 1)) / k;
 }
