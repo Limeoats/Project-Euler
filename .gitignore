@@ -6,6 +6,6 @@ projecteuler.dsym/*
 build-dir
 build-dir/*
 
-#emacs stuff
-\#*\#
-*~
+build
+build/*
+*.swp

@@ -5,6 +5,7 @@
 */
 
 #include <algorithm>
+#include <string>
 
 #include "problem052.h"
 
@@ -27,7 +28,7 @@ int problem052::getAnswer() {
                 break;
             }
             if (i == 6) {
-                return std::stoi(original) / 2;
+                return std::stoi(original) / 3;
             }
         }
         ++a;
