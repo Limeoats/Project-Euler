@@ -4,7 +4,6 @@
 
 #include "utils.h"
 
-
 bool utils::isPrime(int num) {
     if (num <= 1)
         return false;
@@ -90,4 +89,15 @@ std::vector<long> utils::generatePrimes(long limit) {
 unsigned long long utils::choose(long n, long k) {
     if (k == 0) return 1;
     return (n * choose(n - 1, k - 1)) / k;
+}
+
+bool utils::isLychrel(unsigned long long n, int iterations) {
+    unsigned long long sum = n;
+    for (int i = 0; i < iterations; ++i) {
+        sum += utils::reverseNumber(sum);
+        if (utils::isPalindrome(sum)) {
+            return false;
+        }
+    }
+    return true;
 }

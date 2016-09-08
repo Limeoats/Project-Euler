@@ -50,6 +50,21 @@ namespace utils {
         return n;
     }
 
+    template <class T>
+    inline T reverseNumber(T n) {
+        T reverse = 0;
+        while (n != 0) {
+            reverse = reverse * 10 + (n % 10);
+            n /= 10;
+        }
+        return reverse;
+    }
+
+    template <class T>
+    inline bool isPalindrome(T n) {
+        return n == reverseNumber(n);
+    }
+
     //bool isPrime(int num)
     //Parameters:
     //  num: the number being checked
@@ -120,6 +135,18 @@ namespace utils {
     //  Returns:
     //      The number of results
     unsigned long long choose(long n, long k);
+
+    //bool isLychrel(unsigned long long n, int iterations = 50)
+    //  Determine if [n] is a Lychrel number
+    //  A Lychrel number is one that never forms a palindrome
+    //  through the reverse and add process.
+    //  Params:
+    //      n: The number being checked
+    //      iterations: The number of times to try the reverse and add process.
+    //                  Defaults to 50.
+    //  Returns:
+    //  Whether or not the [n] is a Lychrel number
+    bool isLychrel(unsigned long long n, int iterations = 50);
 }
 
 #endif
