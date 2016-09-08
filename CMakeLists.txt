@@ -68,6 +68,7 @@ set(SOURCE_FILES
         src/problem051.cpp
         src/problem052.cpp
         src/problem053.cpp
+        src/problem054.cpp
         )
 
 add_executable(Project_Euler ${SOURCE_FILES})
