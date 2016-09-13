@@ -7,8 +7,9 @@
 #include "problem056.h"
 #include "bignumber.h"
 #include "utils.h"
+#include <cmath>
 
-long problem056::getAnswer() { 
+long problem056::getAnswer() {
     int highest = 0;
     BigNumber bn("1");
     for (int a = 2; a < 100; ++a) {
