@@ -233,22 +233,20 @@ BigNumber BigNumber::multiply(BigNumber other) {
         b = BigNumber("0");
     }
     return b;
-
 }
 
 BigNumber BigNumber::pow(int exponent) {
     if (exponent < 0) {
         std::cerr << "Powers less than 0 are not supported" << std::endl;
     }
-    BigNumber result("1");
-    while (exponent > 0) {
-        if (exponent & 1) {
-            result = result.multiply(*this);
-        }
-        *this = this->multiply(*this);
-        exponent /= 2;
+    if (exponent == 0) return BigNumber("1");
+    if (exponent == 1) return *this;
+    if (exponent & 1) {
+        return this->multiply(this->multiply(*this).pow((exponent - 1) / 2));
     }
-    return result;
+    else {
+        return this->multiply(*this).pow(exponent / 2);
+    }
 }
 
 std::string BigNumber::getString() {

@@ -145,8 +145,16 @@ namespace utils {
     //      iterations: The number of times to try the reverse and add process.
     //                  Defaults to 50.
     //  Returns:
-    //  Whether or not the [n] is a Lychrel number
+    //      Whether or not the [n] is a Lychrel number
     bool isLychrel(unsigned long long n, int iterations = 50);
+
+    //int digitSum(std::string number)
+    //  Calculate the sum of all digits in the number
+    //  Params:
+    //      number: a string of digits
+    //  Returns:
+    //      The sum of the digits
+    int digitSum(std::string number);
 }
 
 #endif

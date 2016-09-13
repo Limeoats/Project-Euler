@@ -101,3 +101,11 @@ bool utils::isLychrel(unsigned long long n, int iterations) {
     }
     return true;
 }
+
+int utils::digitSum(std::string number) {
+    int sum = 0;
+    for (std::size_t i = 0; i < number.size(); ++i) {
+        sum += number[i] - '0';
+    } 
+    return sum;
+}
