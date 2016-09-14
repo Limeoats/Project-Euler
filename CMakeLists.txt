@@ -5,16 +5,13 @@
 cmake_minimum_required(VERSION 2.8)
 project(Project_Euler)
 
-if (WIN32)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11")
-else()
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-endif()
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
 set(SOURCE_FILES
         src/main.cpp
         src/utils.cpp
-        src/bignumber.cpp
         src/problem001.cpp
         src/problem002.cpp
         src/problem003.cpp
@@ -74,3 +71,8 @@ set(SOURCE_FILES
         )
 
 add_executable(Project_Euler ${SOURCE_FILES})
+
+include(FindPkgConfig)
+find_package(BigNumber REQUIRED)
+include_directories(${BIGNUMBER_INCLUDE_DIR})
+target_link_libraries(${PROJECT_NAME} ${BIGNUMBER_LIBRARY})
