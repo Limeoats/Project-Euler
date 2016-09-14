@@ -3,7 +3,7 @@
  * 12/17/2015
  */
 
-#include "problem046.h"
+#include "main.h"
 #include "utils.h"
 
 #include <vector>
@@ -17,7 +17,7 @@
  * return it and print it to the screen.
  */
 
-int problem046::getAnswer() {
+int Problem046::getAnswer() {
     int x = 3;
     bool found;
     std::vector<long> primes = utils::generatePrimes(5000);

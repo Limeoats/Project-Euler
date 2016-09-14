@@ -4,13 +4,13 @@
  * 9/7/2016
 */
 
-#include "problem054.h"
+#include "main.h"
 #include "utils.h"
 
 #include <map>
 #include <fstream>
 
-int problem054::getAnswer() {
+int Problem054::getAnswer() {
     enum class Suit {
         Hearts, Diamonds, Clubs, Spades, None
     };

@@ -4,9 +4,7 @@
  * 9/13/2016
 */
 
-#include "problem057.h"
-#include "utils.h"
-#include "bignumber.h"
+#include "main.h"
 
 /*
  * The solution was determined by finding patterns
@@ -20,7 +18,7 @@
  * increment [c]. Finally, return and print [c].
  */
 
-int problem057::getAnswer() {
+int Problem057::getAnswer() {
     BigNumber n("3"), d("2");
     int c = 0;
     for (int i = 1; i < 1000; ++i) {

@@ -3,7 +3,7 @@
  * 12/16/2015
  */
 
-#include "problem044.h"
+#include "main.h"
 
 #include <algorithm>
 #include <array>
@@ -29,16 +29,16 @@
  *
  */
 
-bool problem044::isPentagonal(int x) {
+bool Problem044::isPentagonal(int x) {
     double t = (sqrt(1.0 + 24.0 * x) + 1.0) / 6.0;
     return  t == int(t);
 }
 
-int problem044::pentagonalNumber(int n) {
+int Problem044::pentagonalNumber(int n) {
     return n * (3 * n - 1) / 2;
 }
 
-int problem044::getAnswer() {
+int Problem044::getAnswer() {
     int x = 1;
     while (true) {
         int pnx = pentagonalNumber(x);

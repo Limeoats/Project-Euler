@@ -2,7 +2,8 @@
 #By: Mark Guerra
 
 set(FIND_BIGNUMBER_PATHS
-        C:/Libs/BigNumber)
+        C:/Libs/BigNumber
+        ~/Library/Frameworks/BigNumber)
 
 
 find_path(BIGNUMBER_INCLUDE_DIR bignumber.h

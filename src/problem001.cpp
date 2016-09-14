@@ -10,12 +10,14 @@
  * The remaining numbers are added together and printed to the screen.
  */
 
+#include "main.h"
+
 #include <numeric>
-#include "problem001.h"
 #include "utils.h"
 
 
-int problem001::getAnswer() {
+
+int Problem001::getAnswer() {
     std::vector<int> multiples(999);
     std::iota(std::begin(multiples), std::end(multiples), 1);
     multiples.erase(std::remove_if(multiples.begin(), multiples.end(), [](int i)->bool {return i % 3 != 0 && i % 5 != 0;}), multiples.end());

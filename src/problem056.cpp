@@ -4,8 +4,7 @@
  * 9/12/2016
  */
 
-#include "problem056.h"
-#include "bignumber.h"
+#include "main.h"
 #include "utils.h"
 
 /*
@@ -17,7 +16,7 @@
  * the new value. Finally, return [highest] and print it.
  */
 
-long problem056::getAnswer() {
+long Problem056::getAnswer() {
     int highest = 0;
     BigNumber bn("1");
     for (int a = 2; a < 100; ++a) {

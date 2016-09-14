@@ -3,11 +3,11 @@
  * 10/19/2015
  */
 
-#include "problem003.h"
+#include "main.h"
 
 #include <cmath>
 
-long problem003::getGreatestPrimeFactor(long long num) {
+long Problem003::getGreatestPrimeFactor(long long num) {
     long i = 2;
     while (pow(i, 2) < num) {
         while (num % i == 0) {
@@ -18,6 +18,6 @@ long problem003::getGreatestPrimeFactor(long long num) {
     return num;
 }
 
-long problem003::getAnswer() {
+long Problem003::getAnswer() {
     return getGreatestPrimeFactor(600851475143);
 }

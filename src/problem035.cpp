@@ -3,7 +3,7 @@
  * 12/7/2015
  */
 
-#include "problem035.h"
+#include "main.h"
 #include "utils.h"
 
 #include <algorithm>
@@ -17,7 +17,7 @@
  * Finally, return the count and print it.
  */
 
-bool problem035::isCircularPrime(int n) {
+bool Problem035::isCircularPrime(int n) {
     if (!utils::isPrime(n)) {
         return false;
     }
@@ -32,7 +32,7 @@ bool problem035::isCircularPrime(int n) {
     return true;
 }
 
-int problem035::getAnswer() {
+int Problem035::getAnswer() {
     int count = 0;
     for (int i = 2; i < 1000000; ++i) {
         if (isCircularPrime(i)) {

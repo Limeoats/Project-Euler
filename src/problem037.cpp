@@ -3,7 +3,7 @@
  * 12/7/2015
  */
 
-#include "problem037.h"
+#include "main.h"
 #include "utils.h"
 
 #include <string>
@@ -18,7 +18,7 @@
  * Finally, return the sum and print it.
  */
 
-bool problem037::isTruncatable(int n) {
+bool Problem037::isTruncatable(int n) {
     std::string str = utils::toString(n);
     std::string str2 = str;
     int numDigits = utils::numDigits(n) - 1;
@@ -32,7 +32,7 @@ bool problem037::isTruncatable(int n) {
     return true;
 }
 
-int problem037::getAnswer() {
+int Problem037::getAnswer() {
     int sum = 0;
     for (int i = 11, count = 0; count < 11; i++) {
         if (utils::isPrime(i) && isTruncatable(i)) {

@@ -4,7 +4,7 @@
  * 5/20/2016
 */
 
-#include "problem051.h"
+#include "main.h"
 #include "utils.h"
 
 #include <iostream>
@@ -29,9 +29,9 @@
  * Finally, the results vector is sorted and the first element is printed.
  */
 
-std::vector<long> problem051::calculate(std::vector<problem051::NumberInfo>& numbers, int familySize) {
+std::vector<long> Problem051::calculate(std::vector<Problem051::NumberInfo>& numbers, int familySize) {
     std::vector<long> results;
-    for (problem051::NumberInfo &n : numbers) {
+    for (Problem051::NumberInfo &n : numbers) {
         for (int a = 0; a < 10; ++a) {
             if (n.DigitPositions[a].size() >= 3) {
                 std::string str = std::to_string(n.Number);
@@ -54,17 +54,17 @@ std::vector<long> problem051::calculate(std::vector<problem051::NumberInfo>& num
     }
 }
 
-long problem051::getAnswer() {
+long Problem051::getAnswer() {
     std::vector<long> primes = utils::generatePrimes(1000000);
     std::vector<long>::iterator it = std::find(primes.begin(), primes.end(), utils::closest(primes, 100000));
-    std::vector<problem051::NumberInfo> numbers;
+    std::vector<Problem051::NumberInfo> numbers;
     for (; it < primes.end(); ++it) {
         std::string str = std::to_string(*it);
         std::map<unsigned int, std::vector<unsigned int>> digitLocs;
         for (unsigned int i = 0; i < str.size(); ++i) {
             digitLocs[str[i] - '0'].push_back(i);
         }
-        numbers.push_back(problem051::NumberInfo(std::stoul(str), digitLocs));
+        numbers.push_back(Problem051::NumberInfo(std::stoul(str), digitLocs));
     }
     auto results = calculate(numbers, 8);
     std::sort(results.begin(), results.end(), [](long a, long b) { return a < b; });

@@ -3,7 +3,7 @@
  * 12/7/2015
  */
 
-#include "problem036.h"
+#include "main.h"
 #include "utils.h"
 
 #include <algorithm>
@@ -16,7 +16,7 @@
  * Finally, return the sum and print it out.
  */
 
-bool problem036::isPalindrome(std::string n) {
+bool Problem036::isPalindrome(std::string n) {
     for (int i = n.size() - 1; i >= 0; i--) {
         if (n[i] == n[abs(i - (n.size() - 1))]) {
             continue;
@@ -28,7 +28,7 @@ bool problem036::isPalindrome(std::string n) {
     return true;
 }
 
-int problem036::getAnswer() {
+int Problem036::getAnswer() {
     int sum = 0;
     for (int i = 0; i < 1000000; ++i) {
         if (isPalindrome(utils::toString(i))) {

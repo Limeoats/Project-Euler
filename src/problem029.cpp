@@ -3,7 +3,7 @@
  * 12/3/2015
  */
 
-#include "problem029.h"
+#include "main.h"
 
 #include <unordered_set>
 #include <cmath>
@@ -16,7 +16,7 @@
  * Finally, the size of [results] is returned and printed out.
  */
 
-unsigned int problem029::getAnswer() {
+unsigned int Problem029::getAnswer() {
     std::unordered_set<double> results;
     for (double i = 2; i <= 100; i++) {
         for (double j = 2; j <= 100; j++) {

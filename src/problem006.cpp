@@ -3,11 +3,11 @@
  * 10/19/2015
  */
 
-#include "problem006.h"
+#include "main.h"
 
 #include <cmath>
 
-int problem006::solveProblem(int numNaturalNumbers) {
+int Problem006::solveProblem(int numNaturalNumbers) {
     int sumOfSquares = 0;
     int sumOfNumbers = 0;
     for (int i = 1; i <= numNaturalNumbers; i++) {
@@ -17,6 +17,6 @@ int problem006::solveProblem(int numNaturalNumbers) {
     return ((int)pow(sumOfNumbers, 2) - sumOfSquares);
 }
 
-int problem006::getAnswer() {
+int Problem006::getAnswer() {
     return solveProblem(100);
 }

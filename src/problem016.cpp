@@ -4,14 +4,14 @@
  */
 
 
-#include "problem016.h"
+#include "main.h"
 
 #include <iostream>
 #include <cmath>
 #include <string>
 #include <cstdlib>
 
-long problem016::sumOfDigits(BigNumber number, int power) {
+long Problem016::sumOfDigits(BigNumber number, int power) {
     BigNumber value = number.pow(power);
     long total = 0;
     for (char c : value.getString()) {
@@ -20,7 +20,7 @@ long problem016::sumOfDigits(BigNumber number, int power) {
     return total;
 }
 
-long problem016::getAnswer() {
+long Problem016::getAnswer() {
     BigNumber b("2");
     return sumOfDigits(b, 1000);
 }

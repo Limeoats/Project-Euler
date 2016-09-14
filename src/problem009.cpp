@@ -3,11 +3,11 @@
  * 10/19/2015
  */
 
-#include "problem009.h"
+#include "main.h"
 
 #include <cmath>
 
-double problem009::getProductOfPythagoreanTriplet(int sumOfABC) {
+double Problem009::getProductOfPythagoreanTriplet(int sumOfABC) {
     for (int a = 1; a < 499; a++) {
         for (int b = 1; b < 499; b++) {
             double c = sqrt(pow(a, 2) + pow(b, 2));
@@ -19,6 +19,6 @@ double problem009::getProductOfPythagoreanTriplet(int sumOfABC) {
     return -1;
 }
 
-int problem009::getAnswer() {
+int Problem009::getAnswer() {
     return getProductOfPythagoreanTriplet(1000);
 }

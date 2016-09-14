@@ -3,7 +3,7 @@
  * 12/8/2015
  */
 
-#include "problem039.h"
+#include "main.h"
 
 #include <cmath>
 #include <iostream>
@@ -33,7 +33,7 @@
  * Finally, return [highest] and print it.
  */
 
-int problem039::getAnswer() {
+int Problem039::getAnswer() {
     int hns = 0;
     int highest = 0;
     for (int i = 2; i <= 1000; i += 2) {

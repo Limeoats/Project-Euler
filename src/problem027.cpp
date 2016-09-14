@@ -3,7 +3,7 @@
  * 11/23/2015
  */
 
-#include "problem027.h"
+#include "main.h"
 
 #include <math.h>
 #include "utils.h"
@@ -19,7 +19,7 @@
  * is returned and printed.
  */
 
-long problem027::getAnswer() {
+long Problem027::getAnswer() {
     long hA = 0, hB = 0, hPrimes = 0;
     for (int i = -999; i < 1000; i++) {
         for (int j = -999; j < 1000; j++) {

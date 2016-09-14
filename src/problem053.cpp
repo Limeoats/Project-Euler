@@ -4,7 +4,7 @@
  * 9/7/2016
 */
 
-#include "problem053.h"
+#include "main.h"
 #include "utils.h"
 
 /*
@@ -15,7 +15,7 @@
  * and print it.
  */
 
-unsigned int problem053::getAnswer() {
+unsigned int Problem053::getAnswer() {
     unsigned int c = 0;
     for (unsigned int n = 23; n <= 100; ++n) {
         for (unsigned int r = 0; r <= n; ++r) {

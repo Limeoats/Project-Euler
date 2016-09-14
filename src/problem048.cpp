@@ -3,7 +3,7 @@
  * 12/18/2015
  */
 
-#include "problem048.h"
+#include "main.h"
 
 /*
  * Due to the fact that we only need to add
@@ -15,7 +15,7 @@
  * the answer, return it and print it.
  */
 
-long long problem048::getAnswer() {
+long long Problem048::getAnswer() {
     const long long MOD = 10000000000LL;
     long long result = 0;
     for (int i = 1; i <= 1000; ++i) {

@@ -3,7 +3,8 @@
  * 11/23/2015
  */
 
-#include "problem028.h"
+#include "main.h"
+
 #include <cmath>
 
 /*
@@ -21,7 +22,7 @@
  * Add each result to [total] and return it;
  */
 
-unsigned int problem028::getAnswer() {
+unsigned int Problem028::getAnswer() {
     return ([](unsigned int total)->unsigned int {
         for (int i = 2; i < 1002; ++i)
             total += (i & 1 == 1) ? pow(i, 2) : 3 * (pow(i, 2) + 1);

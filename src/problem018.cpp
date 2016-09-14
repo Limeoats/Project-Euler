@@ -4,7 +4,7 @@
  */
 
 
-#include "problem018.h"
+#include "main.h"
 #include "utils.h"
 
 #include <sstream>
@@ -14,7 +14,7 @@
 #include <algorithm>
 
 
-int problem018::getMaxSum() {
+int Problem018::getMaxSum() {
     std::vector<std::string> lines;
     std::string line;
     std::ifstream in("data/problem18_data.txt");
@@ -60,6 +60,6 @@ int problem018::getMaxSum() {
 }
 
 
-int problem018::getAnswer() {
+int Problem018::getAnswer() {
     return getMaxSum();
 }

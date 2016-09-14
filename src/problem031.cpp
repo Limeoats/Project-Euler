@@ -3,7 +3,7 @@
  * 12/3/2015
  */
 
-#include "problem031.h"
+#include "main.h"
 
 /*
  * [t] is a list of each denomination of English currency.
@@ -14,7 +14,7 @@
  * number of combinations and that total is printed.
  */
 
-unsigned int problem031::denomFunc(int n, std::vector<int> &denoms) {
+unsigned int Problem031::denomFunc(int n, std::vector<int> &denoms) {
     if (denoms.empty() || n < 0)
         return 0;
     else if (n == 0)
@@ -26,7 +26,7 @@ unsigned int problem031::denomFunc(int n, std::vector<int> &denoms) {
     }
 }
 
-unsigned int problem031::getAnswer() {
+unsigned int Problem031::getAnswer() {
     std::vector<int> t = {1,2,5,10,20,50,100,200};
     return denomFunc(200, t);
 }

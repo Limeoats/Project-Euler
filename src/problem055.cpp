@@ -4,8 +4,8 @@
  * 9/8/2016
 */
 
+#include "main.h"
 #include "utils.h"
-#include "problem055.h"
 
 /*
  * Initialize a counter [c] to 0. Loop [i] from
@@ -14,7 +14,7 @@
  * print it.
  */
 
-int problem055::getAnswer() {
+int Problem055::getAnswer() {
     int c = 0;
     for (unsigned int i = 10; i < 10000; ++i) {
         c += utils::isLychrel(i);

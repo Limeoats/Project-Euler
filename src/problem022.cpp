@@ -3,12 +3,12 @@
  * 11/19/2015
  */
 
-#include "problem022.h"
+#include "main.h"
 #include "utils.h"
 
 #include <fstream>
 
-int problem022::getAnswer() {
+int Problem022::getAnswer() {
     std::ifstream in("data/problem22_data.txt");
     std::stringstream ss;
     ss << in.rdbuf();

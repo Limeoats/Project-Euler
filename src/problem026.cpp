@@ -3,7 +3,7 @@
  * 11/23/2015
  */
 
-#include "problem026.h"
+#include "main.h"
 
 /*
  *  The idea here is that the repeating sequence can't be
@@ -13,7 +13,7 @@
  *  repeating sequence.
  */
 
-int problem026::getAnswer() {
+int Problem026::getAnswer() {
     int highestCount;
     int highestDenom;
     for (int i = 2; i < 1000; i++) {

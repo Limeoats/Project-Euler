@@ -4,10 +4,10 @@
  * 9/6/2016
 */
 
+#include "main.h"
+
 #include <algorithm>
 #include <string>
-
-#include "problem052.h"
 
 /*
  * With [a] starting at 1, begin a loop. First, double [a] to get
@@ -18,17 +18,17 @@
  * return [a] as the lowest number and print it.
  */
 
-int problem052::getAnswer() {
-    int a = 1;
+int Problem052::getAnswer() {
+    unsigned int a = 1;
     while (true) {
         std::string original = std::to_string(2 * a);
-        for (int i = 3; i < 7; ++i) {
+        for (unsigned int i = 3; i < 7; ++i) {
             std::string next = std::to_string(i * a);
             if (!std::is_permutation(original.begin(), original.end(), next.begin())) {
                 break;
             }
             if (i == 6) {
-                return std::stoi(original) / 3;
+                return std::stoi(original) / 2;
             }
         }
         ++a;

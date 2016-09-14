@@ -3,20 +3,20 @@
  * 10/22/2015
  */
 
-#include "problem013.h"
+#include "main.h"
 
 #include <vector>
 #include <iostream>
 
 #include "utils.h"
 
-std::string problem013::numberToString(int number) {
+std::string Problem013::numberToString(int number) {
     std::stringstream ss;
     ss << number;
     return ss.str();
 }
 
-std::string problem013::getFirstNDigitsFromSumOfNumbers(int n, std::string nums) {
+std::string Problem013::getFirstNDigitsFromSumOfNumbers(int n, std::string nums) {
     std::vector<std::string> numbers = utils::split(nums, ' ');
     int carry = 0;
     std::string result = "";
@@ -32,11 +32,11 @@ std::string problem013::getFirstNDigitsFromSumOfNumbers(int n, std::string nums)
     result = std::string(result.rbegin(), result.rend());
     std::string answer = numberToString(carry);
     answer += (result);
-    return answer;
+    return answer.substr(0, n);
 }
 
 
-std::string problem013::getAnswer() {
+std::string Problem013::getAnswer() {
     std::string str = "37107287533902102798797998220837590246510135740250 "
             "46376937677490009712648124896970078050417018260538 "
             "74324986199524741059474233309513058123726617309629 "

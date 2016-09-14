@@ -3,7 +3,7 @@
  * 12/9/2015
  */
 
-#include "problem040.h"
+#include "main.h"
 #include "utils.h"
 
 #include <sstream>
@@ -20,7 +20,7 @@
 
 std::string c = "";
 
-int problem040::getDigitInChampernowneConstant(int n) {
+int Problem040::getDigitInChampernowneConstant(int n) {
     if (c.empty()) {
         std::stringstream ss;
         for (int i = 1; i < 1000000; i++) {
@@ -31,7 +31,7 @@ int problem040::getDigitInChampernowneConstant(int n) {
     return c[n-1] - '0';
 }
 
-int problem040::getAnswer() {
+int Problem040::getAnswer() {
     int n = 1, total = 1;
     for (int i = 0; i < 6; i++) {
         total *= getDigitInChampernowneConstant((n *= 10));

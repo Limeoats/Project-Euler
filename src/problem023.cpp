@@ -3,15 +3,16 @@
  * 11/20/2015
  */
 
+#include "main.h"
+#include "utils.h"
+
 #include <vector>
 #include <numeric>
 #include <algorithm>
 #include <iostream>
 
-#include "utils.h"
-#include "problem023.h"
 
-long problem023::sumOfProperDivisors(int n) {
+long Problem023::sumOfProperDivisors(int n) {
     int sum = 0;
     for (int i = 1; i <= (n / 2); i++) {
         if (n % i == 0) {
@@ -21,11 +22,11 @@ long problem023::sumOfProperDivisors(int n) {
     return sum;
 }
 
-bool problem023::isAbundant(long n) {
+bool Problem023::isAbundant(long n) {
     return sumOfProperDivisors(n) > n;
 }
 
-long long problem023::getAnswer() {
+long long Problem023::getAnswer() {
     std::vector<int> abundantNumbers;
     for (int i = 1; i < 20161; i++) {
         if (isAbundant(i)) {

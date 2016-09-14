@@ -3,11 +3,11 @@
  * 11/19/2015
  */
 
-#include "problem020.h"
+#include "main.h"
 
 #include "utils.h"
 
-BigNumber problem020::factorial(int n) {
+BigNumber Problem020::factorial(int n) {
     BigNumber b("1");
     for (int i = 1; i <= n; i++) {
         b  *= BigNumber(utils::toString(i));
@@ -15,7 +15,7 @@ BigNumber problem020::factorial(int n) {
     return b;
 }
 
-long problem020::getAnswer() {
+long Problem020::getAnswer() {
     BigNumber b = factorial(100);
     long sum = 0;
     for (int i = 0; i < b.getString().size(); i++) {

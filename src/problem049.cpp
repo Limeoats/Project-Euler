@@ -3,7 +3,7 @@
  * 12/21/2015
  */
 
-#include "problem049.h"
+#include "main.h"
 #include "utils.h"
 
 #include <vector>
@@ -22,7 +22,7 @@
  * all together, convert them to a string, and return.
  */
 
-std::string problem049::getAnswer() {
+std::string Problem049::getAnswer() {
     std::vector<long> allPrimes = utils::generatePrimes(9999);
     bool exampleFound = false;
     for (long p : allPrimes) {

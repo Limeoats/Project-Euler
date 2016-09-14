@@ -3,7 +3,7 @@
  * 12/7/2015
  */
 
-#include "problem034.h"
+#include "main.h"
 #include "utils.h"
 
 #include <vector>
@@ -18,7 +18,7 @@
  * the sum of each item in the list.
  */
 
-int problem034::getAnswer() {
+int Problem034::getAnswer() {
     std::vector<int> nums;
     int sum = 0;
     for (int i = 3; i < 41000; i++) {
