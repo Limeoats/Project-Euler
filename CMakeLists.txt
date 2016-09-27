@@ -5,7 +5,13 @@
 cmake_minimum_required(VERSION 2.8)
 project(Project_Euler)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+if (WIN32)
+    set(CPP_VERSION -std=gnu++14)
+else()
+    set(CPP_VERSION -std=c++14)
+endif()
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CPP_VERSION}")
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
