@@ -155,6 +155,8 @@ namespace utils {
     //  Returns:
     //      The sum of the digits
     int digitSum(std::string number);
+
+    char asciiToChar(int ascii);
 }
 
 #endif

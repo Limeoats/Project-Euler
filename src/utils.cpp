@@ -109,3 +109,7 @@ int utils::digitSum(std::string number) {
     } 
     return sum;
 }
+
+char utils::asciiToChar(int ascii) {
+    return char(ascii);
+}

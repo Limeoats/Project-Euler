@@ -1,7 +1,7 @@
 /*
  * Problem 58: Spiral primes
  * By: Mark Guerra
- * 9/13/2016
+ * 11/2/2016
 */
 
 #include "main.h"

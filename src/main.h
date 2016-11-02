@@ -352,4 +352,9 @@ public:
     int getAnswer();
 };
 
+class Problem059 {
+public:
+    int getAnswer();
+};
+
 #endif
