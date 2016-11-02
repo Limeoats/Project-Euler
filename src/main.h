@@ -347,4 +347,9 @@ public:
     int getAnswer();
 };
 
+class Problem058 {
+public:
+    int getAnswer();
+};
+
 #endif
