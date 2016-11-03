@@ -4,6 +4,7 @@
  * 11/2/2016
 */
 
+#include <math.h>
 #include "main.h"
 #include "utils.h"
 

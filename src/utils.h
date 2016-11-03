@@ -157,6 +157,8 @@ namespace utils {
     int digitSum(std::string number);
 
     char asciiToChar(int ascii);
+    
+    int charToAscii(char c);
 }
 
 #endif
