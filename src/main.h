@@ -355,7 +355,12 @@ public:
 class Problem059 {
 public:
     int getAnswer();
+};
 
+class Problem060 {
+public:
+    std::vector<int> getMatchingVals(std::map<int, std::vector<int>> &pairs, std::vector<int> vals);
+    int getAnswer();
 };
 
 #endif

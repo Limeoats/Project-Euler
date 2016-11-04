@@ -65,6 +65,11 @@ namespace utils {
         return n == reverseNumber(n);
     }
 
+    template <typename T>
+    inline long concat(const T &x, const T &y) {
+        return std::stol(std::string(std::to_string(x) + std::to_string(y)));
+    }
+
     //bool isPrime(int num)
     //Parameters:
     //  num: the number being checked
@@ -159,6 +164,8 @@ namespace utils {
     char asciiToChar(int ascii);
     
     int charToAscii(char c);
+
+
 }
 
 #endif
