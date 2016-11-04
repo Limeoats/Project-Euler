@@ -11,12 +11,6 @@
  *
  */
 
-std::vector<int> Problem060::getMatchingVals(std::map<int, std::vector<int>> &pairs, std::vector<int> vals) {
-    for (int v : vals) {
-
-    }
-}
-
 int Problem060::getAnswer() {
     const int LIMIT = 10000;
     const int NUM_PRIMES = 4;
@@ -34,12 +28,33 @@ int Problem060::getAnswer() {
         }
         goodPairs.insert(std::pair<int, std::vector<int>>(primes[x], tmp));
     }
-    std::vector<int> results;
-    for (int p : primes) {
-        for (int v : goodPairs[p]) {
-
+    std::vector<int> nums;
+    int pCount = 0;
+    int Z = primes[pCount], X;
+    int M = NUM_PRIMES;
+    while (true) {
+        X = Z;
+        nums.push_back(X);
+        std::vector<int> L = goodPairs[X];
+        for (int it : L) {
+            if (goodPairs[it].size() >= M - 1) { //MIGHT HAVE TO FIX THIS AND COMPARE THESE M - 1 NUMBERS TO L'S
+                int Y = it;
+                if (M - 1 == 1) {
+                    int sum = 0;
+                    for (int i = 0; i < nums.size(); ++i) {
+                        sum += nums[i];
+                    }
+                    return sum;
+                }
+                else {
+                    X = Y;
+                    M = M - 1;
+                    break;
+                }
+            }
         }
+        Z  = primes[++pCount];
+        nums.clear();
+        continue;
     }
-    return 0;
-
 }
