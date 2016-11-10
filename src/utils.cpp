@@ -4,7 +4,7 @@
 
 #include "utils.h"
 
-bool utils::isPrime(int num) {
+bool utils::isPrime(unsigned long long num) {
     if (num <= 1)
         return false;
     if ((num & 1) == 0)

@@ -66,8 +66,8 @@ namespace utils {
     }
 
     template <typename T>
-    inline long concat(const T &x, const T &y) {
-        return std::stol(std::string(std::to_string(x) + std::to_string(y)));
+    inline unsigned long long concat(const T &x, const T &y) {
+        return std::stoull(std::string(std::to_string(x) + std::to_string(y)));
     }
 
     //bool isPrime(int num)
@@ -75,7 +75,7 @@ namespace utils {
     //  num: the number being checked
     //Returns:
     //  true if num is prime, otherwise false
-    bool isPrime(int num);
+    bool isPrime(unsigned long long num);
 
     //int factorial(int n)
     //Parameters:
