@@ -1,4 +1,5 @@
-/* Problem 4: Largest palindrome product
+/*
+ * Problem 4: Largest palindrome product
  * By: Mark Guerra
  * 10/19/2015
  */
@@ -38,6 +39,6 @@ int Problem004::getLargestPalindrome() {
     return list[std::distance(list.begin(), max_element(std::begin(list), std::end(list)))];
 }
 
-int Problem004::getAnswer() {
-    return getLargestPalindrome();
+std::string Problem004::getAnswer() {
+    return std::to_string(getLargestPalindrome());
 }

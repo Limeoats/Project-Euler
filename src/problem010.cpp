@@ -1,4 +1,5 @@
-/* Problem 10: Summation of primes
+/*
+ * Problem 10: Summation of primes
  * By: Mark Guerra
  * 10/19/2015
  */
@@ -16,6 +17,6 @@ long Problem010::getSumOfPrimesBelowNum(int num) {
     return total;
 }
 
-long Problem010::getAnswer() {
-    return getSumOfPrimesBelowNum(2000000);
+std::string Problem010::getAnswer() {
+    return std::to_string(getSumOfPrimesBelowNum(2000000));
 }

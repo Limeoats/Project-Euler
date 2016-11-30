@@ -18,7 +18,7 @@
  * increment [c]. Finally, return and print [c].
  */
 
-int Problem057::getAnswer() {
+std::string Problem057::getAnswer() {
     BigNumber n("3"), d("2");
     int c = 0;
     for (int i = 1; i < 1000; ++i) {
@@ -26,5 +26,5 @@ int Problem057::getAnswer() {
         d = n - d;
         c += n.digits() > d.digits();
     }
-    return c;
+    return std::to_string(c);
 }

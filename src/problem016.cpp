@@ -1,4 +1,5 @@
-/* Problem 16: Power digit sum
+/*
+ * Problem 16: Power digit sum
  * By: Mark Guerra
  * 11/5/2015
  */
@@ -20,7 +21,7 @@ long Problem016::sumOfDigits(BigNumber number, int power) {
     return total;
 }
 
-long Problem016::getAnswer() {
-    BigNumber b("2");
-    return sumOfDigits(b, 1000);
+std::string Problem016::getAnswer() {
+    BigNumber b = 2;
+    return std::to_string(sumOfDigits(b, 1000));
 }

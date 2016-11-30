@@ -1,4 +1,5 @@
-/* Problem 26: Reciprocal cycles
+/*
+ * Problem 26: Reciprocal cycles
  * By: Mark Guerra
  * 11/23/2015
  */
@@ -13,7 +14,7 @@
  *  repeating sequence.
  */
 
-int Problem026::getAnswer() {
+std::string Problem026::getAnswer() {
     int highestCount;
     int highestDenom;
     for (int i = 2; i < 1000; i++) {
@@ -30,5 +31,5 @@ int Problem026::getAnswer() {
             remainder *= 10;
         }
     }
-    return highestDenom;
+    return std::to_string(highestDenom);
 }

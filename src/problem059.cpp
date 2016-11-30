@@ -29,7 +29,7 @@
  * to [sum]. Return the result and print it.
  */
 
-int Problem059::getAnswer() {
+std::string Problem059::getAnswer() {
     std::ifstream in("data/problem59_data.txt");
     std::stringstream ss;
     ss << in.rdbuf();
@@ -86,7 +86,7 @@ int Problem059::getAnswer() {
                         for (int i = 0; i < result.size(); ++i) {
                             sum += utils::charToAscii(result[i]);
                         }
-                        return sum;
+                        return std::to_string(sum);
                     }
                     result.clear();
                 } else {

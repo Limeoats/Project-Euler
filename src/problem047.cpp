@@ -29,7 +29,7 @@ int Problem047::getDistinctPrimeFactors(int n, std::vector<long> primes) {
     return results;
 }
 
-int Problem047::getAnswer() {
+std::string Problem047::getAnswer() {
     std::vector<long> primes = utils::generatePrimes(1000);
     int counter = 0;
     int result = 0;
@@ -47,7 +47,7 @@ int Problem047::getAnswer() {
             result = 0;
         }
         if (counter == 4) {
-            return result;
+            return std::to_string(result);
         }
     }
 }

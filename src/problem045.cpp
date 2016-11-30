@@ -25,12 +25,12 @@ bool Problem045::isTriangle(int x) {
     return t == int(t);
 }
 
-long Problem045::getAnswer() {
+std::string Problem045::getAnswer() {
     int n = 286;
     while (true) {
         int hex = (2 * n - 1) * n;
         if (isPentagonal(hex) && isTriangle(hex)) {
-            return hex;
+            return std::to_string(hex);
         }
         ++n;
     }

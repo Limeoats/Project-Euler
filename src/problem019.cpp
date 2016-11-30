@@ -1,4 +1,5 @@
-/* Problem 19: Counting Sundays
+/*
+ * Problem 19: Counting Sundays
  * By: Mark Guerra
  * 11/17/2015
  */
@@ -43,6 +44,6 @@ int Problem019::getNumSundaysBetweenDates() {
     return numSundays;
 }
 
-int Problem019::getAnswer() {
-    return getNumSundaysBetweenDates();
+std::string Problem019::getAnswer() {
+    return std::to_string(getNumSundaysBetweenDates());
 }

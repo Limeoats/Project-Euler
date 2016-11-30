@@ -1,4 +1,5 @@
-/* Problem 9: Special Pythagorean triplet
+/*
+ * Problem 9: Special Pythagorean triplet
  * By: Mark Guerra
  * 10/19/2015
  */
@@ -19,6 +20,6 @@ double Problem009::getProductOfPythagoreanTriplet(int sumOfABC) {
     return -1;
 }
 
-int Problem009::getAnswer() {
-    return getProductOfPythagoreanTriplet(1000);
+std::string Problem009::getAnswer() {
+    return std::to_string(getProductOfPythagoreanTriplet(1000));
 }

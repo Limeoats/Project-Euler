@@ -1,4 +1,5 @@
-/* Problem 21: Amicable number
+/*
+ * Problem 21: Amicable number
  * By: Mark Guerra
  * 11/19/2015
  */
@@ -23,12 +24,12 @@ bool Problem021::isAmicable(int a) {
     return sumOfProperDivisors(ans) == a && ans != a;
 }
 
-long Problem021::getAnswer() {
+std::string Problem021::getAnswer() {
     std::vector<int> amicableNumbers;
     for (int i = 1; i < 10000; i++) {
         if (isAmicable(i)) {
             amicableNumbers.push_back(i);
         }
     }
-    return std::accumulate(amicableNumbers.begin(), amicableNumbers.end(), 0);
+    return std::to_string(std::accumulate(amicableNumbers.begin(), amicableNumbers.end(), 0));
 }

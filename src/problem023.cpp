@@ -1,4 +1,5 @@
-/* Problem 23: Non-abundant sums
+/*
+ * Problem 23: Non-abundant sums
  * By: Mark Guerra
  * 11/20/2015
  */
@@ -26,7 +27,7 @@ bool Problem023::isAbundant(long n) {
     return sumOfProperDivisors(n) > n;
 }
 
-long long Problem023::getAnswer() {
+std::string Problem023::getAnswer() {
     std::vector<int> abundantNumbers;
     for (int i = 1; i < 20161; i++) {
         if (isAbundant(i)) {
@@ -48,5 +49,5 @@ long long Problem023::getAnswer() {
             total += i;
         }
     }
-    return total;
+    return std::to_string(total);
 }

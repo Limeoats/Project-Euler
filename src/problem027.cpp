@@ -1,4 +1,5 @@
-/* Problem 27: Quadratic primes
+/*
+ * Problem 27: Quadratic primes
  * By: Mark Guerra
  * 11/23/2015
  */
@@ -19,7 +20,7 @@
  * is returned and printed.
  */
 
-long Problem027::getAnswer() {
+std::string Problem027::getAnswer() {
     long hA = 0, hB = 0, hPrimes = 0;
     for (int i = -999; i < 1000; i++) {
         for (int j = -999; j < 1000; j++) {
@@ -39,5 +40,5 @@ long Problem027::getAnswer() {
             }
         }
     }
-    return hA * hB;
+    return std::to_string(hA * hB);
 }

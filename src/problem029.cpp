@@ -1,4 +1,5 @@
-/* Problem 29: Distinct powers
+/*
+ * Problem 29: Distinct powers
  * By: Mark Guerra
  * 12/3/2015
  */
@@ -16,12 +17,12 @@
  * Finally, the size of [results] is returned and printed out.
  */
 
-unsigned int Problem029::getAnswer() {
+std::string Problem029::getAnswer() {
     std::unordered_set<double> results;
     for (double i = 2; i <= 100; i++) {
         for (double j = 2; j <= 100; j++) {
             results.insert(pow(i, j));
         }
     }
-    return results.size();
+    return std::to_string(results.size());
 }

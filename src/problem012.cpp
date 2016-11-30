@@ -1,4 +1,5 @@
-/* Problem 12: Highly divisible triangular number
+/*
+ * Problem 12: Highly divisible triangular number
  * By: Mark Guerra
  * 10/20/2015
  */
@@ -36,6 +37,6 @@ int Problem012::getFirstTriangleNumberWithGreaterThanNDivisors(int n) {
     return -1;
 }
 
-int Problem012::getAnswer() {
-    return getFirstTriangleNumberWithGreaterThanNDivisors(500);
+std::string Problem012::getAnswer() {
+    return std::to_string(getFirstTriangleNumberWithGreaterThanNDivisors(500));
 }

@@ -16,9 +16,9 @@
  * the new value. Finally, return [highest] and print it.
  */
 
-long Problem056::getAnswer() {
+std::string Problem056::getAnswer() {
     int highest = 0;
-    BigNumber bn("1");
+    BigNumber bn = 1;
     for (int a = 2; a < 100; ++a) {
         bn.setString("1");
         for (int b = 1; b < 100; ++b) {
@@ -26,7 +26,7 @@ long Problem056::getAnswer() {
             highest = std::max(utils::digitSum(bn.getString()), highest);
         }
     }
-    return highest;
+    return std::to_string(highest);
 }
 
 

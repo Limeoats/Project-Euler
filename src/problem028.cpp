@@ -1,4 +1,5 @@
-/* Problem 28: Number spiral diagonals
+/*
+ * Problem 28: Number spiral diagonals
  * By: Mark Guerra
  * 11/23/2015
  */
@@ -22,10 +23,10 @@
  * Add each result to [total] and return it;
  */
 
-unsigned int Problem028::getAnswer() {
-    return ([](unsigned int total)->unsigned int {
+std::string Problem028::getAnswer() {
+    return std::to_string(([](unsigned int total)->unsigned int {
         for (int i = 2; i < 1002; ++i)
             total += (i & 1 == 1) ? pow(i, 2) : 3 * (pow(i, 2) + 1);
         return total;
-    }(1));
+    }(1)));
 }

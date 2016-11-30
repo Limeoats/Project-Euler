@@ -1,4 +1,5 @@
-/* Problem 8: Largest product in a series
+/*
+ * Problem 8: Largest product in a series
  * By: Mark Guerra
  * 10/19/2015
  */
@@ -45,6 +46,6 @@ long Problem008::getGreatestProduct(int howMany) {
 }
 
 
-long Problem008::getAnswer() {
-    return getGreatestProduct(13);
+std::string Problem008::getAnswer() {
+    return std::to_string(getGreatestProduct(13));
 }

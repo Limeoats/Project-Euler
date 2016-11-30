@@ -6,303 +6,308 @@
 
 #include "bignumber.h"
 
-class Problem001 {
+class IAnswer {
 public:
-    int getAnswer();
+    virtual std::string getAnswer() = 0;
 };
 
-class Problem002 {
+class Problem001 : public IAnswer {
+public:
+    std::string getAnswer();
+};
+
+class Problem002 : public IAnswer {
 public:
     bool isOdd(int i);
     std::vector<int> getFibNumbers(int max);
-    int getAnswer();
+    std::string getAnswer();
 };
 
-class Problem003 {
+class Problem003 : public IAnswer {
 public:
     long getGreatestPrimeFactor(long long num);
-    long getAnswer();
+    std::string getAnswer();
 };
 
-class Problem004 {
+class Problem004 : public IAnswer {
 public:
     bool isPalindrome(int num);
     int getLargestPalindrome();
-    int getAnswer();
+    std::string getAnswer();
 };
 
-class Problem005 {
+class Problem005 : public IAnswer {
 public:
     int getSmallestNumberDividedByRange(int begin, int end);
-    int getAnswer();
+    std::string getAnswer();
 };
 
-class Problem006 {
+class Problem006 : public IAnswer {
 public:
     int solveProblem(int numNaturalNumbers);
-    int getAnswer();
+    std::string getAnswer();
 };
 
-class Problem007 {
+class Problem007 : public IAnswer {
 public:
     int getNthPrimeNumber(int n);
-    int getAnswer();
+    std::string getAnswer();
 };
 
-class Problem008 {
+class Problem008 : public IAnswer {
 public:
     long getGreatestProduct(int howMany);
-    long getAnswer();
+    std::string getAnswer();
 };
 
-class Problem009 {
+class Problem009 : public IAnswer {
 public:
     double getProductOfPythagoreanTriplet(int sumOfABC);
-    int getAnswer();
+    std::string getAnswer();
 };
 
-class Problem010 {
+class Problem010 : public IAnswer {
 public:
     long getSumOfPrimesBelowNum(int num);
-    long getAnswer();
+    std::string getAnswer();
 };
 
-class Problem011 {
+class Problem011 : public IAnswer {
 public:
     long getGreatestProductOfXAdjacentNumbers(int x);
-    long getAnswer();
+    std::string getAnswer();
 };
 
-class Problem012 {
+class Problem012 : public IAnswer {
 public:
     int getNumberOfDivisors(int x);
     int getFirstTriangleNumberWithGreaterThanNDivisors(int n);
-    int getAnswer();
+    std::string getAnswer();
 };
 
-class Problem013 {
+class Problem013 : public IAnswer {
 public:
     std::string numberToString(int number);
     std::string getFirstNDigitsFromSumOfNumbers(int n, std::string nums);
     std::string getAnswer();
 };
 
-class Problem014 {
+class Problem014 : public IAnswer {
 public:
     long getNextNumInSequence(long curNum);
     int getStartingNumberUnder(int max);
-    long getAnswer();
+    std::string getAnswer();
 };
 
-class Problem015 {
+class Problem015 : public IAnswer {
 public:
     long calculateNumRoutes(int gridSize);
-    long getAnswer();
+    std::string getAnswer();
 };
 
-class Problem016 {
+class Problem016 : public IAnswer {
 public:
     long sumOfDigits(BigNumber number, int power);
-    long getAnswer();
+    std::string getAnswer();
 };
 
-class Problem017 {
+class Problem017 : public IAnswer {
 public:
     long getNumLetters(int startNum, int endNum);
-    long getAnswer();
+    std::string getAnswer();
 };
 
-class Problem018 {
+class Problem018 : public IAnswer {
 public:
     int getMaxSum();
-    int getAnswer();
+    std::string getAnswer();
 };
 
-class Problem019 {
+class Problem019 : public IAnswer {
 public:
     int getDayOfWeek(int year, int month, int day);
     int getDaysInMonth(int month, int year);
     int getNumSundaysBetweenDates();
-    int getAnswer();
+    std::string getAnswer();
 };
 
-class Problem020 {
+class Problem020 : public IAnswer {
 public:
     BigNumber factorial(int n);
-    long getAnswer();
+    std::string getAnswer();
 };
 
-class Problem021 {
+class Problem021 : public IAnswer {
 public:
     long sumOfProperDivisors(int n);
     bool isAmicable(int a);
-    long getAnswer();
+    std::string getAnswer();
 };
 
-class Problem022 {
+class Problem022 : public IAnswer {
 public:
     inline int getAlphabetPos(char c) { return (c - 'a' + 1);}
-    int getAnswer();
+    std::string getAnswer();
 };
 
-class Problem023 {
+class Problem023 : public IAnswer {
 public:
     long sumOfProperDivisors(int n);
     bool isAbundant(long n);
-    long long getAnswer();
+    std::string getAnswer();
 };
 
-class Problem024 {
+class Problem024 : public IAnswer {
 public:
     std::vector<std::string> getPermutations(std::vector<int> numbers, int limit = 0);
     std::string getAnswer();
 };
 
-class Problem025 {
-public:
-    int getAnswer();
-};
-
-class Problem026 {
-public:
-    int getAnswer();
-};
-
-class Problem027 {
-public:
-    long getAnswer();
-};
-
-class Problem028 {
-public:
-    unsigned int getAnswer();
-};
-
-class Problem029 {
-public:
-    unsigned int getAnswer();
-};
-
-class Problem030 {
-public:
-    long getAnswer();
-};
-
-class Problem031 {
-public:
-    unsigned int denomFunc(int n, std::vector<int> &denoms);
-    unsigned int getAnswer();
-};
-
-class Problem032 {
-public:
-    bool isPandigital(std::string n);
-    long getAnswer();
-};
-
-class Problem033 {
-public:
-    int getAnswer();
-};
-
-class Problem034 {
-public:
-    int getAnswer();
-};
-
-class Problem035 {
-public:
-    bool isCircularPrime(int n);
-    int getAnswer();
-};
-
-class Problem036 {
-public:
-    bool isPalindrome(std::string n);
-    int getAnswer();
-};
-
-class Problem037 {
-public:
-    bool isTruncatable(int n);
-    int getAnswer();
-};
-
-class Problem038 {
-public:
-    bool isPandigital(std::string n);
-    int getAnswer();
-};
-
-class Problem039 {
-public:
-    int getAnswer();
-};
-
-class Problem040 {
-public:
-    int getDigitInChampernowneConstant(int n);
-    int getAnswer();
-};
-
-class Problem041 {
-public:
-    bool isPandigital(long n);
-    long getAnswer();
-};
-
-class Problem042 {
-public:
-    inline int getAlphabetPos(char c) { return (c - 'a' + 1);}
-    int getAnswer();
-};
-
-class Problem043 {
-public:
-    BigNumber getAnswer();
-};
-
-class Problem044 {
-public:
-    bool isPentagonal(int x);
-    int pentagonalNumber(int n);
-    int getAnswer();
-};
-
-class Problem045 {
-public:
-    bool isPentagonal(int x);
-    bool isTriangle(int x);
-    long getAnswer();
-};
-
-class Problem046 {
-public:
-    int getAnswer();
-};
-
-class Problem047 {
-public:
-    int getDistinctPrimeFactors(int n, std::vector<long> primes);
-    int getAnswer();
-};
-
-class Problem048 {
-public:
-    long long getAnswer();
-};
-
-class Problem049 {
+class Problem025 : public IAnswer {
 public:
     std::string getAnswer();
 };
 
-class Problem050 {
+class Problem026 : public IAnswer {
 public:
-    int getAnswer();
+    std::string getAnswer();
 };
 
-class Problem051 {
+class Problem027 : public IAnswer {
+public:
+    std::string getAnswer();
+};
+
+class Problem028 : public IAnswer {
+public:
+    std::string getAnswer();
+};
+
+class Problem029 : public IAnswer {
+public:
+    std::string getAnswer();
+};
+
+class Problem030 : public IAnswer {
+public:
+    std::string getAnswer();
+};
+
+class Problem031 : public IAnswer {
+public:
+    unsigned int denomFunc(int n, std::vector<int> &denoms);
+    std::string getAnswer();
+};
+
+class Problem032 : public IAnswer {
+public:
+    bool isPandigital(std::string n);
+    std::string getAnswer();
+};
+
+class Problem033 : public IAnswer {
+public:
+    std::string getAnswer();
+};
+
+class Problem034 : public IAnswer {
+public:
+    std::string getAnswer();
+};
+
+class Problem035 : public IAnswer {
+public:
+    bool isCircularPrime(int n);
+    std::string getAnswer();
+};
+
+class Problem036 : public IAnswer {
+public:
+    bool isPalindrome(std::string n);
+    std::string getAnswer();
+};
+
+class Problem037 : public IAnswer {
+public:
+    bool isTruncatable(int n);
+    std::string getAnswer();
+};
+
+class Problem038 : public IAnswer {
+public:
+    bool isPandigital(std::string n);
+    std::string getAnswer();
+};
+
+class Problem039 : public IAnswer {
+public:
+    std::string getAnswer();
+};
+
+class Problem040 : public IAnswer {
+public:
+    int getDigitInChampernowneConstant(int n);
+    std::string getAnswer();
+};
+
+class Problem041 : public IAnswer {
+public:
+    bool isPandigital(long n);
+    std::string getAnswer();
+};
+
+class Problem042 : public IAnswer {
+public:
+    inline int getAlphabetPos(char c) { return (c - 'a' + 1);}
+    std::string getAnswer();
+};
+
+class Problem043 : public IAnswer {
+public:
+    std::string getAnswer();
+};
+
+class Problem044 : public IAnswer {
+public:
+    bool isPentagonal(int x);
+    int pentagonalNumber(int n);
+    std::string getAnswer();
+};
+
+class Problem045 : public IAnswer {
+public:
+    bool isPentagonal(int x);
+    bool isTriangle(int x);
+    std::string getAnswer();
+};
+
+class Problem046 : public IAnswer {
+public:
+    std::string getAnswer();
+};
+
+class Problem047 : public IAnswer {
+public:
+    int getDistinctPrimeFactors(int n, std::vector<long> primes);
+    std::string getAnswer();
+};
+
+class Problem048 : public IAnswer {
+public:
+    std::string getAnswer();
+};
+
+class Problem049 : public IAnswer {
+public:
+    std::string getAnswer();
+};
+
+class Problem050 : public IAnswer {
+public:
+    std::string getAnswer();
+};
+
+class Problem051 : public IAnswer {
 public:
     struct NumberInfo {
     public:
@@ -314,52 +319,52 @@ public:
         }
     };
     std::vector<long> calculate(std::vector<NumberInfo>& numbers, int familySize);
-    long getAnswer();
+    std::string getAnswer();
 };
 
-class Problem052 {
+class Problem052 : public IAnswer {
 public:
-    int getAnswer();
+    std::string getAnswer();
 };
 
-class Problem053 {
+class Problem053 : public IAnswer {
 public:
-    unsigned int getAnswer();
+    std::string getAnswer();
 };
 
-class Problem054 {
+class Problem054 : public IAnswer {
 public:
-    int getAnswer();
+    std::string getAnswer();
 };
 
-class Problem055 {
+class Problem055 : public IAnswer {
 public:
-    int getAnswer();
+    std::string getAnswer();
 };
 
-class Problem056 {
+class Problem056 : public IAnswer {
 public:
-    long getAnswer();
+    std::string getAnswer();
 };
 
-class Problem057 {
+class Problem057 : public IAnswer {
 public:
-    int getAnswer();
+    std::string getAnswer();
 };
 
-class Problem058 {
+class Problem058 : public IAnswer {
 public:
-    int getAnswer();
+    std::string getAnswer();
 };
 
-class Problem059 {
+class Problem059 : public IAnswer {
 public:
-    int getAnswer();
+    std::string getAnswer();
 };
 
-class Problem060 {
+class Problem060 : public IAnswer {
 public:
-    int getAnswer();
+    std::string getAnswer();
 };
 
 #endif

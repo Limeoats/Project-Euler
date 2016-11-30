@@ -26,7 +26,7 @@ unsigned int Problem031::denomFunc(int n, std::vector<int> &denoms) {
     }
 }
 
-unsigned int Problem031::getAnswer() {
+std::string Problem031::getAnswer() {
     std::vector<int> t = {1,2,5,10,20,50,100,200};
-    return denomFunc(200, t);
+    return std::to_string(denomFunc(200, t));
 }

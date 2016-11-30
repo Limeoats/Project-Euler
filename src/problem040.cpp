@@ -31,10 +31,10 @@ int Problem040::getDigitInChampernowneConstant(int n) {
     return c[n-1] - '0';
 }
 
-int Problem040::getAnswer() {
+std::string Problem040::getAnswer() {
     int n = 1, total = 1;
     for (int i = 0; i < 6; i++) {
         total *= getDigitInChampernowneConstant((n *= 10));
     }
-    return total;
+    return std::to_string(total);
 }

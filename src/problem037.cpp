@@ -32,7 +32,7 @@ bool Problem037::isTruncatable(int n) {
     return true;
 }
 
-int Problem037::getAnswer() {
+std::string Problem037::getAnswer() {
     int sum = 0;
     for (int i = 11, count = 0; count < 11; i++) {
         if (utils::isPrime(i) && isTruncatable(i)) {
@@ -40,5 +40,5 @@ int Problem037::getAnswer() {
             count++;
         }
     }
-    return sum;
+    return std::to_string(sum);
 }

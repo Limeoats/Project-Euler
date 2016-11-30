@@ -15,7 +15,7 @@
  * the answer, return it and print it.
  */
 
-long long Problem048::getAnswer() {
+std::string Problem048::getAnswer() {
     const long long MOD = 10000000000LL;
     long long result = 0;
     for (int i = 1; i <= 1000; ++i) {
@@ -26,5 +26,5 @@ long long Problem048::getAnswer() {
         }
         result = (result + x) % MOD;
     }
-    return result;
+    return std::to_string(result);
 }

@@ -18,7 +18,7 @@
  * return [a] as the lowest number and print it.
  */
 
-int Problem052::getAnswer() {
+std::string Problem052::getAnswer() {
     unsigned int a = 1;
     while (true) {
         std::string original = std::to_string(2 * a);
@@ -28,7 +28,7 @@ int Problem052::getAnswer() {
                 break;
             }
             if (i == 6) {
-                return std::stoi(original) / 2;
+                return std::to_string(std::stoi(original) / 2);
             }
         }
         ++a;

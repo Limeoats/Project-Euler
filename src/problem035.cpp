@@ -32,12 +32,12 @@ bool Problem035::isCircularPrime(int n) {
     return true;
 }
 
-int Problem035::getAnswer() {
+std::string Problem035::getAnswer() {
     int count = 0;
     for (int i = 2; i < 1000000; ++i) {
         if (isCircularPrime(i)) {
             count++;
         }
     }
-    return count;
+    return std::to_string(count);
 }

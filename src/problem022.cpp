@@ -1,4 +1,5 @@
-/* Problem 22: Name scores
+/*
+ * Problem 22: Name scores
  * By: Mark Guerra
  * 11/19/2015
  */
@@ -8,7 +9,7 @@
 
 #include <fstream>
 
-int Problem022::getAnswer() {
+std::string Problem022::getAnswer() {
     std::ifstream in("data/problem22_data.txt");
     std::stringstream ss;
     ss << in.rdbuf();
@@ -26,5 +27,5 @@ int Problem022::getAnswer() {
         }
         total += lTotal * (i + 1);
     }
-    return total;
+    return std::to_string(total);
 }

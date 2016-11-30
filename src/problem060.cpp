@@ -26,7 +26,7 @@
  * set [curr] to the next prime, and start the entire process over.
  */
 
-int Problem060::getAnswer() {
+std::string Problem060::getAnswer() {
     const int LIMIT = 10000;
     const int NUM_PRIMES = 5;
     std::vector<long> primes = utils::generatePrimes(LIMIT);
@@ -94,7 +94,7 @@ int Problem060::getAnswer() {
                         for (int i = 0; i < nums.size(); ++i) {
                             sum += nums[i];
                         }
-                        return sum;
+                        return std::to_string(sum);
                     }
                 }
                 else {
@@ -125,5 +125,5 @@ int Problem060::getAnswer() {
             nums.clear();
         }
     }
-    return -1;
+    return "";
 }

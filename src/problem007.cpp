@@ -1,4 +1,5 @@
-/* Problem 7: 10001st prime
+/*
+ * Problem 7: 10001st prime
  * By: Mark Guerra
  * 10/19/2015
  */
@@ -23,6 +24,6 @@ int Problem007::getNthPrimeNumber(int n) {
     return i;
 }
 
-int Problem007::getAnswer() {
-    return getNthPrimeNumber(10001);
+std::string Problem007::getAnswer() {
+    return std::to_string(getNthPrimeNumber(10001));
 }

@@ -21,7 +21,7 @@
  * Finally, return count and print it to the screen.
  */
 
-int Problem042::getAnswer() {
+std::string Problem042::getAnswer() {
     std::ifstream in("data/problem42_data.txt");
     std::stringstream ss;
     ss << in.rdbuf();
@@ -45,6 +45,6 @@ int Problem042::getAnswer() {
             count++;
         }
     }
-    return count;
+    return std::to_string(count);
 
 }

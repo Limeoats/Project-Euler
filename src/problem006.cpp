@@ -1,4 +1,5 @@
-/* Problem 6: Sum square difference
+/*
+ * Problem 6: Sum square difference
  * By: Mark Guerra
  * 10/19/2015
  */
@@ -17,6 +18,6 @@ int Problem006::solveProblem(int numNaturalNumbers) {
     return ((int)pow(sumOfNumbers, 2) - sumOfSquares);
 }
 
-int Problem006::getAnswer() {
-    return solveProblem(100);
+std::string Problem006::getAnswer() {
+    return std::to_string(solveProblem(100));
 }

@@ -17,7 +17,7 @@
  * return it and print it to the screen.
  */
 
-int Problem046::getAnswer() {
+std::string Problem046::getAnswer() {
     int x = 3;
     bool found;
     std::vector<long> primes = utils::generatePrimes(5000);
@@ -36,7 +36,7 @@ int Problem046::getAnswer() {
             if (found) break;
         }
         if (!found) {
-            return x;
+            return std::to_string(x);
         }
     }
 }

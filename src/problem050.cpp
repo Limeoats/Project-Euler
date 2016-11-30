@@ -22,7 +22,7 @@ namespace {
     const int LIMIT = 1000000;
 }
 
-int Problem050::getAnswer() {
+std::string Problem050::getAnswer() {
     std::vector<long> allPrimes = utils::generatePrimes(LIMIT);
     int sum = 0, i = 0;
     for (i; sum + allPrimes[i] < LIMIT; ++i) {
@@ -37,5 +37,5 @@ int Problem050::getAnswer() {
         }
         end = i;
     }
-    return sum;
+    return std::to_string(sum);
 }

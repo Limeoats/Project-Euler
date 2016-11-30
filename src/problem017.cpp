@@ -1,4 +1,5 @@
-/* Problem 17: Number letter counts
+/*
+ * Problem 17: Number letter counts
  * By: Mark Guerra
  * 11/5/2015
  */
@@ -79,6 +80,6 @@ long Problem017::getNumLetters(int startNum, int endNum) {
     return letterTotal;
 }
 
-long Problem017::getAnswer() {
-    return getNumLetters(1, 1000);
+std::string Problem017::getAnswer() {
+    return std::to_string(getNumLetters(1, 1000));
 }

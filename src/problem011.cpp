@@ -1,4 +1,5 @@
-/* Problem 11: Largest product in a grid
+/*
+ * Problem 11: Largest product in a grid
  * By: Mark Guerra
  * 10/19/2015
  */
@@ -93,6 +94,6 @@ long Problem011::getGreatestProductOfXAdjacentNumbers(int x) {
 }
 
 
-long Problem011::getAnswer() {
-    return getGreatestProductOfXAdjacentNumbers(4);
+std::string Problem011::getAnswer() {
+    return std::to_string(getGreatestProductOfXAdjacentNumbers(4));
 }

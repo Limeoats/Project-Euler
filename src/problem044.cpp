@@ -38,14 +38,14 @@ int Problem044::pentagonalNumber(int n) {
     return n * (3 * n - 1) / 2;
 }
 
-int Problem044::getAnswer() {
+std::string Problem044::getAnswer() {
     int x = 1;
     while (true) {
         int pnx = pentagonalNumber(x);
         for (int y = x - 1; y > 0; --y) {
             int pny = pentagonalNumber(y);
             if (isPentagonal(pnx + pny) && isPentagonal(pnx - pny)) {
-                return pnx - pny;
+                return std::to_string(pnx - pny);
             }
         }
         ++x;

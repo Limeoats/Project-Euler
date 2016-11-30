@@ -21,7 +21,7 @@
  */
 
 
-BigNumber Problem043::getAnswer() {
+std::string Problem043::getAnswer() {
     BigNumber sum = BigNumber("0");
     int divs[6] = {2, 3, 5, 7, 11, 13};
     std::string str = "0123456789";
@@ -41,5 +41,5 @@ BigNumber Problem043::getAnswer() {
         }
     } while (std::next_permutation(str.begin(), str.end()));
 
-    return sum;
+    return sum.getString();
 }

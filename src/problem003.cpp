@@ -1,4 +1,5 @@
-/* Problem 3: Largest prime factor
+/*
+ * Problem 3: Largest prime factor
  * By: Mark Guerra
  * 10/19/2015
  */
@@ -18,6 +19,6 @@ long Problem003::getGreatestPrimeFactor(long long num) {
     return num;
 }
 
-long Problem003::getAnswer() {
-    return getGreatestPrimeFactor(600851475143);
+std::string Problem003::getAnswer() {
+    return std::to_string(getGreatestPrimeFactor(600851475143));
 }

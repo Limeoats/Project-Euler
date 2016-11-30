@@ -10,7 +10,7 @@
 #include <map>
 #include <fstream>
 
-int Problem054::getAnswer() {
+std::string Problem054::getAnswer() {
     enum class Suit {
         Hearts, Diamonds, Clubs, Spades, None
     };
@@ -299,5 +299,5 @@ int Problem054::getAnswer() {
         wins += p1Wins(p1, p2);
         p1.clear(), p2.clear();
     }
-    return wins;
+    return std::to_string(wins);
 }

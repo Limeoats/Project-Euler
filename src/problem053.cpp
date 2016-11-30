@@ -15,12 +15,12 @@
  * and print it.
  */
 
-unsigned int Problem053::getAnswer() {
+std::string Problem053::getAnswer() {
     unsigned int c = 0;
     for (unsigned int n = 23; n <= 100; ++n) {
         for (unsigned int r = 0; r <= n; ++r) {
            c += utils::choose(n, r) > 1000000;
         }
     }
-    return c;
+    return std::to_string(c);
 }

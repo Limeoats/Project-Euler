@@ -1,4 +1,5 @@
-/* Problem 5: Smallest multiple
+/*
+ * Problem 5: Smallest multiple
  * By: Mark Guerra
  * 10/19/2015
  */
@@ -25,6 +26,6 @@ int Problem005::getSmallestNumberDividedByRange(int begin, int end) {
     }
 }
 
-int Problem005::getAnswer() {
-    return getSmallestNumberDividedByRange(1, 20);
+std::string Problem005::getAnswer() {
+    return std::to_string(getSmallestNumberDividedByRange(1, 20));
 }

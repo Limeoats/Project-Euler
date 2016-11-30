@@ -54,7 +54,7 @@ std::vector<long> Problem051::calculate(std::vector<Problem051::NumberInfo>& num
     }
 }
 
-long Problem051::getAnswer() {
+std::string Problem051::getAnswer() {
     std::vector<long> primes = utils::generatePrimes(1000000);
     std::vector<long>::iterator it = std::find(primes.begin(), primes.end(), utils::closest(primes, 100000));
     std::vector<Problem051::NumberInfo> numbers;
@@ -68,5 +68,5 @@ long Problem051::getAnswer() {
     }
     auto results = calculate(numbers, 8);
     std::sort(results.begin(), results.end(), [](long a, long b) { return a < b; });
-    return results.front();
+    return std::to_string(results.front());
 }

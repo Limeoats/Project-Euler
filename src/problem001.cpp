@@ -1,4 +1,5 @@
-/* Problem 1: Multiples of 3 and 5
+/*
+ * Problem 1: Multiples of 3 and 5
  * By: Mark Guerra
  * 10/14/2015
  */
@@ -17,9 +18,9 @@
 
 
 
-int Problem001::getAnswer() {
+std::string Problem001::getAnswer() {
     std::vector<int> multiples(999);
     std::iota(std::begin(multiples), std::end(multiples), 1);
     multiples.erase(std::remove_if(multiples.begin(), multiples.end(), [](int i)->bool {return i % 3 != 0 && i % 5 != 0;}), multiples.end());
-    return std::accumulate(multiples.begin(), multiples.end(), 0);
+    return std::to_string(std::accumulate(multiples.begin(), multiples.end(), 0));
 }

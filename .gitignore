@@ -1,11 +1,3 @@
-# Created by .ignore support plugin (hsz.mobi)
 .idea
-.idea/*
-projecteuler.dSYM
-projecteuler.dsym/*
-build-dir
-build-dir/*
+cmake-build-debug
 
-build
-build/*
-*.swp

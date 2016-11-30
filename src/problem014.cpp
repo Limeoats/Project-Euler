@@ -1,4 +1,5 @@
-/* Problem 14: Longest Collatz sequence
+/*
+ * Problem 14: Longest Collatz sequence
  * By: Mark Guerra
  * 10/28/2015
  */
@@ -34,6 +35,6 @@ int Problem014::getStartingNumberUnder(int max) {
     return longestChainStartingNumber;
 }
 
-long Problem014::getAnswer() {
-    return getStartingNumberUnder(1000000);
+std::string Problem014::getAnswer() {
+    return std::to_string(getStartingNumberUnder(1000000));
 }

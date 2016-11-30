@@ -24,7 +24,7 @@
  * together and simplify it. Return the simplified denominator.
  */
 
-int Problem033::getAnswer() {
+std::string Problem033::getAnswer() {
     auto firstDigit = [](int n)->int{n /= 10; return n;};
     auto secondDigit = [](int n)->int{return n%10;};
     std::function<int (int,int)> gcd = [&gcd](int a, int b)->int{return b == 0 ? a : gcd(b, a%b);};
@@ -57,5 +57,5 @@ int Problem033::getAnswer() {
         num *= std::get<0>(f);
         den *= std::get<1>(f);
     }
-    return den / gcd(num, den);
+    return std::to_string(den / gcd(num, den));
 }

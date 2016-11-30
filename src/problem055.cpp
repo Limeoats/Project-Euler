@@ -14,10 +14,10 @@
  * print it.
  */
 
-int Problem055::getAnswer() {
+std::string Problem055::getAnswer() {
     int c = 0;
     for (unsigned int i = 10; i < 10000; ++i) {
         c += utils::isLychrel(i);
     }
-    return c;
+    return std::to_string(c);
 }

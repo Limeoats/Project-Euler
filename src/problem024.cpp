@@ -1,11 +1,11 @@
-/* Problem 24: Lexicographic permutations
+/*
+ * Problem 24: Lexicographic permutations
  * By: Mark Guerra
  * 11/23/2015
  */
 
 #include "main.h"
 
-#include <iostream>
 #include <algorithm>
 #include <sstream>
 

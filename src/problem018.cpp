@@ -1,4 +1,5 @@
-/* Problem 18: Maximum path sum 1
+/*
+ * Problem 18: Maximum path sum 1
  * By: Mark Guerra
  * 11/10/2015
  */
@@ -60,6 +61,6 @@ int Problem018::getMaxSum() {
 }
 
 
-int Problem018::getAnswer() {
-    return getMaxSum();
+std::string Problem018::getAnswer() {
+    return std::to_string(getMaxSum());
 }

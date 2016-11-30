@@ -1,4 +1,5 @@
-/* Problem 2: Even Fibonacci numbers
+/*
+ * Problem 2: Even Fibonacci numbers
  * By: Mark Guerra
  * 10/19/2015
  */
@@ -26,9 +27,9 @@ std::vector<int> Problem002::getFibNumbers(int max) {
     return list;
 }
 
-int Problem002::getAnswer() {
+std::string Problem002::getAnswer() {
     std::vector<int> list = getFibNumbers(4000000);
     //Remove the odds
     list.erase(std::remove_if(list.begin(), list.end(), [](int i) { return (i & 1) == 1; }), list.end());
-    return std::accumulate(list.begin(), list.end(), 0);
+    return std::to_string(std::accumulate(list.begin(), list.end(), 0));
 }

@@ -1,4 +1,5 @@
-/* Problem 13: Large sum
+/*
+ * Problem 13: Large sum
  * By: Mark Guerra
  * 10/22/2015
  */
