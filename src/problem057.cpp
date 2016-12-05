@@ -19,10 +19,10 @@
  */
 
 std::string Problem057::getAnswer() {
-    BigNumber n("3"), d("2");
+    BigNumber n = 3, d = 2;
     int c = 0;
-    for (int i = 1; i < 1000; ++i) {
-        n = n + (d.multiply(BigNumber("2")));
+    for (unsigned int i = 1; i < 1000; ++i) {
+        n += (d * 2);
         d = n - d;
         c += n.digits() > d.digits();
     }

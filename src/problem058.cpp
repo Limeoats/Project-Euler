@@ -33,7 +33,7 @@ std::string Problem058::getAnswer() {
     int primes = 0, i = 1;
     while (true) {
         for (int j = 0; j < 4; ++j) {
-            primes += utils::isPrime(static_cast<int>(powl(i, 2)) - j * (i - 1));
+            primes += utils::isPrime(static_cast<unsigned long long>(powl(i, 2)) - j * (i - 1));
         }
         if (i > 1 && (static_cast<double>(primes) / (i * 2 - 1)) * 100 < 10) {
             return std::to_string(i);
