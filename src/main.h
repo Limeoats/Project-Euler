@@ -371,9 +371,13 @@ class Problem061 : public IAnswer {
 public:
     std::string getAnswer();
 private:
-    bool isTriangle(unsigned int x);
     bool isNgonal(unsigned int n, unsigned int &x) const;
     bool isCyclic(int x, int y) const;
+};
+
+class Problem062 : public IAnswer {
+public:
+    std::string getAnswer();
 };
 
 #endif
