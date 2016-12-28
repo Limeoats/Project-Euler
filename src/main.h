@@ -371,13 +371,9 @@ class Problem061 : public IAnswer {
 public:
     std::string getAnswer();
 private:
-//    bool isTriangle(unsigned int &n) const;
-//    bool isSquare(unsigned int &n) const;
-//    bool isPentagonal(unsigned int &n) const;
-//    bool isHexagonal(unsigned int &n) const;
-//    bool isHeptagonal(unsigned int &n) const;
-//    bool isOctagonal(unsigned int &n) const;
+    bool isTriangle(unsigned int x);
     bool isNgonal(unsigned int n, unsigned int &x) const;
+    bool isCyclic(int x, int y) const;
 };
 
 #endif
