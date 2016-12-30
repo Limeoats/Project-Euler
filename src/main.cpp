@@ -2,7 +2,7 @@
 #include "utils.h"
 #include "main.h"
 
-Problem064 p;
+Problem065 p;
 
 int main(int argc, const char* argv[]) {
     auto t0 = std::chrono::high_resolution_clock::now();
