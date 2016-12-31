@@ -395,4 +395,11 @@ public:
     std::string getAnswer();
 };
 
+class Problem066 : public IAnswer {
+public:
+    std::string getAnswer();
+private:
+    bool pellsEquation(BigNumber x, BigNumber y, int d);
+};
+
 #endif
