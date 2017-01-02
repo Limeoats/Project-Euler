@@ -402,4 +402,9 @@ private:
     bool pellsEquation(BigNumber x, BigNumber y, int d);
 };
 
+class Problem067 : public IAnswer {
+public:
+    std::string getAnswer();
+};
+
 #endif

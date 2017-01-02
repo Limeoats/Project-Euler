@@ -5,6 +5,7 @@
 */
 
 #include <cmath>
+#include <algorithm>
 #include "main.h"
 
 /*
