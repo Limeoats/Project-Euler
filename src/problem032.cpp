@@ -31,9 +31,9 @@ std::string Problem032::getAnswer() {
     for (int i = 2; i < 9876; i++) {
         for (int j = 123; j < 9876 / i; j++) {
             if (i == j) continue;
-            std::string str1 = utils::toString(i);
-            std::string str2 = utils::toString(j);
-            std::string product = utils::toString(i*j);
+            std::string str1 = std::to_string(i);
+            std::string str2 = std::to_string(j);
+            std::string product = std::to_string(i * j);
             std::string str = str1 + str2 + product;
             if (str.size() != 9) continue;
             if (isPandigital(str)) {

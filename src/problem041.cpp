@@ -19,7 +19,7 @@
 //Once we get the highest number, we return it and print it out.
 
 bool Problem041::isPandigital(long n) {
-    std::string str = utils::toString(n);
+    std::string str = std::to_string(n);
     int len = str.size();
     for (int i = 1; i <= len; ++i) {
         if (str.find(i + '0') == std::string::npos)

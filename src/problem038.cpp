@@ -31,7 +31,7 @@ std::string Problem038::getAnswer() {
     for (int i = 1; i < 10000; ++i) {
         std::string result = "";
         for (int j = 1; ; ++j) {
-            result += utils::toString(i*j);
+            result += std::to_string(i * j);
             if (result.size() > 9) {
                 break;
             }

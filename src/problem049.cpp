@@ -28,7 +28,7 @@ std::string Problem049::getAnswer() {
     for (long p : allPrimes) {
         if (p >= 1000) {
             std::vector<int> perms;
-            std::string str = utils::toString(p);
+            std::string str = std::to_string(p);
             do {
                 perms.push_back(atol(str.c_str()));
             } while (std::next_permutation(str.begin(), str.end()));

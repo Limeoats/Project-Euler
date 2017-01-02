@@ -19,7 +19,7 @@
  */
 
 bool Problem037::isTruncatable(int n) {
-    std::string str = utils::toString(n);
+    std::string str = std::to_string(n);
     std::string str2 = str;
     int numDigits = utils::numDigits(n) - 1;
     for (int i = 0; i < numDigits; i++) {

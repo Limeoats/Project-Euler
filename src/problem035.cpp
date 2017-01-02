@@ -21,7 +21,7 @@ bool Problem035::isCircularPrime(int n) {
     if (!utils::isPrime(n)) {
         return false;
     }
-    std::string str = utils::toString(n);
+    std::string str = std::to_string(n);
     std::string original = str;
     do {
         if (!utils::isPrime(atoi(str.c_str()))) {
