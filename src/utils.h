@@ -119,6 +119,16 @@ namespace utils {
     long long factorial(int n);
     
     /*
+     * Get the Greatest Common Divisor of two numbers
+     * Parameters:
+     *   a: the first number
+     *   b: the second number
+     * Returns:
+     *   The greatest common divisor of [a] and [b]
+     */
+    long gcd(long a, long b);
+    
+    /*
      * Generate phi values using a variation of the Sieve of Eratosthenes
      * Parameters:
      *   max: the limit

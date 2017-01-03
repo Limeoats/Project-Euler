@@ -4,6 +4,7 @@
  * 12/13/2016
 */
 
+#include <algorithm>
 #include "main.h"
 
 /*

@@ -33,6 +33,15 @@ long long utils::factorial(int n) {
     return x;
 }
 
+long utils::gcd(long a, long b) {
+    while (b != 0) {
+        long t = b;
+        b = a % b;
+        a = t;
+    }
+    return a;
+}
+
 std::vector<long> utils::generatePhi(long max) {
     long i, j;
     std::vector<long> phi(max);
