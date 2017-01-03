@@ -9,6 +9,7 @@
 #include <vector>
 #include <algorithm>
 #include <chrono>
+#include <cmath>
 
 namespace utils {
     
@@ -116,6 +117,15 @@ namespace utils {
      *   The result of the factorial
      */
     long long factorial(int n);
+    
+    /*
+     * Generate phi values using a variation of the Sieve of Eratosthenes
+     * Parameters:
+     *   max: the limit
+     * Returns:
+     *   A list of phi values
+     */
+    std::vector<long> generatePhi(long max);
     
     /*
      * Generate primes using the Sieve of Eratosthenes

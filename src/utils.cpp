@@ -33,6 +33,19 @@ long long utils::factorial(int n) {
     return x;
 }
 
+std::vector<long> utils::generatePhi(long max) {
+    long i, j;
+    std::vector<long> phi(max);
+    for (i = 1; i < max; ++i)
+        phi[i] = i;
+    for (i = 2; i < max; ++i) {
+        if (phi[i] != i) continue;
+        for (j = i; j < max; j += i)
+            phi[j] = phi[j] / i * (i - 1);
+    }
+    return phi;
+}
+
 std::vector<long> utils::generatePrimes(long limit) {
     long bound = (long)sqrt(limit);
     std::vector<bool> primes(limit, true);
