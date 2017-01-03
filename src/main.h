@@ -437,4 +437,13 @@ public:
     std::string getAnswer();
 };
 
+class Problem074 : public IAnswer {
+public:
+    Problem074();
+    std::string getAnswer();
+private:
+    int digitFactorialSum(int num);
+    int _digitFactorials[10];
+};
+
 #endif
