@@ -427,4 +427,9 @@ public:
     std::string getAnswer();
 };
 
+class Problem072 : public IAnswer {
+public:
+    std::string getAnswer();
+};
+
 #endif
