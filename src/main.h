@@ -451,4 +451,13 @@ public:
     std::string getAnswer();
 };
 
+class Problem076 : public IAnswer {
+public:
+    Problem076();
+    std::string getAnswer();
+private:
+    int partition(int n, int nm);
+    int _vals[101][101];
+};
+
 #endif
