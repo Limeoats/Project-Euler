@@ -446,4 +446,9 @@ private:
     int _digitFactorials[10];
 };
 
+class Problem075 : public IAnswer {
+public:
+    std::string getAnswer();
+};
+
 #endif
