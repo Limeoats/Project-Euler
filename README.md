@@ -1,6 +1,6 @@
 # Project Euler
 
-![Limeoats Project Euler](https://projecteuler.net/profile/Limeoats.png?60)
+![Limeoats Project Euler](https://projecteuler.net/profile/Limeoats.png?77)
 
 I'll be uploading my **C++** solutions for each of the Project Euler problems to this repository.
 
