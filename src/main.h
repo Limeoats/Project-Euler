@@ -460,4 +460,9 @@ private:
     int _vals[101][101];
 };
 
+class Problem077 : public IAnswer {
+public:
+    std::string getAnswer();
+};
+
 #endif
