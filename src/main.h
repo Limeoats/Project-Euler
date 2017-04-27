@@ -465,4 +465,11 @@ public:
     std::string getAnswer();
 };
 
+class Problem078 : public IAnswer {
+public:
+    std::string getAnswer();
+private:
+    int getGeneralizedPentagonal(int n);
+};
+
 #endif
