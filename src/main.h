@@ -472,4 +472,9 @@ private:
     int getGeneralizedPentagonal(int n);
 };
 
+class Problem079 : public IAnswer {
+public:
+    std::string getAnswer();
+};
+
 #endif

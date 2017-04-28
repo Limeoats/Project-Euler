@@ -33,7 +33,7 @@ set(SOURCE_FILES
         src/problem061.cpp src/problem062.cpp src/problem063.cpp src/problem064.cpp src/problem065.cpp
         src/problem066.cpp src/problem067.cpp src/problem068.cpp src/problem069.cpp src/problem070.cpp
         src/problem071.cpp src/problem072.cpp src/problem073.cpp src/problem074.cpp src/problem075.cpp
-        src/problem076.cpp src/problem077.cpp src/problem078.cpp
+        src/problem076.cpp src/problem077.cpp src/problem078.cpp src/problem079.cpp
         )
 
 add_executable(Project_Euler ${SOURCE_FILES})
