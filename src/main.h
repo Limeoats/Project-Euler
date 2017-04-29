@@ -484,4 +484,9 @@ private:
     BigNumber sqrtDigits(int n, int precision);
 };
 
+class Problem081 : public IAnswer {
+public:
+    std::string getAnswer();
+};
+
 #endif
