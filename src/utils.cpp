@@ -87,6 +87,13 @@ bool utils::isLychrel(unsigned long long n, int iterations) {
     return true;
 }
 
+bool utils::isPerfectSquare(int n) {
+    auto c = sqrt(n);
+    auto c2 = static_cast<int>(c);
+    return (c * c) == (c2 * c2);
+
+}
+
 std::string utils::ltrim(std::string str, char c) {
     str.erase(0, str.find_first_not_of(c));
     return str;

@@ -474,7 +474,14 @@ private:
 
 class Problem079 : public IAnswer {
 public:
+        std::string getAnswer();
+};
+
+class Problem080 : public IAnswer {
+public:
     std::string getAnswer();
+private:
+    BigNumber sqrtDigits(int n, int precision);
 };
 
 #endif

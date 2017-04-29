@@ -176,6 +176,8 @@ namespace utils {
         }
         return n == reverse;
     }
+
+    bool isPerfectSquare(int n);
     
     /*
      * Check if a number is prime

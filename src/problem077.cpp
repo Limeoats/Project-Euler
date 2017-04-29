@@ -21,7 +21,8 @@ std::string Problem077::getAnswer() {
     const int LIMIT = 5000;
     std::vector<long> primes = utils::generatePrimes(1000);
     for (int a = 11;; ++a) {
-        int c[a + 1] = {0};
+        std::vector<int> c(a + 1);
+        std::fill(c.begin(), c.end(), 0);
         c[0] = 1;
         for (long p : primes) {
             for (long i = p; i <= a; ++i) {
