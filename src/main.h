@@ -489,4 +489,10 @@ public:
     std::string getAnswer();
 };
 
+class Problem082 : public IAnswer {
+public:
+    std::string getAnswer();
+};
+
+
 #endif
