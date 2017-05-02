@@ -474,7 +474,7 @@ private:
 
 class Problem079 : public IAnswer {
 public:
-        std::string getAnswer();
+    std::string getAnswer();
 };
 
 class Problem080 : public IAnswer {
