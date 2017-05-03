@@ -492,6 +492,10 @@ public:
 class Problem082 : public IAnswer {
 public:
     std::string getAnswer();
+private:
+    std::vector<std::vector<int>> _original;
+    std::vector<std::vector<int>> _tmp;
+    int minPath(int y, int x);
 };
 
 
