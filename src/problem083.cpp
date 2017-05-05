@@ -1,7 +1,7 @@
 /*
- * Problem 82: Path sum: three ways
+ * Problem 83: Path sum: four ways
  * By: Mark Guerra
- * 5/3/2017
+ * 5/5/2017
 */
 
 #include "main.h"
