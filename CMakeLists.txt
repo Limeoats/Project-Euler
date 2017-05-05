@@ -34,7 +34,7 @@ set(SOURCE_FILES
         src/problem066.cpp src/problem067.cpp src/problem068.cpp src/problem069.cpp src/problem070.cpp
         src/problem071.cpp src/problem072.cpp src/problem073.cpp src/problem074.cpp src/problem075.cpp
         src/problem076.cpp src/problem077.cpp src/problem078.cpp src/problem079.cpp src/problem080.cpp
-        src/problem081.cpp src/problem082.cpp
+        src/problem081.cpp src/problem082.cpp src/problem083.cpp
 
         )
 

@@ -498,5 +498,14 @@ private:
     int minPath(int y, int x);
 };
 
+class Problem083 : public IAnswer {
+public:
+    std::string getAnswer();
+private:
+    std::vector<std::vector<int>> _original;
+    
+    int dijkstra();
+};
+
 
 #endif
