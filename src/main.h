@@ -511,7 +511,8 @@ class Problem084 : public IAnswer {
 public:
     std::string getAnswer();
 private:
-    std::map<int, float> getDiceResultPercentages(const int diceSides);
+    void chance(std::vector<int> &cards, int &location);
+    void community_chest(std::vector<int> &cards, int &location);
 };
 
 
