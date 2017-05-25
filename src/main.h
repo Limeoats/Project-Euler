@@ -507,5 +507,12 @@ private:
     int dijkstra();
 };
 
+class Problem084 : public IAnswer {
+public:
+    std::string getAnswer();
+private:
+    std::map<int, float> getDiceResultPercentages(const int diceSides);
+};
+
 
 #endif
