@@ -520,5 +520,12 @@ public:
     std::string getAnswer();
 };
 
+class Problem086 : public IAnswer {
+public:
+    std::string getAnswer();
+private:
+    double shortest_path(int l, int w, int h);
+};
+
 
 #endif
