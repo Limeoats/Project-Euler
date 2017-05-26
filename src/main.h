@@ -515,5 +515,10 @@ private:
     void community_chest(std::vector<int> &cards, int &location);
 };
 
+class Problem085 : public IAnswer {
+public:
+    std::string getAnswer();
+};
+
 
 #endif
