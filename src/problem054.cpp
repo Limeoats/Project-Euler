@@ -10,7 +10,7 @@
 #include <map>
 #include <fstream>
 
-std::string Problem054::getAnswer() {
+std::string Problem054::get_answer() {
     enum class Suit {
         Hearts, Diamonds, Clubs, Spades, None
     };

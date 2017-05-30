@@ -23,7 +23,7 @@ bool Problem066::pellsEquation(BigNumber x, BigNumber y, int d) {
     return x * x - d * y * y == 1;
 }
 
-std::string Problem066::getAnswer() {
+std::string Problem066::get_answer() {
     BigNumber xD = 0, xX = 0;
     for (int i = 2; i <= 1000; ++i) {
         double t = sqrt(i);

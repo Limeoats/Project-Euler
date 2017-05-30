@@ -39,6 +39,6 @@ int Problem004::getLargestPalindrome() {
     return list[std::distance(list.begin(), max_element(std::begin(list), std::end(list)))];
 }
 
-std::string Problem004::getAnswer() {
+std::string Problem004::get_answer() {
     return std::to_string(getLargestPalindrome());
 }

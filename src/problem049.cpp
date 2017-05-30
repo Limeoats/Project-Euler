@@ -22,7 +22,7 @@
  * all together, convert them to a string, and return.
  */
 
-std::string Problem049::getAnswer() {
+std::string Problem049::get_answer() {
     std::vector<long> allPrimes = utils::generatePrimes(9999);
     bool exampleFound = false;
     for (long p : allPrimes) {

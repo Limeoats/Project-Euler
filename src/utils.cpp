@@ -56,23 +56,17 @@ std::vector<long> utils::generatePhi(long max) {
 }
 
 std::vector<long> utils::generatePrimes(long limit) {
-    long bound = (long)sqrt(limit);
-    std::vector<bool> primes(limit, true);
     std::vector<long> result;
-    
-    for (long i = 2; i < bound; ++i) {
-        if (primes[i]) {
-            for (long j = i * i; j < limit; j += i) {
-                primes[j] = false;
-            }
-        }
+    if (limit < 2) return result;
+    std::vector<bool> input(limit + 1, true);
+    int s = (int)sqrt(limit);
+    for (int i = 2; i <= s; ++i) {
+        if (!input[i]) continue;
+        for (int j = i * i; j <= limit; j += i) input[j] = false;
     }
     result.push_back(2);
-    for (long i = 3; i < primes.size(); ++i) {
-        if (primes[i]) {
-            result.push_back(i);
-        }
-    }
+    for (long i = 3; i <= limit; i += 2)
+        if (input[i]) result.push_back(i);
     return result;
 }
 

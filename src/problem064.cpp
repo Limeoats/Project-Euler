@@ -16,7 +16,7 @@
 */
 
 
-std::string Problem064::getAnswer() {
+std::string Problem064::get_answer() {
     int total = 0;
     for (int i = 2; i <= 10000; ++i) {
         int x = static_cast<int>(sqrt(i));

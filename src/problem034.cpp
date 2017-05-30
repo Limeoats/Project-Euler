@@ -18,7 +18,7 @@
  * the sum of each item in the list.
  */
 
-std::string Problem034::getAnswer() {
+std::string Problem034::get_answer() {
     std::vector<int> nums;
     int sum = 0;
     for (int i = 3; i < 41000; i++) {

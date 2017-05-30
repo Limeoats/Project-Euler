@@ -17,7 +17,7 @@
  * return it and print it.
 */
 
-std::string Problem077::getAnswer() {
+std::string Problem077::get_answer() {
     const int LIMIT = 5000;
     std::vector<long> primes = utils::generatePrimes(1000);
     for (int a = 11;; ++a) {

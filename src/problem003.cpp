@@ -19,6 +19,6 @@ long Problem003::getGreatestPrimeFactor(long long num) {
     return num;
 }
 
-std::string Problem003::getAnswer() {
+std::string Problem003::get_answer() {
     return std::to_string(getGreatestPrimeFactor(600851475143));
 }

@@ -27,7 +27,7 @@ std::vector<int> Problem002::getFibNumbers(int max) {
     return list;
 }
 
-std::string Problem002::getAnswer() {
+std::string Problem002::get_answer() {
     std::vector<int> list = getFibNumbers(4000000);
     //Remove the odds
     list.erase(std::remove_if(list.begin(), list.end(), [](int i) { return (i & 1) == 1; }), list.end());

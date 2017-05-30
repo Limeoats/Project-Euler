@@ -80,6 +80,6 @@ long Problem017::getNumLetters(int startNum, int endNum) {
     return letterTotal;
 }
 
-std::string Problem017::getAnswer() {
+std::string Problem017::get_answer() {
     return std::to_string(getNumLetters(1, 1000));
 }

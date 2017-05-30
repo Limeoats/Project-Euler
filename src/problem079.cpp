@@ -22,7 +22,7 @@
  * into a string and return it.
 */
 
-std::string Problem079::getAnswer() {
+std::string Problem079::get_answer() {
     std::vector<std::string> lines;
     std::string line;
     std::ifstream in("data/problem79_data.txt");

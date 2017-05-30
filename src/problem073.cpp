@@ -15,7 +15,7 @@
  * increase [count]. When done, return [count] and print.
 */
 
-std::string Problem073::getAnswer() {
+std::string Problem073::get_answer() {
     const int LIMIT = 12000;
     int count = 0;
     for (int d = 2; d <= LIMIT; ++d) {

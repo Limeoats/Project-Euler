@@ -14,7 +14,7 @@
  * iterating, return [maxN] and print.
 */
 
-std::string Problem069::getAnswer() {
+std::string Problem069::get_answer() {
     double max = 0.0, maxN = 0.0;
     std::vector<long> list = utils::generatePhi(1000000);
     for (double i = 0.0; i < list.size(); ++i) {

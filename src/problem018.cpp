@@ -61,6 +61,6 @@ int Problem018::getMaxSum() {
 }
 
 
-std::string Problem018::getAnswer() {
+std::string Problem018::get_answer() {
     return std::to_string(getMaxSum());
 }

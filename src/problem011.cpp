@@ -94,6 +94,6 @@ long Problem011::getGreatestProductOfXAdjacentNumbers(int x) {
 }
 
 
-std::string Problem011::getAnswer() {
+std::string Problem011::get_answer() {
     return std::to_string(getGreatestProductOfXAdjacentNumbers(4));
 }

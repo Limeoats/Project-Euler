@@ -54,7 +54,7 @@ std::vector<long> Problem051::calculate(std::vector<Problem051::NumberInfo>& num
     }
 }
 
-std::string Problem051::getAnswer() {
+std::string Problem051::get_answer() {
     std::vector<long> primes = utils::generatePrimes(1000000);
     std::vector<long>::iterator it = std::find(primes.begin(), primes.end(), utils::closest(primes, 100000));
     std::vector<Problem051::NumberInfo> numbers;

@@ -26,7 +26,7 @@ bool Problem032::isPandigital(std::string n) {
     return true;
 }
 
-std::string Problem032::getAnswer() {
+std::string Problem032::get_answer() {
     std::unordered_set<long> products;
     for (int i = 2; i < 9876; i++) {
         for (int j = 123; j < 9876 / i; j++) {

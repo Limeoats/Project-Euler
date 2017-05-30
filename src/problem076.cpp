@@ -25,7 +25,7 @@ int Problem076::partition(int n, int nm) {
     return this->_vals[n][nm];
 }
 
-std::string Problem076::getAnswer() {
+std::string Problem076::get_answer() {
     const int LIMIT = 100;
     return std::to_string(this->partition(LIMIT, LIMIT - 1));
 }

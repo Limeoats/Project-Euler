@@ -28,7 +28,7 @@ bool Problem036::isPalindrome(std::string n) {
     return true;
 }
 
-std::string Problem036::getAnswer() {
+std::string Problem036::get_answer() {
     int sum = 0;
     for (int i = 0; i < 1000000; ++i) {
         if (isPalindrome(std::to_string(i))) {

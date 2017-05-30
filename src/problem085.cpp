@@ -16,7 +16,7 @@
  * 100x100, which is an upper bound that I chose, I return and print the [closest_area].
  */
 
-std::string Problem085::getAnswer() {
+std::string Problem085::get_answer() {
     const int TARGET = 2000000;
     int closest_distance = TARGET;
     int closest_area = 0;

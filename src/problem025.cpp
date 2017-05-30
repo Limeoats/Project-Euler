@@ -6,7 +6,7 @@
 
 #include "main.h"
 
-std::string Problem025::getAnswer() {
+std::string Problem025::get_answer() {
     int index = 2;
     BigNumber b = 1, c = 1, tmp = 1;
     while (c.digits() < 1000) {

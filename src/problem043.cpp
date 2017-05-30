@@ -21,7 +21,7 @@
  */
 
 
-std::string Problem043::getAnswer() {
+std::string Problem043::get_answer() {
     BigNumber sum = BigNumber("0");
     int divs[6] = {2, 3, 5, 7, 11, 13};
     std::string str = "0123456789";

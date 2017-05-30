@@ -26,6 +26,6 @@ int Problem005::getSmallestNumberDividedByRange(int begin, int end) {
     }
 }
 
-std::string Problem005::getAnswer() {
+std::string Problem005::get_answer() {
     return std::to_string(getSmallestNumberDividedByRange(1, 20));
 }

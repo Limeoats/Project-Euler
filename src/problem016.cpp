@@ -21,7 +21,7 @@ long Problem016::sumOfDigits(BigNumber number, int power) {
     return total;
 }
 
-std::string Problem016::getAnswer() {
+std::string Problem016::get_answer() {
     BigNumber b = 2;
     return std::to_string(sumOfDigits(b, 1000));
 }

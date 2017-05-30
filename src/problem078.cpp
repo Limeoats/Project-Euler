@@ -23,7 +23,7 @@ int Problem078::getGeneralizedPentagonal(int n) {
     return (3 * n * n - n) / 2;
 }
 
-std::string Problem078::getAnswer() {
+std::string Problem078::get_answer() {
     int n = 2;
     std::vector<long> p = {1, 1};
     while (true) {

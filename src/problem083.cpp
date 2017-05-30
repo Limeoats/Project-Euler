@@ -102,7 +102,7 @@ int Problem083::dijkstra() {
     return nodes[this->_original.size() - 1][this->_original.size() - 1].Distance;
 }
 
-std::string Problem083::getAnswer() {
+std::string Problem083::get_answer() {
     std::vector<std::string> lines;
     std::string line;
     std::ifstream in("data/problem83_data.txt");

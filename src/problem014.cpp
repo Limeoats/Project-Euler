@@ -35,6 +35,6 @@ int Problem014::getStartingNumberUnder(int max) {
     return longestChainStartingNumber;
 }
 
-std::string Problem014::getAnswer() {
+std::string Problem014::get_answer() {
     return std::to_string(getStartingNumberUnder(1000000));
 }

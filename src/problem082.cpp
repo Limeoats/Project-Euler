@@ -29,7 +29,7 @@ int Problem082::minPath(int y, int x) {
     return *std::min_element(std::begin(cumulative), std::end(cumulative));
 }
 
-std::string Problem082::getAnswer() {
+std::string Problem082::get_answer() {
     std::vector<std::string> lines;
     std::string line;
     std::ifstream in("data/problem82_data.txt");

@@ -13,7 +13,7 @@
  * Once the sum is found, return it and print.
 */
 
-std::string Problem072::getAnswer() {
+std::string Problem072::get_answer() {
     const int LIMIT = 1000000;
     std::vector<long> phiList = utils::generatePhi(LIMIT + 2);
     long sum = 0;

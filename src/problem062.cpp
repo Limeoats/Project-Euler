@@ -21,7 +21,7 @@
  * sorted key. Return and print it.
 */
 
-std::string Problem062::getAnswer() {
+std::string Problem062::get_answer() {
     const int NUM_PERMUTATIONS = 5;
     int n = 345;
     std::map<std::string, std::vector<unsigned long>> cubes;

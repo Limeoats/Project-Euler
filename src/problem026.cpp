@@ -14,7 +14,7 @@
  *  repeating sequence.
  */
 
-std::string Problem026::getAnswer() {
+std::string Problem026::get_answer() {
     int highestCount;
     int highestDenom;
     for (int i = 2; i < 1000; i++) {

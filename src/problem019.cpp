@@ -44,6 +44,6 @@ int Problem019::getNumSundaysBetweenDates() {
     return numSundays;
 }
 
-std::string Problem019::getAnswer() {
+std::string Problem019::get_answer() {
     return std::to_string(getNumSundaysBetweenDates());
 }

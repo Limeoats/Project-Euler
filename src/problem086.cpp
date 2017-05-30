@@ -17,7 +17,7 @@
  * the current value of [l] is returned and printed since [l] is always the greatest.
  */
 
-std::string Problem086::getAnswer() {
+std::string Problem086::get_answer() {
     int c = 0;
     for (int l = 1;; ++l) {
         for (int w = 1; w <= l; ++w) {

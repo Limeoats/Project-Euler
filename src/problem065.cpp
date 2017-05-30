@@ -20,7 +20,7 @@
  * the 100'th numerator, get the sum of its digits, and then return and print it.
 */
 
-std::string Problem065::getAnswer() {
+std::string Problem065::get_answer() {
     std::vector<int> c { 2, 1 };
     int t = 2;
     for (int i = 0; i <= 100; ++i) {

@@ -26,7 +26,7 @@ bool Problem038::isPandigital(std::string n) {
     return true;
 }
 
-std::string Problem038::getAnswer() {
+std::string Problem038::get_answer() {
     int highest = 0;
     for (int i = 1; i < 10000; ++i) {
         std::string result = "";

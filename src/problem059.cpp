@@ -29,7 +29,7 @@
  * to [sum]. Return the result and print it.
  */
 
-std::string Problem059::getAnswer() {
+std::string Problem059::get_answer() {
     std::ifstream in("data/problem59_data.txt");
     std::stringstream ss;
     ss << in.rdbuf();

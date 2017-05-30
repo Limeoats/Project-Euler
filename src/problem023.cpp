@@ -27,7 +27,7 @@ bool Problem023::isAbundant(long n) {
     return sumOfProperDivisors(n) > n;
 }
 
-std::string Problem023::getAnswer() {
+std::string Problem023::get_answer() {
     std::vector<int> abundantNumbers;
     for (int i = 1; i < 20161; i++) {
         if (isAbundant(i)) {

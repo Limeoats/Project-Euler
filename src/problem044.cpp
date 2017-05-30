@@ -38,7 +38,7 @@ int Problem044::pentagonalNumber(int n) {
     return n * (3 * n - 1) / 2;
 }
 
-std::string Problem044::getAnswer() {
+std::string Problem044::get_answer() {
     int x = 1;
     while (true) {
         int pnx = pentagonalNumber(x);

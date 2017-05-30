@@ -24,7 +24,7 @@ bool Problem021::isAmicable(int a) {
     return sumOfProperDivisors(ans) == a && ans != a;
 }
 
-std::string Problem021::getAnswer() {
+std::string Problem021::get_answer() {
     std::vector<int> amicableNumbers;
     for (int i = 1; i < 10000; i++) {
         if (isAmicable(i)) {

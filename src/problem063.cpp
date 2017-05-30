@@ -16,7 +16,7 @@
  * After the base's loop is done, counter has the answer. Return and print it.
 */
 
-std::string Problem063::getAnswer() {
+std::string Problem063::get_answer() {
     int counter = 0;
     for (BigNumber i = 1; i < 10; ++i) {
         for (int e = 1;; ++e) {

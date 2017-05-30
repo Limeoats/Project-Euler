@@ -14,7 +14,7 @@
  * print it.
  */
 
-std::string Problem055::getAnswer() {
+std::string Problem055::get_answer() {
     int c = 0;
     for (unsigned int i = 10; i < 10000; ++i) {
         c += utils::isLychrel(i);

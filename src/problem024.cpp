@@ -27,7 +27,7 @@ std::vector<std::string> Problem024::getPermutations(std::vector<int> numbers, i
     return p;
 }
 
-std::string Problem024::getAnswer() {
+std::string Problem024::get_answer() {
     std::vector<std::string> x = getPermutations({0,1,2,3,4,5,6,7,8,9}, 1000000);
     return x[999999];
 }

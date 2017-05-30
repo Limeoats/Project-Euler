@@ -16,7 +16,7 @@ BigNumber Problem020::factorial(int n) {
     return b;
 }
 
-std::string Problem020::getAnswer() {
+std::string Problem020::get_answer() {
     BigNumber b = factorial(100);
     long sum = 0;
     for (int i = 0; i < b.getString().size(); i++) {

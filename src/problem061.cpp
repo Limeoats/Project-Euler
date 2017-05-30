@@ -16,7 +16,7 @@ bool Problem061::isCyclic(int x, int y) const {
     return x % 100 == y / 100;
 }
 
-std::string Problem061::getAnswer() {
+std::string Problem061::get_answer() {
     std::vector<unsigned int> triangleNumbers, squareNumbers, pentagonalNumbers,
             hexagonalNumbers, heptagonalNumbers, octagonalNumbers;
     for (unsigned int i = 1000; i <= 9999; ++i) {

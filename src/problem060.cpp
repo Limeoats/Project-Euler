@@ -26,7 +26,7 @@
  * set [curr] to the next prime, and start the entire process over.
  */
 
-std::string Problem060::getAnswer() {
+std::string Problem060::get_answer() {
     const int LIMIT = 10000;
     const int NUM_PRIMES = 5;
     std::vector<long> primes = utils::generatePrimes(LIMIT);

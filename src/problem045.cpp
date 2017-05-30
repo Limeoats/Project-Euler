@@ -25,7 +25,7 @@ bool Problem045::isTriangle(int x) {
     return t == int(t);
 }
 
-std::string Problem045::getAnswer() {
+std::string Problem045::get_answer() {
     int n = 286;
     while (true) {
         int hex = (2 * n - 1) * n;

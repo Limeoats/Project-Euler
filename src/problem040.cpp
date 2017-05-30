@@ -31,7 +31,7 @@ int Problem040::getDigitInChampernowneConstant(int n) {
     return c[n-1] - '0';
 }
 
-std::string Problem040::getAnswer() {
+std::string Problem040::get_answer() {
     int n = 1, total = 1;
     for (int i = 0; i < 6; i++) {
         total *= getDigitInChampernowneConstant((n *= 10));

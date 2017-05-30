@@ -32,7 +32,7 @@ BigNumber Problem080::sqrtDigits(int n, int precision) {
     return BigNumber(b.getString().substr(0, b.getString().size() - 3));
 }
 
-std::string Problem080::getAnswer() {
+std::string Problem080::get_answer() {
     int sum = 0;
     for (int n = 1; n <= 100; ++n) {
         if (utils::isPerfectSquare(n)) continue;

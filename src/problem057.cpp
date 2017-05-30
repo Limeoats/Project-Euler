@@ -18,7 +18,7 @@
  * increment [c]. Finally, return and print [c].
  */
 
-std::string Problem057::getAnswer() {
+std::string Problem057::get_answer() {
     BigNumber n = 3, d = 2;
     int c = 0;
     for (unsigned int i = 1; i < 1000; ++i) {

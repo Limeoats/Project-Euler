@@ -39,7 +39,7 @@ void Problem084::community_chest(std::vector<int> &cards, int &location) {
     std::rotate(std::begin(cards), std::begin(cards) + 1, std::end(cards));
 }
 
-std::string Problem084::getAnswer() {
+std::string Problem084::get_answer() {
     srand(static_cast<unsigned int>(time(nullptr)));
     const int DICE_SIDES = 4;
     

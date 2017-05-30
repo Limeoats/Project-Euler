@@ -20,7 +20,7 @@
  * numerator we found from [list], return, and print it.
 */
 
-std::string Problem071::getAnswer() {
+std::string Problem071::get_answer() {
     std::vector<int> list;
     for (int d = 2; d <= 1000000; ++d) {
         int c = (3 * d + 1) / 7;

@@ -20,7 +20,7 @@
  * is returned and printed.
  */
 
-std::string Problem027::getAnswer() {
+std::string Problem027::get_answer() {
     long hA = 0, hB = 0, hPrimes = 0;
     for (int i = -999; i < 1000; i++) {
         for (int j = -999; j < 1000; j++) {

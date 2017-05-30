@@ -33,7 +33,7 @@
  * Finally, return [highest] and print it.
  */
 
-std::string Problem039::getAnswer() {
+std::string Problem039::get_answer() {
     int hns = 0;
     int highest = 0;
     for (int i = 2; i <= 1000; i += 2) {

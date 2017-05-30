@@ -46,6 +46,6 @@ long Problem008::getGreatestProduct(int howMany) {
 }
 
 
-std::string Problem008::getAnswer() {
+std::string Problem008::get_answer() {
     return std::to_string(getGreatestProduct(13));
 }

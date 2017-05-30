@@ -24,6 +24,6 @@ int Problem007::getNthPrimeNumber(int n) {
     return i;
 }
 
-std::string Problem007::getAnswer() {
+std::string Problem007::get_answer() {
     return std::to_string(getNthPrimeNumber(10001));
 }

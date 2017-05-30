@@ -17,7 +17,7 @@
  * left is reached and added to, it contains the result. Return it and print.
 */
 
-std::string Problem081::getAnswer() {
+std::string Problem081::get_answer() {
     std::vector<std::string> lines;
     std::string line;
     std::ifstream in("data/problem81_data.txt");

@@ -20,6 +20,6 @@ double Problem009::getProductOfPythagoreanTriplet(int sumOfABC) {
     return -1;
 }
 
-std::string Problem009::getAnswer() {
+std::string Problem009::get_answer() {
     return std::to_string(getProductOfPythagoreanTriplet(1000));
 }

@@ -33,7 +33,7 @@ int Problem074::digitFactorialSum(int num) {
     return sum;
 }
 
-std::string Problem074::getAnswer() {
+std::string Problem074::get_answer() {
     int count = 0;
     std::vector<int> terms;
     for (int i = 2; i < 1000000; ++i) {

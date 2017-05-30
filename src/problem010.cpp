@@ -17,6 +17,6 @@ long Problem010::getSumOfPrimesBelowNum(int num) {
     return total;
 }
 
-std::string Problem010::getAnswer() {
+std::string Problem010::get_answer() {
     return std::to_string(getSumOfPrimesBelowNum(2000000));
 }

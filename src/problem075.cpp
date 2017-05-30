@@ -21,7 +21,7 @@
  * At the end, [result] has the answer so return it and print.
 */
 
-std::string Problem075::getAnswer() {
+std::string Problem075::get_answer() {
     const int LIMIT = 1500000;
     int result = 0;
     std::map<long, long> items;

@@ -9,7 +9,7 @@
 
 #include <fstream>
 
-std::string Problem022::getAnswer() {
+std::string Problem022::get_answer() {
     std::ifstream in("data/problem22_data.txt");
     std::stringstream ss;
     ss << in.rdbuf();

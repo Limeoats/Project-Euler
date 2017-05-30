@@ -18,7 +18,7 @@
  * loop through each row and each column, determining the highest numbers. Return the highest and print.
 */
 
-std::string Problem067::getAnswer() {
+std::string Problem067::get_answer() {
     std::vector<std::string> lines;
     std::string line;
     std::ifstream in("data/problem67_data.txt");

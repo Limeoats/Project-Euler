@@ -15,7 +15,7 @@
  * and print it.
  */
 
-std::string Problem053::getAnswer() {
+std::string Problem053::get_answer() {
     unsigned int c = 0;
     for (unsigned int n = 23; n <= 100; ++n) {
         for (unsigned int r = 0; r <= n; ++r) {

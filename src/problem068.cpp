@@ -6,7 +6,7 @@
 
 #include "main.h"
 
-std::string Problem068::getAnswer() {
+std::string Problem068::get_answer() {
     // I solved this problem with a pen and paper, so there is no programmatic solution here.
     // Since we're looking for the highest possible number and the numbers always start from the outer nodes,
     // we need to put the highest numbers in the outer nodes (6,7,8,9,10).

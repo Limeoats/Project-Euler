@@ -18,6 +18,6 @@ int Problem006::solveProblem(int numNaturalNumbers) {
     return ((int)pow(sumOfNumbers, 2) - sumOfSquares);
 }
 
-std::string Problem006::getAnswer() {
+std::string Problem006::get_answer() {
     return std::to_string(solveProblem(100));
 }

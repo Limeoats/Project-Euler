@@ -19,7 +19,7 @@
  * Finally, return the sum of everything in [nums] and print it to the screen.
  */
 
-std::string Problem030::getAnswer() {
+std::string Problem030::get_answer() {
     std::vector<int> nums;
     for (int i = 2; i < (pow(9, 5) * 5); i++) {
         if ([](int x)->int {

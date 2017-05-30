@@ -16,7 +16,7 @@
  * the new value. Finally, return [highest] and print it.
  */
 
-std::string Problem056::getAnswer() {
+std::string Problem056::get_answer() {
     int highest = 0;
     BigNumber bn = 1;
     for (int a = 2; a < 100; ++a) {

@@ -18,7 +18,7 @@
 
 
 
-std::string Problem001::getAnswer() {
+std::string Problem001::get_answer() {
     std::vector<int> multiples(999);
     std::iota(std::begin(multiples), std::end(multiples), 1);
     multiples.erase(std::remove_if(multiples.begin(), multiples.end(), [](int i)->bool {return i % 3 != 0 && i % 5 != 0;}), multiples.end());

@@ -28,7 +28,7 @@ bool Problem041::isPandigital(long n) {
     return true;
 }
 
-std::string Problem041::getAnswer() {
+std::string Problem041::get_answer() {
     long highest = 0;
     auto primes = utils::generatePrimes(7654321);
     for (long t : primes) {

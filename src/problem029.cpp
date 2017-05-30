@@ -17,7 +17,7 @@
  * Finally, the size of [results] is returned and printed out.
  */
 
-std::string Problem029::getAnswer() {
+std::string Problem029::get_answer() {
     std::unordered_set<double> results;
     for (double i = 2; i <= 100; i++) {
         for (double j = 2; j <= 100; j++) {

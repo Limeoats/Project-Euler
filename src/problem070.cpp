@@ -16,7 +16,7 @@
  * Once the loop is finished, [minN] has the answer so return it and print.
 */
 
-std::string Problem070::getAnswer() {
+std::string Problem070::get_answer() {
     const long LIMIT = 10000000;
     double min = std::numeric_limits<double>::max(), minN = std::numeric_limits<double>::max();
     std::vector<long> list = utils::generatePhi(LIMIT);

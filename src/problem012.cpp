@@ -37,6 +37,6 @@ int Problem012::getFirstTriangleNumberWithGreaterThanNDivisors(int n) {
     return -1;
 }
 
-std::string Problem012::getAnswer() {
+std::string Problem012::get_answer() {
     return std::to_string(getFirstTriangleNumberWithGreaterThanNDivisors(500));
 }

@@ -29,7 +29,7 @@
  * side length [i] by 2 and repeat the process.
  */
 
-std::string Problem058::getAnswer() {
+std::string Problem058::get_answer() {
     int primes = 0, i = 1;
     while (true) {
         for (int j = 0; j < 4; ++j) {

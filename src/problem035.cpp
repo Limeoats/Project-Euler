@@ -32,7 +32,7 @@ bool Problem035::isCircularPrime(int n) {
     return true;
 }
 
-std::string Problem035::getAnswer() {
+std::string Problem035::get_answer() {
     int count = 0;
     for (int i = 2; i < 1000000; ++i) {
         if (isCircularPrime(i)) {
