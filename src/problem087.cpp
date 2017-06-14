@@ -4,7 +4,6 @@
  * 5/30/2017
 */
 
-#include <set>
 #include <unordered_set>
 #include "main.h"
 #include "utils.h"

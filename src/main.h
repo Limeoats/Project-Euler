@@ -530,5 +530,10 @@ public:
     std::string get_answer();
 };
 
+class Problem088 : public IAnswer {
+public:
+    std::string get_answer();
+};
+
 
 #endif
