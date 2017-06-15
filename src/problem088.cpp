@@ -7,5 +7,5 @@
 #include "main.h"
 
 std::string Problem088::get_answer() {
-    return "ok";
+    return "nice";
 }
