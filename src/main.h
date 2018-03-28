@@ -533,6 +533,8 @@ public:
 class Problem088 : public IAnswer {
 public:
     std::string get_answer();
+private:
+
 };
 
 
